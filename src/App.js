@@ -1,5 +1,6 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
+import Header from "./components/Header";
 
 function App() {
   const appRouter = createBrowserRouter([
@@ -9,6 +10,7 @@ function App() {
     },
   ]);
   return <div className="App">
+    <Header/>
     <RouterProvider router={appRouter} />
   </div>;
 }
