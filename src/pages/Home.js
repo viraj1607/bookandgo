@@ -13,21 +13,8 @@ import SignInPopup from "../components/SignInPopup";
 
 function Home() {
   return (
-    <div className="container relative">
-      <SignInPopup />
-      <HeroSection />
-      <HeaderContainer />
-      <SearchCard />
-      {/* <GoButton /> */}
-      <SearchDisplay />
-      <AdBanner1 imageUrl="/path/to/ad-image.jpg" />
-      <StackedCard />
-      <Offers />
-      <RecommendAndMostViewed title={'Recommended for you'} hotels={recommendedHotelsList}/>
-      <RecommendAndMostViewed title={'Most Viewed'} hotels={mostViewedHotelsList}/> 
-      <Locations />
-    </div>
-  );
+    <div>Checkout flights!</div>
+  )
 }
 
 export default Home;
