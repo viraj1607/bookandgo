@@ -2,6 +2,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import Header from "./components/Header";
 import Admin from "./pages/Admin";
+import HotelList from "./pages/HotelList";
 
 function App() {
   const appRouter = createBrowserRouter([
@@ -13,6 +14,10 @@ function App() {
       path: "/admin/:id",
       element: <Admin />,
     },
+    {
+      path:"/hotellist",
+      element:<HotelList/>
+    }
   ]);
   return <div className="App">
     <Header/>
