@@ -6,7 +6,7 @@ const offers = [
     title: "Trips to Alberta & British Columbia",
     description: "Grab Up to 40% OFF* on Hotels",
     cta: "BOOK NOW",
-    imageUrl: "https://via.placeholder.com/463x170", // Replace with actual image URL
+    imageUrl: '../imgs/heroimg1.jpg',
   },
   {
     category: "INTL FLIGHTS",
