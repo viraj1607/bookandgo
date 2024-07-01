@@ -31,7 +31,7 @@ const hotelList = [
     ],
   },
   {
-    img: "https://s3-alpha-sig.figma.com/img/56ee/9b5e/be399a0fe03c4b509c5dce94a3b7b6f7?Expires=1721001600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=mwEY9WuZigCEVav8627XQjSm~p9k2ZvCfY5PpFkppBQHsVcOjsltFuVJvJ7X-PQwgr9xe4ONwGQliD1OVqZ8JPNlmtnkjZfnnawffzHMpOISCgGgHKt~7jmHfJQsLRWKUMuTyDlhqARws4FcQZ15jr0K8Glh98h-r9dF-JPaleQy6OSsIDSi-bDinc0tqXOa7NdmPSzvTE4HU7TesEBfw-w5nwLnku1efhxOEK-DXQSMFYvVyxMvuzW0vWzh8WWvKd3GXL85PruWKuBFs8HzXoLQ5qyKESrpxMP5UsvDKzXM-U9gfJhsF2UQHlVDxDvAdm9VBT1~UJQSssyaPb98ug__",
+    img: "https://s3-alpha-sig.figma.com/img/acf4/b9e1/980face65675966b164728984277eea1?Expires=1721001600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=bNhOpGE1yXZaYJem7FEUg2FGWlJKnmG8Ka69-GukEBdzKHhakcRE4yH4QSBCNtj73MRSvG-P0nX24ewfPaen-ttFPTQZPu1Nc6uGgqVMfF7RFmuQvm7D4-xhD-bWb0iUcrQ6EKpcFjUOkNTDHO7oBtXvlR6QDyUReb4tYHghx67SDE5ozXF3axC8w8nLcYWkDAd8dQBPd6tBwDGA1OPjWmgugN30XckWQ28xSI79CaeQA0Yd9fiFEAeeLFpcziX86YhnQeM0e46xSph6tph8yq2pJ7I4R4OCiyAQuKuHIWRTFKXW-9iOR64He0cFhvHX5V4~5Z8LLXe9OqNIaKDSvw__",
     hotelName: "Holiday Inn Express",
     city: "New York",
     landmark: "Near John F. Kennedy International Airport",
