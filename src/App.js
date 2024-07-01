@@ -4,6 +4,8 @@ import Home from "./pages/Home";
 import Header from "./components/Header";
 import Admin from "./pages/Admin";
 import Footer from "./components/Footer"; // Import the Footer component
+import HotelList from "./pages/HotelList";
+import UserProfile from "./pages/UserProfile";
 
 function App() {
   const appRouter = createBrowserRouter([
@@ -14,6 +16,14 @@ function App() {
     {
       path: "/admin/:id",
       element: <Admin />,
+    },
+    {
+      path: "/hotellist",
+      element: <HotelList />,
+    },
+    {
+      path: "userprofile",
+      element: <UserProfile />,
     },
   ]);
 
