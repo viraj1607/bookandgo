@@ -1,3 +1,262 @@
+/* index.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Apply the Inter font to the entire website */
+body {
+    background-color: #FFF;
+    font-family: 'Inter', sans-serif;
+}
+
+.container{
+    background-color: #FFF;
+}
+
+/* Custom class for half rectangle background */
+.bg-half-rectangle {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    /* Adjust as needed */
+    height: 307px;
+    /* Adjust as needed */
+    margin: 0 auto;
+    border-radius: 32px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    background: #FFF;
+    box-shadow: 0px 12px 24px 0px rgba(0, 0, 0, 0.10);
+}
+
+.card {
+    width: 290px;
+    /* Single card width */
+    height: 307px;
+    /* Single card height */
+    flex-shrink: 0;
+    border-radius: 20px;
+    background: #FFF;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    /* Ensures content does not spill out */
+    margin-left: -5px;
+}
+
+.card-image {
+    width: 290px;
+    height: 160px;
+    flex-shrink: 0;
+    background: lightgray 50% / cover no-repeat;
+}
+
+.card-content {
+    padding: 16px;
+    /* Adjust padding as needed */
+}
+
+.card-title,
+.card-price {
+    color: #000;
+    font-family: 'Inter';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.card-location,
+.card-per-night {
+    color: #6F6F6F;
+    font-family: 'Inter';
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.card-amenities {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.card-amenity {
+    display: flex;
+    align-items: center;
+}
+
+.card-amenity .icon {
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
+    margin-right: 4px;
+}
+
+.card-amenity span {
+    color: #000;
+    font-family: 'Inter';
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.card-stars {
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+}
+
+/* Custom styles for typography */
+.typography-heading {
+    color: #000;
+    font-family: 'Inter';
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+.typography-subheading {
+    color: #EB2226;
+    font-family: 'Inter';
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+.date-range {
+    color: #000;
+    text-align: right;
+    font-family: 'Inter';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+
+/*------------------------------------     GoButton.js     ------------------------------------*/
+
+
+/* Button styles */
+.go-button {
+    width: 280px;
+    height: 69px;
+    flex-shrink: 0;
+    border-radius: 34.5px;
+    background: #EB2226;
+    box-shadow: 0px 5px 10px 4px rgba(0, 0, 0, 0.20);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.go-button:hover {
+    transform: scale(1.05);
+}
+
+.go-button-text {
+    color: #FFF;
+    font-family: 'Inter', sans-serif;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 110%;
+    /* 55px */
+}
+
+.go-button-icon {
+    margin-left: 10px;
+}
+
+.go-button-icon svg {
+    width: 50px;
+    height: 38px;
+}
+
+
+/*------------------------------------     AdBanner.js     ------------------------------------*/
+
+
+.ad-banner {
+    width: 100%;
+    /* Full width */
+    height: 134px;
+    /* Fixed height */
+    flex-shrink: 0;
+    background: lightgray;
+    /* Fallback color */
+    margin-top: 145px;
+}
+
+
+/*------------------------------------     ImageStack.js     ------------------------------------*/
+
+
+.stacked-card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 110vh;
+}
+
+.bg-main-rectangle {
+    position: relative;
+    width: 1332px;
+    height: 631px;
+    border-radius: 41px;
+    background: url('https://via.placeholder.com/1332x631') lightgray 50% / cover no-repeat;
+    z-index: 3;
+}
+
+.bg-second-rectangle {
+    position: absolute;
+    top: 37%;
+    left: 50%;
+    transform: translate(-50%, -25%);
+    width: 1268px;
+    height: 561px;
+    border-radius: 41px;
+    background: #D9D9D9;
+    z-index: 2;
+}
+
+.bg-third-rectangle {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -15%);
+    width: 1126px;
+    height: 498px;
+    border-radius: 41px;
+    background: #EAEAEA;
+    z-index: 1;
+}
+
+.main-text {
+    color: #000;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 60px;
+    font-weight: 800;
+}
+
+.highlight-text {
+    color: #FFF;
+    font-family: 'Inter', sans-serif;
+    font-size: 60px;
+    font-weight: 800;
+}
+
+.logo {
+    width: 148px;
+    height: 44px;
+    background: url('https://via.placeholder.com/148x44') lightgray 50% / cover no-repeat;
+    margin-top: 20px;
+}
