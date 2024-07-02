@@ -38,8 +38,8 @@ const hotels = [
 const SearchDisplay = () => {
   return (
     <div className="flex justify-center items-center">
-      <div className="p-4 w-full max-w-screen-xl">
-        <div className="relative bg-half-rectangle p-6 md:p-4">
+      <div className="p-4">
+        <div className="relative bg-half-rectangle p-8 md:p-8">
           <div className="flex justify-between items-center mb-4 md:m-0">
             <div className="flex">
               <h2 className="typography-heading">For <span className="typography-subheading">New York</span></h2>
