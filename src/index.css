@@ -211,7 +211,7 @@ body {
     width: 1332px;
     height: 631px;
     border-radius: 41px;
-    background: url('./imgs/beach.jpg') lightgray 50% / cover no-repeat;
+    background: url('./imgs/beach.png') lightgray 50% / cover no-repeat;
     z-index: 3;
 }
 
@@ -237,6 +237,11 @@ body {
     border-radius: 41px;
     background: #EAEAEA;
     z-index: 1;
+}
+
+.stacked-card-container .text-center{
+    position: absolute;
+    top: 40px;
 }
 
 .main-text {
@@ -430,7 +435,8 @@ body {
     display: grid;
     grid-template-columns: repeat(4, auto);
     grid-template-rows: repeat(2, auto);
-    gap: 10px 60px; /* Gap between columns and rows */
+    gap: 10px 60px;
+    /* Gap between columns and rows */
     width: 100%;
     height: 100%;
     justify-content: center;
@@ -463,7 +469,8 @@ body {
     font-family: 'Inter', sans-serif;
     font-size: 25px;
     font-weight: 600;
-    line-height: 110%; /* 33px */
+    line-height: 110%;
+    /* 33px */
 }
 
 
@@ -483,7 +490,8 @@ body {
 
 .footer-content {
     display: flex;
-    align-items: flex-start; /* Align content at the top */
+    align-items: flex-start;
+    /* Align content at the top */
     justify-content: space-between;
     width: 100%;
 }
@@ -502,12 +510,14 @@ body {
 .footer-icons {
     display: flex;
     gap: 20px;
-    margin-top: auto; /* Move icons to the bottom */
+    margin-top: auto;
+    /* Move icons to the bottom */
 }
 
 .footer-links {
     display: flex;
-    gap: 80px; /* Adjust the gap as needed */
+    gap: 80px;
+    /* Adjust the gap as needed */
 }
 
 .footer-section {
@@ -527,7 +537,8 @@ body {
 .footer-list {
     list-style-type: none;
     padding: 0;
-    gap: var(--Spacing-S, 24px); /* Custom spacing between items */
+    gap: var(--Spacing-S, 24px);
+    /* Custom spacing between items */
     display: flex;
     flex-direction: column;
 }
@@ -548,5 +559,107 @@ body {
     height: 20px;
     background: none;
     border: none;
+    cursor: pointer;
+}
+
+
+/*------------------------------------     HeaderContainer.js     ------------------------------------*/
+
+.header-container {
+    width: 800px;
+    height: 110px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 18px;
+    background: #FFF;
+    box-shadow: 0px 12px 24px 0px rgba(0, 0, 0, 0.10);
+    border: 1px solid rgba(0, 0, 0, 0.20);
+    margin: -350px auto 0; /* Adjusted margin-top to create space for the hero image */
+    position: -webkit-sticky;
+    /* For Safari */
+    position: sticky;
+    top: 20px;
+    z-index: 1000;
+    /* Ensure it stays above other elements */
+}
+
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 246px;
+    height: 110px;
+    flex-shrink: 0;
+    transition: background 0.3s;
+}
+
+.section.hotels {
+    border-radius: 18px 0px 0px 18px;
+}
+
+.section.holiday-packages {
+    border-radius: 0px 18px 18px 0px;
+}
+
+.section:hover {
+    background: #E5F4FF;
+}
+
+.divider {
+    width: 5px;
+    height: 92px;
+    flex-shrink: 0;
+    background: rgba(0, 0, 0, 0.30);
+    border-radius: 10px;
+}
+
+.icon {
+    width: 55.518px;
+    height: 39.623px;
+    flex-shrink: 0;
+}
+
+.flights .icon {
+    width: 88.178px;
+    height: 39.499px;
+}
+
+.holiday-packages .icon {
+    width: 44.643px;
+    height: 45.95px;
+}
+
+.text {
+    color: #5D5D5D;
+    text-align: center;
+    font-family: Inter, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-top: 15px;
+}
+
+
+
+/*------------------------------------     HeroSection.js     ------------------------------------*/
+
+.hero-section {
+    width: 100%;
+    height: 742px;
+    background: lightgray -236.636px -326.188px / 128.627% 154.412% no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1s ease-in;
+}
+
+
+/*------------------------------------     Header.js     ------------------------------------*/
+
+.header img {
+    height: 2.5rem;
     cursor: pointer;
 }
