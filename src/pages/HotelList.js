@@ -1,5 +1,6 @@
 import React from "react";
 import HotelCard from "../components/HotelCard";
+import Filters from "../components/Filters";
 
 const hotelList = [
   {
@@ -69,10 +70,24 @@ const hotelList = [
 const HotelList = () => {
   return (
     <div>
-      <div className="w-2/3">
-        {hotelList.map((val, ind) => {
-          return <HotelCard hotelData={val} />;
-        })}
+      <div className="bg-[#E5F4FF] p-4">
+        <ul className="flex justify-evenly">
+          <li className="font-bold">Sort By:</li>
+          <li className="cursor-pointer">Popular</li>
+          <li className="cursor-pointer">Ratings</li>
+          <li className="cursor-pointer">Price(High)</li>
+          <li className="cursor-pointer">Price(Low)</li>
+        </ul>
+      </div>
+      <div className="flex">
+        <div className="w-[80%]">
+          {hotelList.map((val, ind) => {
+            return <HotelCard hotelData={val} />;
+          })}
+        </div>
+        <div>
+          <Filters />
+        </div>
       </div>
     </div>
   );
