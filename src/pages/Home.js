@@ -7,6 +7,7 @@ import StackedCard from '../components/StackedCard'; // Import the StackedCard c
 import Offers from '../components/Offers'; // Import the Offers component
 import Locations from '../components/Locations'; // Import the Locations component
 import HeaderContainer from '../components/HeaderContainer';
+import HotelCard from '../components/HotelCard';
 import LoginSignup from '../components/LoginSignup';
 
 function Home() {
@@ -14,6 +15,7 @@ function Home() {
     <div className="container">
       <HeroSection />
       <HeaderContainer />
+      <HotelCard />
       <SearchDisplay />
       {/* <div className="flex justify-center mt-8">
         <GoButton />

@@ -1,8 +1,7 @@
 import React from "react";
 import Rating from "@mui/material/Rating";
-import Stack from "@mui/material/Stack";
 
-const HotelCard = ({ hotelData }) => {
+const HotelCard = ({ hotelData = {} }) => {
   const {
     img,
     hotelName,
@@ -13,9 +12,15 @@ const HotelCard = ({ hotelData }) => {
     description,
     aminities,
   } = hotelData;
+
+  if (!img || !hotelName) {
+    return <div className="text-red-500">Hotel data is missing.</div>;
+  }
+
   return (
     <div className="flex flex-col md:flex-row h-fit shadow-custom-grey p-4 my-8 mx-4 md:mx-16 rounded-xl">
       <div>
+        <img className="rounded-xl" src={img} alt={hotelName} />
         <img className="rounded-xl w-full md:w-auto" src={img} />
       </div>
       <div className="md:ml-4 mt-4 md:mt-0">
@@ -40,16 +45,14 @@ const HotelCard = ({ hotelData }) => {
         />
         <p>{description}</p>
         <div className="flex flex-wrap">
-          {aminities && aminities.map((val, ind) => {
-            return (
-              <span
-                key={ind}
-                className="border-grey border-2 px-2 m-2 rounded-lg"
-              >
-                {val}
-              </span>
-            );
-          })}
+          {aminities && aminities.map((val, ind) => (
+            <span
+              key={ind}
+              className="border-grey border-2 px-2 m-2 rounded-lg"
+            >
+              {val}
+            </span>
+          ))}
         </div>
       </div>
     </div>
