@@ -8,6 +8,7 @@ import Offers from '../components/Offers'; // Import the Offers component
 import Locations from '../components/Locations'; // Import the Locations component
 import HeaderContainer from '../components/HeaderContainer';
 import HotelCard from '../components/HotelCard';
+import LoginSignup from '../components/LoginSignup';
 
 function Home() {
   return (

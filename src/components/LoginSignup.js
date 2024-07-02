@@ -42,17 +42,17 @@ const LoginSignup = () => {
     setIsSignIn(!isSignIn);
   };
   return (
-    <div className="w-[75%] flex rounded-md absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] shadow-lg border border-solid border-black">
-      <div className="w-6/12">
+    <div className="flex flex-col md:flex-row w-full md:w-[75%] rounded-md absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 shadow-lg">
+      <div className="w-full md:w-6/12">
         <video
-          className="w-[100%] h-[100%] rounded-md"
+          className="w-full h-full rounded-md"
           src={Hiking_Video}
           autoPlay
           loop
           muted
         ></video>
       </div>
-      <div className="w-6/12 bg-[#FFFFFF4D] py-4 px-8">
+      <div className="w-full md:w-6/12 bg-white bg-opacity-30 py-4 px-8">
         <h2 className="text-[#002475] font-bold text-3xl">
           {isSignIn ? "Sign In" : "Sign Up"}
         </h2>

@@ -18,19 +18,20 @@ const HotelCard = ({ hotelData = {} }) => {
   }
 
   return (
-    <div className="flex h-fit shadow-custom-grey p-4 my-8 mx-16 rounded-xl">
+    <div className="flex flex-col md:flex-row h-fit shadow-custom-grey p-4 my-8 mx-4 md:mx-16 rounded-xl">
       <div>
         <img className="rounded-xl" src={img} alt={hotelName} />
+        <img className="rounded-xl w-full md:w-auto" src={img} />
       </div>
-      <div className="ml-4">
-        <div className="flex justify-between mb-2">
+      <div className="md:ml-4 mt-4 md:mt-0">
+        <div className="flex flex-col md:flex-row justify-between mb-2">
           <div>
-            <h2 className="font-bold text-[35px]">{hotelName}</h2>
-            <p className="text-[#6F6F6F] text-[20px]">{city}</p>
+            <h2 className="font-bold text-2xl md:text-[35px]">{hotelName}</h2>
+            <p className="text-[#6F6F6F] text-lg md:text-[20px]">{city}</p>
             <span className="text-[#00B0F3]">{landmark}</span>
           </div>
-          <div>
-            <h2 className="font-bold text-[35px]">${price}</h2>
+          <div className="mt-4 md:mt-0">
+            <h2 className="font-bold text-2xl md:text-[35px]">${price}</h2>
             <span className="text-[#6F6F6F] text-right">
               +taxes <br /> per night
             </span>
