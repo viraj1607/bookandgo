@@ -594,6 +594,7 @@ body {
     height: 110px;
     flex-shrink: 0;
     transition: background 0.3s;
+    cursor: pointer;
 }
 
 .section.hotels {
