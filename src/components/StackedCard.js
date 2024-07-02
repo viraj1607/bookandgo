@@ -2,7 +2,7 @@ import React from 'react';
 
 const StackedCard = () => {
   return (
-    <div className="stacked-card-container flex justify-center items-center">
+    <div className="stacked-card-container pt-20 md:pt-9">
       <div className="relative">
         <div className="bg-third-rectangle"></div>
         <div className="bg-second-rectangle"></div>
