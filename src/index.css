@@ -15,19 +15,19 @@ body {
     background-color: #FFF;
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1024px) and (max-width: 1280px) {
     .container {
         max-width: 100%;
     }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
     .container {
         max-width: 100%;
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 425px) and (max-width: 768px) {
     .container {
         max-width: 100%;
     }
@@ -60,7 +60,7 @@ body {
     }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 425px) and (max-width: 768px) {
     .bg-half-rectangle {
         border-radius: 28px;
         height: 250px;
@@ -93,7 +93,7 @@ body {
     }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 425px) and (max-width: 768px) {
     .card {
         width: 200px;
         height: 270px;
@@ -114,7 +114,7 @@ body {
     }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 425px) and (max-width: 768px) {
     .card-image {
         width: 200px;
         height: 130px;
@@ -143,7 +143,7 @@ body {
     }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 425px) and (max-width: 768px) {
 
     .card-title,
     .card-price {
@@ -211,7 +211,7 @@ body {
     }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 425px) and (max-width: 768px) {
     .typography-heading {
         font-size: 30px;
     }
@@ -237,7 +237,7 @@ body {
     }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 425px) and (max-width: 768px) {
     .date-range {
         font-size: 15px;
     }
@@ -303,7 +303,7 @@ body {
     }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 425px) and (max-width: 768px) {
     .ad-banner {
         margin-top: 120px;
     }
@@ -427,8 +427,6 @@ body {
 /*------------------------------------     Offers.js     ------------------------------------*/
 
 
-/* Add the following CSS to your index.css file */
-
 .offers-container {
     position: relative;
     width: 1296px;
@@ -454,7 +452,7 @@ body {
     }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 425px) and (max-width: 768px) {
     .offers-container {
         height: 400px;
     }
@@ -473,7 +471,7 @@ body {
     }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 425px) and (max-width: 768px) {
     .offers-title {
         font-size: 30px;
     }
@@ -515,7 +513,7 @@ body {
     }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 425px) and (max-width: 768px) {
     .offers-grid {
         grid-template-columns: repeat(4, 400px);
         grid-template-rows: repeat(2, 133px);
@@ -543,7 +541,7 @@ body {
     }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 425px) and (max-width: 768px) {
     .offer-card {
         width: 400px;
         height: 140px;
@@ -586,7 +584,7 @@ body {
     margin: 5px 0;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 425px) and (max-width: 768px) {
     .offer-title {
         font-size: 15px;
         width: 216px;
@@ -711,7 +709,7 @@ body {
     }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 425px) and (max-width: 768px) {
     .location-name {
         font-size: 14px;
     }
@@ -738,7 +736,7 @@ body {
     box-sizing: border-box;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 425px) and (max-width: 768px) {
     .footer-container {
         padding: 2.5rem;
     }
@@ -858,17 +856,23 @@ body {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 835px) {
     .header-container {
         width: 540px;
         height: 80px;
     }
 }
 
-@media (max-width: 835px) {
+@media (min-width: 425px) and (max-width: 768px) {
     .header-container {
         width: 540px;
         height: 80px;
+    }
+}
+
+@media (min-width: 318px) and (max-width: 426px) {
+    .header-container {
+        width: 85%;
     }
 }
 
@@ -884,7 +888,7 @@ body {
     cursor: pointer;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 425px) and (max-width: 768px) {
     .section {
         width: 175px;
         height: 80px;
@@ -918,7 +922,7 @@ body {
     border-radius: 10px;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 425px) and (max-width: 768px) {
     .divider {
         width: 4px;
         height: 65px;
@@ -938,7 +942,7 @@ body {
     flex-shrink: 0;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 425px) and (max-width: 768px) {
     .icon {
         width: 45px;
         height: 32.1163px;
@@ -957,7 +961,7 @@ body {
     height: 39.499px;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 425px) and (max-width: 768px) {
     .flights .icon {
         width: 71.6968;
         height: 32.1163px;
@@ -976,7 +980,7 @@ body {
     height: 45.95px;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 425px) and (max-width: 768px) {
     .holiday-packages .icon {
         width: 31.2028;
         height: 32.1163px;
@@ -1001,7 +1005,7 @@ body {
     margin-top: 15px;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 425px) and (max-width: 768px) {
     .text {
         margin-top: 10px;
         font-size: 15px;
@@ -1040,6 +1044,12 @@ body {
     }
 }
 
+@media (min-width: 425px) and (max-width: 768px){
+    .hero-section {
+        height: 550px;
+    }
+}
+
 
 /*------------------------------------     Header.js     ------------------------------------*/
 
@@ -1048,7 +1058,7 @@ body {
     cursor: pointer;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 425px) and (max-width: 768px) {
     .header img {
         height: 2rem;
     }
