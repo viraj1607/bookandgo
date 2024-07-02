@@ -71,7 +71,7 @@ const HotelList = () => {
   return (
     <div>
       <div className="bg-[#E5F4FF] p-4">
-        <ul className="flex justify-evenly">
+        <ul className="flex justify-evenly flex-wrap">
           <li className="font-bold">Sort By:</li>
           <li className="cursor-pointer">Popular</li>
           <li className="cursor-pointer">Ratings</li>
@@ -79,13 +79,13 @@ const HotelList = () => {
           <li className="cursor-pointer">Price(Low)</li>
         </ul>
       </div>
-      <div className="flex">
-        <div className="w-[80%]">
+      <div className="flex flex-wrap">
+        <div className="w-full md:w-[80%]">
           {hotelList.map((val, ind) => {
             return <HotelCard hotelData={val} />;
           })}
         </div>
-        <div>
+        <div className="w-full md:w-[20%]">
           <Filters />
         </div>
       </div>

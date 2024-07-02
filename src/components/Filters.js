@@ -28,12 +28,12 @@ const Filters = () => {
     setVal(newValue);
   };
   return (
-    <div className="my-8 mx-10">
-      <h2 className="text-[25px] font-bold">Select Filters</h2>
+    <div className="my-8 mx-4 md:mx-10">
+      <h2 className="text-xl md:text-[25px] font-bold">Select Filters</h2>
       <FormControl className="!my-4">
         <FormLabel
           id="demo-radio-buttons-group-label"
-          className="!text-[20px] !font-bold"
+          className="!text-lg md:!text-[20px] !font-bold"
         >
           Category
         </FormLabel>
@@ -76,7 +76,9 @@ const Filters = () => {
       </Box>
 
       <FormGroup className="!my-4">
-        <FormLabel className="!text-[20px] !font-bold">Aminities</FormLabel>
+        <FormLabel className="!text-lg md:!text-[20px] !font-bold">
+          Aminities
+        </FormLabel>
         <FormControlLabel control={<Checkbox />} label="Breakfast Included" />
         <FormControlLabel control={<Checkbox />} label="Bar" />
         <FormControlLabel control={<Checkbox />} label="Swimming Pool" />
