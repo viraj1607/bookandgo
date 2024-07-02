@@ -15,11 +15,10 @@ function Home() {
     <div className="container">
       <HeroSection />
       <HeaderContainer />
-      <HotelCard />
       <SearchDisplay />
-      {/* <div className="flex justify-center mt-8">
+      <div className="flex justify-center mt-8">
         <GoButton />
-      </div> */}
+      </div>
       <AdBanner imageUrl="/path/to/ad-image.jpg" /> {/* Use the AdBanner component */}
       <StackedCard /> {/* Include the StackedCard component */}
       <Offers /> {/* Include the Offers component */}
