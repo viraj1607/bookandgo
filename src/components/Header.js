@@ -9,7 +9,9 @@ const Header = () => {
       <Link to="/">
         <img className="h-14 cursor-pointer" src={Logo} alt="Logo" />
       </Link>
-      <img className="h-10 cursor-pointer" src={ProfileIcon} alt="Profile" />
+      <Link to="/userprofile">
+        <img className="h-10 cursor-pointer" src={ProfileIcon} alt="Profile" />
+      </Link>
     </div>
   );
 };
