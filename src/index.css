@@ -13,6 +13,31 @@ body {
 
 .container {
     background-color: #FFF;
+    width: 100%;
+}
+
+@media (min-width: 1280px) and (max-width: 1441px) {
+    .container {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+    .container {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 425px) and (max-width: 768px) {
+    .container {
+        max-width: 100%;
+    }
 }
 
 /* Custom class for half rectangle background */
@@ -20,9 +45,7 @@ body {
     position: relative;
     z-index: 1;
     width: 100%;
-    /* Adjust as needed */
     height: 307px;
-    /* Adjust as needed */
     margin: 0 auto;
     border-radius: 32px;
     border: 1px solid rgba(0, 0, 0, 0.10);
@@ -30,11 +53,31 @@ body {
     box-shadow: 0px 12px 24px 0px rgba(0, 0, 0, 0.10);
 }
 
+@media (max-width: 1280px) {
+    .bg-half-rectangle {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 835px) {
+    .bg-half-rectangle {
+        border-radius: 28px;
+        height: 250px;
+        max-width: 93%;
+    }
+}
+
+@media (min-width: 425px) and (max-width: 768px) {
+    .bg-half-rectangle {
+        border-radius: 28px;
+        height: 250px;
+        max-width: 93%;
+    }
+}
+
 .card {
     width: 290px;
-    /* Single card width */
     height: 307px;
-    /* Single card height */
     flex-shrink: 0;
     border-radius: 20px;
     background: #FFF;
@@ -44,11 +87,45 @@ body {
     margin-left: -5px;
 }
 
+@media (max-width: 1024px) {
+    .card {
+        width: 265px;
+    }
+}
+
+@media (max-width: 835px) {
+    .card {
+        width: 200px;
+        height: 270px;
+    }
+}
+
+@media (min-width: 425px) and (max-width: 768px) {
+    .card {
+        width: 200px;
+        height: 270px;
+    }
+}
+
 .card-image {
     width: 290px;
     height: 160px;
     flex-shrink: 0;
     background: lightgray 50% / cover no-repeat;
+}
+
+@media (max-width: 835px) {
+    .card-image {
+        width: 200px;
+        height: 130px;
+    }
+}
+
+@media (min-width: 425px) and (max-width: 768px) {
+    .card-image {
+        width: 200px;
+        height: 130px;
+    }
 }
 
 .card-content {
@@ -58,12 +135,28 @@ body {
 
 .card-title,
 .card-price {
-    color: #000;
-    font-family: 'Inter';
     font-size: 20px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+}
+
+@media (max-width: 835px) {
+
+    .card-title,
+    .card-price {
+        font-size: 15px;
+        font-weight: 700;
+    }
+}
+
+@media (min-width: 425px) and (max-width: 768px) {
+
+    .card-title,
+    .card-price {
+        font-size: 15px;
+        font-weight: 700;
+    }
 }
 
 .card-location,
@@ -119,13 +212,20 @@ body {
     line-height: normal;
 }
 
+@media (max-width: 835px) {
+    .typography-heading {
+        font-size: 30px;
+    }
+}
+
+@media (min-width: 425px) and (max-width: 768px) {
+    .typography-heading {
+        font-size: 30px;
+    }
+}
+
 .typography-subheading {
     color: #EB2226;
-    font-family: 'Inter';
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 800;
-    line-height: normal;
 }
 
 .date-range {
@@ -136,6 +236,18 @@ body {
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+}
+
+@media (max-width: 835px) {
+    .date-range {
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 425px) and (max-width: 768px) {
+    .date-range {
+        font-size: 15px;
+    }
 }
 
 
@@ -186,25 +298,27 @@ body {
 
 .ad-banner {
     width: 100%;
-    /* Full width */
     height: 134px;
-    /* Fixed height */
     flex-shrink: 0;
     background: lightgray;
-    /* Fallback color */
     margin-top: 145px;
+}
+
+@media (max-width: 835px) {
+    .ad-banner {
+        margin-top: 120px;
+    }
+}
+
+@media (min-width: 425px) and (max-width: 768px) {
+    .ad-banner {
+        margin-top: 120px;
+    }
 }
 
 
 /*------------------------------------     ImageStack.js     ------------------------------------*/
 
-
-.stacked-card-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 110vh;
-}
 
 .bg-main-rectangle {
     position: relative;
@@ -213,6 +327,19 @@ body {
     border-radius: 41px;
     background: url('./imgs/beach.png') lightgray 50% / cover no-repeat;
     z-index: 3;
+    margin: 0 auto;
+}
+
+@media (max-width: 1280px) {
+    .bg-main-rectangle {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .bg-main-rectangle {
+        height: 550px;
+    }
 }
 
 .bg-second-rectangle {
@@ -227,6 +354,18 @@ body {
     z-index: 2;
 }
 
+@media (max-width: 1280px) {
+    .bg-second-rectangle {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .bg-second-rectangle {
+        top: 27%;
+    }
+}
+
 .bg-third-rectangle {
     position: absolute;
     top: 40%;
@@ -239,7 +378,19 @@ body {
     z-index: 1;
 }
 
-.stacked-card-container .text-center{
+@media (max-width: 1280px) {
+    .bg-third-rectangle {
+        max-width: 70%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .bg-third-rectangle {
+        top: 30%;
+    }
+}
+
+.stacked-card-container .text-center {
     position: absolute;
     top: 40px;
 }
@@ -252,11 +403,23 @@ body {
     font-weight: 800;
 }
 
+@media (max-width: 1024px) {
+    .main-text {
+        font-size: 40px;
+    }
+}
+
 .highlight-text {
     color: #FFF;
     font-family: 'Inter', sans-serif;
     font-size: 60px;
     font-weight: 800;
+}
+
+@media (max-width: 1024px) {
+    .highlight-text {
+        font-size: 40px;
+    }
 }
 
 .logo {
@@ -271,43 +434,63 @@ body {
 /*------------------------------------     Offers.js     ------------------------------------*/
 
 
-/* Add the following CSS to your index.css file */
-
 .offers-container {
     position: relative;
-    /* To position the arrow absolutely within this container */
     width: 1296px;
     height: 479px;
     background: #FFF;
     border-radius: 20px;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.20);
-    margin: 20px auto;
+    margin: 100px auto 20px;
     padding: 20px;
     display: flex;
     flex-direction: column;
 }
 
+@media (max-width: 1280px) {
+    .offers-container {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 835px) {
+    .offers-container {
+        height: 400px;
+    }
+}
+
+@media (min-width: 425px) and (max-width: 768px) {
+    .offers-container {
+        height: 400px;
+    }
+}
+
 .offers-title {
-    color: #000;
-    font-family: 'Inter', sans-serif;
     font-size: 40px;
     font-weight: 700;
     line-height: normal;
     margin-bottom: 20px;
 }
 
+@media (max-width: 835px) {
+    .offers-title {
+        font-size: 30px;
+    }
+}
+
+@media (min-width: 425px) and (max-width: 768px) {
+    .offers-title {
+        font-size: 30px;
+    }
+}
+
 .offers-scroll {
     width: 100%;
     height: calc(100% - 60px);
-    /* Adjust height to exclude the title */
     overflow-x: auto;
-    /* Enable horizontal scrolling */
     overflow-y: hidden;
-    /* Disable vertical scrolling */
     display: flex;
-    /* Ensure flex display */
     flex-direction: row;
-    /* Align items horizontally */
     padding: 7px;
 }
 
@@ -317,10 +500,8 @@ body {
 }
 
 .offers-scroll {
-    -ms-overflow-style: none;
-    /* IE and Edge */
-    scrollbar-width: none;
-    /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
 }
 
 .offers-grid {
@@ -329,7 +510,22 @@ body {
     grid-template-rows: repeat(2, 170px);
     gap: 20px;
     width: 100%;
-    /* Adjust the width to fit the content */
+}
+
+@media (max-width: 835px) {
+    .offers-grid {
+        grid-template-columns: repeat(4, 400px);
+        grid-template-rows: repeat(2, 133px);
+        gap: 15px;
+    }
+}
+
+@media (min-width: 425px) and (max-width: 768px) {
+    .offers-grid {
+        grid-template-columns: repeat(4, 400px);
+        grid-template-rows: repeat(2, 133px);
+        gap: 15px;
+    }
 }
 
 .offer-card {
@@ -343,6 +539,20 @@ body {
     border-radius: 20px;
     overflow: hidden;
     flex-shrink: 0;
+}
+
+@media (max-width: 835px) {
+    .offer-card {
+        width: 400px;
+        height: 140px;
+    }
+}
+
+@media (min-width: 425px) and (max-width: 768px) {
+    .offer-card {
+        width: 400px;
+        height: 140px;
+    }
 }
 
 .offer-card:hover {
@@ -379,6 +589,20 @@ body {
     font-weight: 600;
     line-height: normal;
     margin: 5px 0;
+}
+
+@media (min-width: 425px) and (max-width: 768px) {
+    .offer-title {
+        font-size: 15px;
+        width: 216px;
+    }
+}
+
+@media (max-width: 835px) {
+    .offer-title {
+        font-size: 15px;
+        width: 216px;
+    }
 }
 
 .offer-description {
@@ -431,15 +655,24 @@ body {
     justify-content: center;
 }
 
+@media (max-width: 1280px) {
+    .locations-container {
+        max-width: 90%;
+    }
+}
+
 .locations-grid {
-    display: grid;
-    grid-template-columns: repeat(4, auto);
-    grid-template-rows: repeat(2, auto);
     gap: 10px 60px;
     /* Gap between columns and rows */
     width: 100%;
     height: 100%;
     justify-content: center;
+}
+
+@media (max-width: 1280px) {
+    .locations-grid {
+        column-gap: 20px;
+    }
 }
 
 .location-item {
@@ -458,6 +691,13 @@ body {
     margin-right: 20px;
 }
 
+@media (max-width: 1024px) {
+    .location-image {
+        width: 70px;
+        height: 70px;
+    }
+}
+
 .location-image img {
     width: 100%;
     height: 100%;
@@ -465,12 +705,27 @@ body {
 }
 
 .location-name {
-    color: #000;
-    font-family: 'Inter', sans-serif;
     font-size: 25px;
     font-weight: 600;
     line-height: 110%;
-    /* 33px */
+}
+
+@media (max-width: 1024px) {
+    .location-name {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 425px) and (max-width: 768px) {
+    .location-name {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 835px) {
+    .location-name {
+        font-size: 14px;
+    }
 }
 
 
@@ -486,6 +741,18 @@ body {
     justify-content: space-between;
     padding: 40px 180px;
     box-sizing: border-box;
+}
+
+@media (min-width: 425px) and (max-width: 768px) {
+    .footer-container {
+        padding: 2.5rem;
+    }
+}
+
+@media (max-width: 835px) {
+    .footer-container {
+        padding: 2.5rem;
+    }
 }
 
 .footer-content {
@@ -565,6 +832,7 @@ body {
 
 /*------------------------------------     HeaderContainer.js     ------------------------------------*/
 
+
 .header-container {
     width: 800px;
     height: 110px;
@@ -576,13 +844,43 @@ body {
     background: #FFF;
     box-shadow: 0px 12px 24px 0px rgba(0, 0, 0, 0.10);
     border: 1px solid rgba(0, 0, 0, 0.20);
-    margin: -350px auto 0; /* Adjusted margin-top to create space for the hero image */
+    margin: -350px auto 0;
     position: -webkit-sticky;
-    /* For Safari */
     position: sticky;
     top: 20px;
     z-index: 1000;
-    /* Ensure it stays above other elements */
+}
+
+@media (max-width: 1280px) {
+    .header-container {
+        margin-top: -280px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .header-container {
+        margin-top: -200px;
+    }
+}
+
+@media (max-width: 835px) {
+    .header-container {
+        width: 540px;
+        height: 80px;
+    }
+}
+
+@media (min-width: 425px) and (max-width: 768px) {
+    .header-container {
+        width: 540px;
+        height: 80px;
+    }
+}
+
+@media (min-width: 318px) and (max-width: 426px) {
+    .header-container {
+        width: 85%;
+    }
 }
 
 .section {
@@ -595,6 +893,20 @@ body {
     flex-shrink: 0;
     transition: background 0.3s;
     cursor: pointer;
+}
+
+@media (min-width: 425px) and (max-width: 768px) {
+    .section {
+        width: 175px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 835px) {
+    .section {
+        width: 175px;
+        height: 80px;
+    }
 }
 
 .section.hotels {
@@ -617,10 +929,38 @@ body {
     border-radius: 10px;
 }
 
+@media (min-width: 425px) and (max-width: 768px) {
+    .divider {
+        width: 4px;
+        height: 65px;
+    }
+}
+
+@media (max-width: 835px) {
+    .divider {
+        width: 4px;
+        height: 65px;
+    }
+}
+
 .icon {
     width: 55.518px;
     height: 39.623px;
     flex-shrink: 0;
+}
+
+@media (min-width: 425px) and (max-width: 768px) {
+    .icon {
+        width: 45px;
+        height: 32.1163px;
+    }
+}
+
+@media (max-width: 835px) {
+    .icon {
+        width: 45px;
+        height: 32.1163px;
+    }
 }
 
 .flights .icon {
@@ -628,9 +968,37 @@ body {
     height: 39.499px;
 }
 
+@media (min-width: 425px) and (max-width: 768px) {
+    .flights .icon {
+        width: 71.6968;
+        height: 32.1163px;
+    }
+}
+
+@media (max-width: 835px) {
+    .flights .icon {
+        width: 71.6968;
+        height: 32.1163px;
+    }
+}
+
 .holiday-packages .icon {
     width: 44.643px;
     height: 45.95px;
+}
+
+@media (min-width: 425px) and (max-width: 768px) {
+    .holiday-packages .icon {
+        width: 31.2028;
+        height: 32.1163px;
+    }
+}
+
+@media (max-width: 835px) {
+    .holiday-packages .icon {
+        width: 31.2028;
+        height: 32.1163px;
+    }
 }
 
 .text {
@@ -642,6 +1010,20 @@ body {
     font-weight: 600;
     line-height: normal;
     margin-top: 15px;
+}
+
+@media (min-width: 425px) and (max-width: 768px) {
+    .text {
+        margin-top: 10px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 835px) {
+    .text {
+        margin-top: 10px;
+        font-size: 15px;
+    }
 }
 
 
@@ -657,10 +1039,40 @@ body {
     transition: background-image 1s ease-in;
 }
 
+@media (max-width: 1280px) {
+    .hero-section {
+        height: 650px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero-section {
+        height: 550px;
+    }
+}
+
+@media (min-width: 425px) and (max-width: 768px){
+    .hero-section {
+        height: 550px;
+    }
+}
+
 
 /*------------------------------------     Header.js     ------------------------------------*/
 
 .header img {
     height: 2.5rem;
     cursor: pointer;
+}
+
+@media (min-width: 425px) and (max-width: 768px) {
+    .header img {
+        height: 2rem;
+    }
+}
+
+@media (max-width: 835px) {
+    .header img {
+        height: 2rem;
+    }
 }
