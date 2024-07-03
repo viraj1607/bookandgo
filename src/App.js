@@ -5,6 +5,7 @@ import Admin from "./pages/Admin";
 import HotelList from "./pages/HotelList";
 import UserProfile from "./pages/UserProfile";
 import Layout from './pages/Layout';
+import HotelDetails from './pages/HotelDetails';
 
 function App() {
   const appRouter = createBrowserRouter([
@@ -28,6 +29,10 @@ function App() {
           path: "/userprofile",
           element: <UserProfile />,
         },
+        {
+          path: "/hoteldetails",
+          element: <HotelDetails />
+        }
       ],
     },
   ]);
