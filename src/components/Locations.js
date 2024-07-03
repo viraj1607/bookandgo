@@ -14,7 +14,7 @@ const locations = [
 const Locations = () => {
   return (
     <div className="locations-container">
-      <div className="locations-grid">
+      <div className="locations-grid grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 ">
         {locations.map((location, index) => (
           <div key={index} className="location-item">
             <div className="location-image">
