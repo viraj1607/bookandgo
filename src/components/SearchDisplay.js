@@ -37,7 +37,7 @@ const hotels = [
 
 const SearchDisplay = () => {
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex justify-center items-center mt-9">
       <div className="p-4">
         <div className="relative bg-half-rectangle p-8 md:p-8">
           <div className="flex justify-between items-center mb-4 md:m-0">

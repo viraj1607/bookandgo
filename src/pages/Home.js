@@ -8,16 +8,18 @@ import Offers from '../components/Offers'; // Import the Offers component
 import Locations from '../components/Locations'; // Import the Locations component
 import HeaderContainer from '../components/HeaderContainer';
 import LoginSignup from '../components/LoginSignup';
+import SearchCard from '../components/SearchBar';
 
 function Home() {
   return (
     <div className="container">
       <HeroSection />
       <HeaderContainer />
+
+      <SearchCard />
+      <GoButton />
       <SearchDisplay />
-      <div className="flex justify-center mt-8">
-        <GoButton />
-      </div>
+
       <AdBanner imageUrl="/path/to/ad-image.jpg" /> {/* Use the AdBanner component */}
       <StackedCard /> {/* Include the StackedCard component */}
       <Offers /> {/* Include the Offers component */}
