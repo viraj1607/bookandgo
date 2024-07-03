@@ -18,7 +18,7 @@ const hotels = [
     rating: 5,
   },
   {
-    name: "Holiday Inn Express",
+    name: "Holiday Inn",
     location: "New York",
     price: 187,
     imageUrl: "/path/to/holiday-inn-express.jpg", // Replace with actual image URL
@@ -38,19 +38,22 @@ const hotels = [
 const SearchDisplay = () => {
   return (
     <div className="flex justify-center items-center">
-      <div className="p-4 w-full max-w-screen-xl">
-        <div className="relative bg-half-rectangle p-6">
-          <div className="flex justify-between items-center mb-4">
+      <div className="p-4">
+        <div className="relative bg-half-rectangle p-8 md:p-8">
+          <div className="flex justify-between items-center mb-4 md:m-0">
             <div className="flex">
               <h2 className="typography-heading">For <span className="typography-subheading">New York</span></h2>
             </div>
             <span className="date-range">23 May'24 - 24 May'24</span>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[25px] pt-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-[25px] pt-4 justify-items-center">
             {hotels.map((hotel, index) => (
-              <div key={index} className="card bg-white rounded-lg shadow-lg">
-                <div className="card-image" style={{ backgroundImage: `url(${hotel.imageUrl})` }}></div>
-                <div className="card-content p-4">
+              <div
+                key={index}
+                className={`card bg-white rounded-lg shadow-lg w-full max-w-xs ${index === hotels.length - 1 ? 'hidden xl:block' : ''}`}
+              >
+                <div className="card-image" style={{ backgroundImage: `url(${hotel.imageUrl})`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+                <div className="card-content p-4 md:p-3">
                   <div className="flex justify-between items-center">
                     <h3 className="card-title">{hotel.name}</h3>
                     <p className="card-price">${hotel.price}</p>
@@ -59,7 +62,7 @@ const SearchDisplay = () => {
                     <p className="card-location">{hotel.location}</p>
                     <span className="card-per-night">per night</span>
                   </div>
-                  <div className="card-amenities mt-2 pt-4">
+                  <div className="card-amenities mt-2 pt-4 md:pt-1">
                     <div className="card-amenity">
                       <span className="icon"></span> {/* Add the icon for Free WiFi */}
                       <span>Free WiFi</span>
