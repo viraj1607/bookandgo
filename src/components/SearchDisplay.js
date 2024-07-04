@@ -5,7 +5,7 @@ const hotels = [
     name: "Hilton Garden Inn",
     location: "New York",
     price: 200,
-    imageUrl: "/path/to/hilton-garden-inn.jpg", // Replace with actual image URL
+    imageUrl: require("../imgs/heroimg1.jpg"), // Replace with actual image URL
     amenities: ["Free WiFi", "Breakfast Included", "Parking Available", "Pet Friendly"],
     rating: 5,
   },
@@ -13,7 +13,7 @@ const hotels = [
     name: "DoubleTree",
     location: "New York",
     price: 243,
-    imageUrl: "/path/to/doubletree-by-hilton.jpg", // Replace with actual image URL
+    imageUrl: require("../imgs/heroimg1.jpg"), // Replace with actual image URL
     amenities: ["Free WiFi", "Breakfast Included", "Parking Available", "Pet Friendly"],
     rating: 5,
   },
@@ -21,7 +21,7 @@ const hotels = [
     name: "Holiday Inn",
     location: "New York",
     price: 187,
-    imageUrl: "/path/to/holiday-inn-express.jpg", // Replace with actual image URL
+    imageUrl: require("../imgs/heroimg1.jpg"), // Replace with actual image URL
     amenities: ["Free WiFi", "Breakfast Included", "Parking Available", "Pet Friendly"],
     rating: 5,
   },
@@ -29,7 +29,7 @@ const hotels = [
     name: "Hyatt Grand",
     location: "New York",
     price: 266,
-    imageUrl: "/path/to/hyatt-grand.jpg", // Replace with actual image URL
+    imageUrl: require("../imgs/heroimg1.jpg"), // Replace with actual image URL
     amenities: ["Free WiFi", "Breakfast Included", "Parking Available", "Pet Friendly"],
     rating: 5,
   },
@@ -37,50 +37,50 @@ const hotels = [
 
 const SearchDisplay = () => {
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex justify-center items-center mt-9">
       <div className="p-4">
-        <div className="relative bg-half-rectangle p-8 md:p-8">
-          <div className="flex justify-between items-center mb-4 md:m-0">
+        <div className="relative bg-half-rectangle shadow-2xl relative mx-auto my-0 rounded-3xl border border-slate-300 border-solid h-[307px] z-10 p-3 md:px-8 md:py-4">
+          <div className="flex justify-between items-center mb-4 md:m-0 gap-[8px]">
             <div className="flex">
-              <h2 className="typography-heading">For <span className="typography-subheading">New York</span></h2>
+              <h2 className="typography-heading md:text-[40px] text-[30px] font-extrabold">For <span className="typography-subheading text-rose-600">New York</span></h2>
             </div>
             <span className="date-range">23 May'24 - 24 May'24</span>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-[25px] pt-4 justify-items-center">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-[25px] pt-4 justify-items-center">
             {hotels.map((hotel, index) => (
               <div
                 key={index}
-                className={`card bg-white rounded-lg shadow-lg w-full max-w-xs ${index === hotels.length - 1 ? 'hidden xl:block' : ''}`}
+                className={`card w-[290px] h-[307px] rounded-3xl shadow-2xl truncate bg-white w-full max-w-xs ${index === hotels.length - 1 ? 'hidden xl:block' : ''}`}
               >
-                <div className="card-image" style={{ backgroundImage: `url(${hotel.imageUrl})`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+                <div className="card-image w-[290px] h-[160px]" style={{ backgroundImage: `url(${hotel.imageUrl})`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
                 <div className="card-content p-4 md:p-3">
                   <div className="flex justify-between items-center">
-                    <h3 className="card-title">{hotel.name}</h3>
-                    <p className="card-price">${hotel.price}</p>
+                    <h3 className="card-title font-semibold text-[20px]">{hotel.name}</h3>
+                    <p className="card-price  font-semibold text-[20px]">${hotel.price}</p>
                   </div>
                   <div className="flex justify-between items-center">
-                    <p className="card-location">{hotel.location}</p>
-                    <span className="card-per-night">per night</span>
+                    <p className="card-location font-medium text-[10px] text-slate-500">{hotel.location}</p>
+                    <span className="card-per-night font-medium text-[10px] text-slate-500">per night</span>
                   </div>
-                  <div className="card-amenities mt-2 pt-4 md:pt-1">
-                    <div className="card-amenity">
-                      <span className="icon"></span> {/* Add the icon for Free WiFi */}
-                      <span>Free WiFi</span>
+                  <div className="card-amenities grid grid grid-cols-2 gap-2 mt-2 pt-4 md:pt-1">
+                    <div className="card-amenity flex items-center">
+                      <span className="w-3.5 h-3.5 mr-[4px]"></span> {/* Add the icon for Free WiFi */}
+                      <span className='text-[12px]'>Free WiFi</span>
                     </div>
-                    <div className="card-amenity">
-                      <span className="icon"></span> {/* Add the icon for Breakfast Included */}
-                      <span>Breakfast Included</span>
+                    <div className="card-amenity flex items-center">
+                      <span className="w-3.5 h-3.5 mr-[4px]"></span> {/* Add the icon for Breakfast Included */}
+                      <span className='text-[12px]'>Breakfast Included</span>
                     </div>
-                    <div className="card-amenity">
-                      <span className="icon"></span> {/* Add the icon for Parking Available */}
-                      <span>Parking Available</span>
+                    <div className="card-amenity flex items-center">
+                      <span className="w-3.5 h-3.5 mr-[4px]"></span> {/* Add the icon for Parking Available */}
+                      <span className='text-[12px]'>Parking Available</span>
                     </div>
-                    <div className="card-amenity">
-                      <span className="icon"></span> {/* Add the icon for Pet Friendly */}
-                      <span>Pet Friendly</span>
+                    <div className="card-amenity flex items-center">
+                      <span className="w-3.5 h-3.5 mr-[4px]"></span> {/* Add the icon for Pet Friendly */}
+                      <span className='text-[12px]'>Pet Friendly</span>
                     </div>
                   </div>
-                  <div className="flex mt-2 card-stars">
+                  <div className="flex mt-2 card-stars mt-[8px] justify-center">
                     {Array(hotel.rating).fill().map((_, i) => (
                       <svg key={i} xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
                         <g clipPath="url(#clip0_76_6122)">

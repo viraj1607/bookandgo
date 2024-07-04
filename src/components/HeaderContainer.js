@@ -5,7 +5,7 @@ import HolidayPackagesIcon from './icons/holiday-packages.svg';
 
 const HeaderContainer = () => {
   return (
-    <div className="header-container">
+    <div className="header-container flex items-center w-[800px] h-[110px] rounded-3xl shadow-custom-shadow bg-white justify-between mt-[-350px] mx-auto webkit-sticky sticky z-50 top-5">
       <div className="section hotels">
         <img src={HotelsIcon} alt="Hotels" className="icon" />
         <p className="text">Hotels</p>

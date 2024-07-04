@@ -94,7 +94,7 @@ const HotelList = () => {
 
       <button
         onClick={() => setShowFilters(!showFilters)}
-        className="md:hidden fixed bottom-4 right-4 bg-blue-500 text-white p-2 rounded z-60"
+        className="md:hidden fixed bottom-4 right-4 bg-blue-500 text-white p-2 rounded z-[60]"
       >
         {showFilters ? "Close Filters" : "Open Filters"}
       </button>

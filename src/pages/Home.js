@@ -16,18 +16,21 @@ function Home() {
     <div className="container">
       <HeroSection />
       <HeaderContainer />
+
       <SearchCard />
+      <GoButton />
       <SearchDisplay />
-      <div className="flex justify-center mt-8">
+      <AdBanner imageUrl="/path/to/ad-image.jpg" />
+      <StackedCard />
+      <Offers />
+      <Locations />
         <GoButton />
-      </div> 
       <AdBanner imageUrl="/path/to/ad-image.jpg" />
       <StackedCard />
       <RecommendAndMostViewed title={'Recommended for you'} hotels={recommendedHotelsList}/>
       <RecommendAndMostViewed title={'Most Viewed'} hotels={mostViewedHotelsList}/> 
       <Offers /> 
       <Locations />
-
     </div>
   );
 }
