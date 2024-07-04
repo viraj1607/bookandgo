@@ -1,5 +1,5 @@
 import React from "react";
-import { RouterProvider, createBrowserRouter, Outlet } from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import Admin from "./pages/Admin";
 import HotelList from "./pages/HotelList";
