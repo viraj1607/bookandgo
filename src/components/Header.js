@@ -4,7 +4,7 @@ import ProfileIcon from "./icons/profile.svg";
 import { Link } from "react-router-dom";
 import { useAuth } from "../utils/AuthContext";
 
-const Header = () => {
+const Header = ({ onSignInClick }) => {
   const { isAuthenticated } = useAuth();
   return (
     <div className="header bg-[#002475] p-4 flex items-center justify-between">
@@ -20,7 +20,12 @@ const Header = () => {
           />
         </Link>
       ) : (
-        <span className="text-white font-semibold cursor-pointer">Sign In</span>
+        <span
+          className="text-white font-semibold cursor-pointer"
+          onClick={onSignInClick}
+        >
+          Sign In
+        </span>
       )}
     </div>
   );

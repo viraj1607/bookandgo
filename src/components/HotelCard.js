@@ -14,9 +14,9 @@ const HotelCard = ({ hotelData = {} }) => {
     aminities,
   } = hotelData;
 
-  if (!img || !hotelName) {
-    return <div className="text-red-500">Hotel data is missing.</div>;
-  }
+  // if (!img || !hotelName) {
+  //   return <div className="text-red-500">Hotel data is missing.</div>;
+  // }
 
   return (
     <Link 
@@ -41,6 +41,12 @@ const HotelCard = ({ hotelData = {} }) => {
                 +taxes <br /> per night
               </span>
             </div>
+      <div className="md:ml-4 mt-4 md:mt-0">
+        <div className="flex flex-col md:flex-row justify-between mb-2">
+          <div>
+            <h2 className="font-bold text-2xl md:text-[35px]">{hotelName}</h2>
+            <p className="text-[#6F6F6F] text-lg md:text-[20px]">{city}</p>
+            <span className="text-[#00B0F3]">{landmark}</span>
           </div>
           <Rating
             name="half-rating-read"
