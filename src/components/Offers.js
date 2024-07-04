@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import bgImage from '../imgs/offers.png';
 
 const offers = [
   {
@@ -6,56 +7,56 @@ const offers = [
     title: "Trips to Alberta & British Columbia",
     description: "Grab Up to 40% OFF* on Hotels",
     cta: "BOOK NOW",
-    imageUrl: '../imgs/heroimg1.jpg',
+    imageUrl: require("../imgs/01.png"),
   },
   {
     category: "INTL FLIGHTS",
     title: "Get Up to 40% OFF* + No-tax fee",
     description: "on flights, hotels & Holiday packages",
     cta: "BOOK NOW",
-    imageUrl: "https://via.placeholder.com/463x170", // Replace with actual image URL
+    imageUrl: require("../imgs/02.png"), // Replace with actual image URL
   },
   {
     category: "DOM HOTELS",
     title: "Trips to Alberta & British Columbia",
     description: "Grab Up to 40% OFF* on Hotels",
     cta: "BOOK NOW",
-    imageUrl: "https://via.placeholder.com/463x170", // Replace with actual image URL
+    imageUrl: require("../imgs/03.png"), // Replace with actual image URL
   },
   {
     category: "DOM FLIGHTS",
     title: "Flights by American Airlines",
     description: "connecting Saskatchewan",
     cta: "BOOK NOW",
-    imageUrl: "https://via.placeholder.com/463x170", // Replace with actual image URL
+    imageUrl: require("../imgs/04.png"), // Replace with actual image URL
   },
   {
     category: "INTL HOTELS",
     title: "Trips to New York & Washington",
     description: "Grab Up to 30% OFF* on Hotels",
     cta: "BOOK NOW",
-    imageUrl: "https://via.placeholder.com/463x170", // Replace with actual image URL
+    imageUrl: require("../imgs/05.png"), // Replace with actual image URL
   },
   {
     category: "DOM FLIGHTS",
     title: "Flights by American Airlines",
     description: "connecting Saskatchewan",
     cta: "BOOK NOW",
-    imageUrl: "https://via.placeholder.com/463x170", // Replace with actual image URL
+    imageUrl: require("../imgs/06.png"), // Replace with actual image URL
   },
   {
     category: "INTL FLIGHTS",
     title: "Flights to Europe",
     description: "Enjoy 25% off on all flights to Europe",
     cta: "BOOK NOW",
-    imageUrl: "https://via.placeholder.com/463x170", // Replace with actual image URL
+    imageUrl: require("../imgs/01.png"), // Replace with actual image URL
   },
   {
     category: "DOM HOTELS",
     title: "Staycation Deals",
     description: "Get up to 50% off on local hotels",
     cta: "BOOK NOW",
-    imageUrl: "https://via.placeholder.com/463x170", // Replace with actual image URL
+    imageUrl: require("../imgs/02.png"), // Replace with actual image URL
   },
 ];
 
@@ -69,13 +70,13 @@ const Offers = () => {
   };
 
   return (
-    <div className="offers-container p-6 rounded-lg shadow-md">
+    <div className="offers-container relative p-6 rounded-lg shadow-md" style={{ backgroundImage: `url(${bgImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
       <h2 className="offers-title mb-4">Offers</h2>
       <div className="offers-scroll" ref={offersContainerRef}>
         <div className="offers-grid">
           {offers.map((offer, index) => (
             <div key={index} className="offer-card">
-              <img src={offer.imageUrl} alt={offer.title} className="offer-image" />
+              <img src={offer.imageUrl} alt={offer.title} className="offer-image w-[114px] lg:w-[139px]" />
               <div className="offer-details">
                 <p className="offer-category">{offer.category}</p>
                 <h3 className="offer-title">{offer.title}</h3>
