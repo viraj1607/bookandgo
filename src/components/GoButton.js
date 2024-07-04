@@ -5,7 +5,7 @@ const GoButton = () => {
   const navigate = useNavigate();
 
   const handleGoButtonClick = () => {
-    navigate('/target-page'); // Change '/target-page' to your desired route
+    navigate('/hotellist'); // Change '/target-page' to your desired route
   };
 
   return (

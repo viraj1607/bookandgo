@@ -1,16 +1,19 @@
-import React from 'react';
+import React from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import Admin from "./pages/Admin";
 import HotelList from "./pages/HotelList";
 import UserProfile from "./pages/UserProfile";
-import Layout from './pages/Layout';
+import Layout from "./pages/Layout";
+import HotelDetails from "./pages/HotelDetails";
+import ProtectedRoute from "./ProtectedRoute";
+import { AuthProvider } from "./utils/AuthContext";
 
 function App() {
   const appRouter = createBrowserRouter([
     {
       path: "/",
-      element: <Layout />, 
+      element: <Layout />,
       children: [
         {
           path: "/",
@@ -18,24 +21,46 @@ function App() {
         },
         {
           path: "/admin/:id",
-          element: <Admin />,
+          element: (
+            <ProtectedRoute>
+              <Admin />
+            </ProtectedRoute>
+          ),
         },
         {
           path: "/hotellist",
-          element: <HotelList />,
+          element: (
+            <ProtectedRoute>
+              <HotelList />
+            </ProtectedRoute>
+          ),
         },
         {
           path: "/userprofile",
-          element: <UserProfile />,
+          element: (
+            <ProtectedRoute>
+              <UserProfile />
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path: "/hoteldetails",
+          element: (
+            <ProtectedRoute>
+              <HotelDetails />
+            </ProtectedRoute>
+          ),
         },
       ],
     },
   ]);
 
   return (
-    <div className="App">
-      <RouterProvider router={appRouter} />
-    </div>
+    <AuthProvider>
+      <div className="App">
+        <RouterProvider router={appRouter} />
+      </div>
+    </AuthProvider>
   );
 }
 
