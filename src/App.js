@@ -4,8 +4,8 @@ import Home from "./pages/Home";
 import Admin from "./pages/Admin";
 import HotelList from "./pages/HotelList";
 import UserProfile from "./pages/UserProfile";
-import Layout from './pages/Layout';
-import HotelDetails from './pages/HotelDetails';
+import Layout from "./pages/Layout";
+import HotelDetails from "./pages/HotelDetails";
 import ProtectedRoute from "./ProtectedRoute";
 import { AuthProvider } from "./utils/AuthContext";
 
@@ -45,8 +45,12 @@ function App() {
         },
         {
           path: "/hoteldetails",
-          element: <HotelDetails />
-        }
+          element: (
+            <ProtectedRoute>
+              <HotelDetails />
+            </ProtectedRoute>
+          ),
+        },
       ],
     },
   ]);
