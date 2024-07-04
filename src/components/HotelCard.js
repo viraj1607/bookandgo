@@ -14,10 +14,6 @@ const HotelCard = ({ hotelData = {} }) => {
     aminities,
   } = hotelData;
 
-  // if (!img || !hotelName) {
-  //   return <div className="text-red-500">Hotel data is missing.</div>;
-  // }
-
   return (
     <Link to="/hoteldetails" state={{ hotelData }}>
       <div className="flex flex-col md:flex-row  shadow-custom-grey p-4 my-8 mx-4 md:mx-16 rounded-xl">

@@ -5,14 +5,17 @@ const GoButton = () => {
   const navigate = useNavigate();
 
   const handleGoButtonClick = () => {
-    navigate('/hotellist'); // Change '/target-page' to your desired route
+    navigate('/hotellist');
   };
 
   return (
     <div className="flex justify-center mt-[-35px]">
-      <div className="go-button flex justify-center items-center w-[180px] md:w-[280px] h-[69px]" onClick={handleGoButtonClick}>
-        <span className="go-button-text">GO</span>
-        <div className="go-button-icon">
+      <div 
+        className="flex justify-center items-center w-[180px] md:w-[280px] h-[69px] rounded-[34.5px] bg-[#EB2226] shadow-[0px_5px_10px_4px_rgba(0,0,0,0.20)] cursor-pointer transition-transform transform hover:scale-105"
+        onClick={handleGoButtonClick}
+      >
+        <span className="text-white font-inter text-[50px] font-semibold leading-[110%]">GO</span>
+        <div className="ml-[10px]">
           <svg xmlns="http://www.w3.org/2000/svg" width="50" height="38" viewBox="0 0 50 38" fill="none">
             <path d="M4 4L19 19L4 34" stroke="white" strokeWidth="7" strokeLinecap="round" />
             <path d="M30 4L45 19L30 34" stroke="white" strokeWidth="7" strokeLinecap="round" />

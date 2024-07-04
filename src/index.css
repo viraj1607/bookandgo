@@ -47,271 +47,17 @@ body {
 }
 
 
-@media (max-width: 1024px) {
-    .card {
-        width: 265px;
-    }
-}
-
-@media (max-width: 835px) {
-    .card {
-        width: 200px;
-        height: 270px;
-    }
-}
-
-@media (min-width: 425px) and (max-width: 768px) {
-    .card {
-        width: 200px;
-        height: 270px;
-    }
-}
-
-
-@media (max-width: 835px) {
-    .card-image {
-        width: 200px;
-        height: 130px;
-    }
-}
-
-@media (min-width: 425px) and (max-width: 768px) {
-    .card-image {
-        width: 200px;
-        height: 130px;
-    }
-}
-
-
-@media (max-width: 835px) {
-
-    .card-title,
-    .card-price {
-        font-size: 15px;
-        font-weight: 700;
-    }
-}
-
-@media (min-width: 425px) and (max-width: 768px) {
-
-    .card-title,
-    .card-price {
-        font-size: 15px;
-        font-weight: 700;
-    }
-}
-
-@media (max-width: 835px) {
-    .typography-heading {
-        font-size: 30px;
-    }
-}
-
-.date-range {
-    color: #000;
-    text-align: right;
-    font-family: 'Inter';
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-}
-
-@media (max-width: 835px) {
-    .date-range {
-        font-size: 15px;
-    }
-}
-
-@media (min-width: 425px) and (max-width: 768px) {
-    .date-range {
-        font-size: 15px;
-    }
-}
-
-
 /*------------------------------------     GoButton.js     ------------------------------------*/
 
 
-/* Button styles */
-.go-button {
-    border-radius: 34.5px;
-    background: #EB2226;
-    box-shadow: 0px 5px 10px 4px rgba(0, 0, 0, 0.20);
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.go-button:hover {
-    transform: scale(1.05);
-}
-
-.go-button-text {
-    color: #FFF;
-    font-family: 'Inter', sans-serif;
-    font-size: 50px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 110%;
-    /* 55px */
-}
-
-.go-button-icon {
-    margin-left: 10px;
-}
-
-.go-button-icon svg {
-    width: 50px;
-    height: 38px;
-}
-
-
 /*------------------------------------     AdBanner.js     ------------------------------------*/
-
-
-.ad-banner {
-    width: 100%;
-    height: 134px;
-    flex-shrink: 0;
-    background: lightgray;
-    margin-top: 145px;
-}
-
-@media (max-width: 835px) {
-    .ad-banner {
-        margin-top: 120px;
-    }
-}
-
-@media (min-width: 425px) and (max-width: 768px) {
-    .ad-banner {
-        margin-top: 120px;
-    }
-}
-
-
-/*------------------------------------     ImageStack.js     ------------------------------------*/
-
-
-.bg-main-rectangle {
-    position: relative;
-    width: 1332px;
-    height: 631px;
-    border-radius: 41px;
-    background: url('./imgs/beach.png') lightgray 50% / cover no-repeat;
-    z-index: 3;
-    margin: 0 auto;
-}
-
-@media (max-width: 1280px) {
-    .bg-main-rectangle {
-        max-width: 90%;
-    }
-}
-
-@media (max-width: 1024px) {
-    .bg-main-rectangle {
-        height: 550px;
-    }
-}
-
-.bg-second-rectangle {
-    position: absolute;
-    top: 37%;
-    left: 50%;
-    transform: translate(-50%, -25%);
-    width: 1268px;
-    height: 561px;
-    border-radius: 41px;
-    background: #D9D9D9;
-    z-index: 2;
-}
-
-@media (max-width: 1280px) {
-    .bg-second-rectangle {
-        max-width: 80%;
-    }
-}
-
-@media (max-width: 1024px) {
-    .bg-second-rectangle {
-        top: 27%;
-    }
-}
-
-.bg-third-rectangle {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -15%);
-    width: 1126px;
-    height: 498px;
-    border-radius: 41px;
-    background: #EAEAEA;
-    z-index: 1;
-}
-
-@media (max-width: 1280px) {
-    .bg-third-rectangle {
-        max-width: 70%;
-    }
-}
-
-@media (max-width: 1024px) {
-    .bg-third-rectangle {
-        top: 30%;
-    }
-}
-
-.stacked-card-container .text-center {
-    position: absolute;
-    top: 40px;
-}
-
-.main-text {
-    color: #000;
-    text-align: center;
-    font-family: 'Inter', sans-serif;
-    font-size: 60px;
-    font-weight: 800;
-}
-
-@media (max-width: 1024px) {
-    .main-text {
-        font-size: 40px;
-    }
-}
-
-.highlight-text {
-    color: #FFF;
-    font-family: 'Inter', sans-serif;
-    font-size: 60px;
-    font-weight: 800;
-}
-
-@media (max-width: 1024px) {
-    .highlight-text {
-        font-size: 40px;
-    }
-}
-
-.logo {
-    width: 148px;
-    height: 44px;
-    background: url('./imgs/logo.png') 100% / cover no-repeat;
-    margin-top: 20px;
-    margin: 0 auto;
-}
-
 
 /*------------------------------------     Offers.js     ------------------------------------*/
 
 
 .offers-container {
-    position: relative;
     width: 1296px;
     height: 479px;
-    background: #FFF;
     border-radius: 20px;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.20);
     margin: 100px auto 20px;
@@ -335,6 +81,12 @@ body {
 @media (min-width: 425px) and (max-width: 768px) {
     .offers-container {
         height: 400px;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 426px) {
+    .offers-container {
+        margin-top: 60px;
     }
 }
 
@@ -369,14 +121,11 @@ body {
 
 .offers-scroll::-webkit-scrollbar {
     display: none;
-    /* Hide scrollbar for WebKit browsers */
 }
 
 .offers-scroll {
     -ms-overflow-style: none;
-    /* IE and Edge */
     scrollbar-width: none;
-    /* Firefox */
 }
 
 .offers-grid {
@@ -435,14 +184,12 @@ body {
 }
 
 .offer-image {
-    width: 150px;
-    height: 100%;
     object-fit: cover;
+    padding: 5px;
 }
 
 .offer-details {
     padding: 16px;
-    /* Adjust padding as needed */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -502,9 +249,7 @@ body {
 .arrow-icon {
     position: absolute;
     top: 20px;
-    /* Adjust to position the arrow */
     right: 20px;
-    /* Adjust to position the arrow */
     width: 40.5px;
     height: 21px;
     flex-shrink: 0;
@@ -517,12 +262,6 @@ body {
 @media (max-width: 1280px) {
     .locations-container {
         max-width: 90%;
-    }
-}
-
-@media (max-width: 1280px) {
-    .locations-grid {
-        column-gap: 20px;
     }
 }
 
