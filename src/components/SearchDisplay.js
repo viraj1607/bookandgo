@@ -39,7 +39,7 @@ const SearchDisplay = () => {
   return (
     <div className="flex justify-center items-center mt-9">
       <div className="p-4">
-        <div className="relative bg-half-rectangle shadow-2xl relative mx-auto my-0 rounded-3xl border border-slate-300 border-solid h-[307px] z-10 p-3 md:px-8 md:py-4">
+        <div className="bg-half-rectangle shadow-2xl relative mx-auto my-0 rounded-3xl border border-slate-300 border-solid h-[307px] z-10 p-3 md:px-8 md:py-4">
           <div className="flex justify-between items-center mb-4 md:m-0 gap-[8px]">
             <div className="flex">
               <h2 className="typography-heading md:text-[40px] text-[30px] font-extrabold">For <span className="typography-subheading text-rose-600">New York</span></h2>
@@ -62,7 +62,7 @@ const SearchDisplay = () => {
                     <p className="card-location font-medium text-[10px] text-slate-500">{hotel.location}</p>
                     <span className="card-per-night font-medium text-[10px] text-slate-500">per night</span>
                   </div>
-                  <div className="card-amenities grid grid grid-cols-2 gap-2 mt-2 pt-4 md:pt-1">
+                  <div className="card-amenities grid grid-cols-2 gap-2 mt-2 pt-4 md:pt-1">
                     <div className="card-amenity flex items-center">
                       <span className="w-3.5 h-3.5 mr-[4px]"></span> {/* Add the icon for Free WiFi */}
                       <span className='text-[12px]'>Free WiFi</span>
