@@ -8,6 +8,8 @@ import Offers from "../components/Offers";
 import Locations from "../components/Locations";
 import HeaderContainer from "../components/HeaderContainer";
 import SearchCard from "../components/SearchBar";
+import RecommendAndMostViewed, { recommendedHotelsList, mostViewedHotelsList } from '../components/RecommendAndMostViewed';
+
 
 function Home() {
   return (
@@ -18,11 +20,14 @@ function Home() {
       <SearchDisplay />
       <div className="flex justify-center mt-8">
         <GoButton />
-      </div>
+      </div> 
       <AdBanner imageUrl="/path/to/ad-image.jpg" />
       <StackedCard />
-      <Offers />
+      <RecommendAndMostViewed title={'Recommended for you'} hotels={recommendedHotelsList}/>
+      <RecommendAndMostViewed title={'Most Viewed'} hotels={mostViewedHotelsList}/> 
+      <Offers /> 
       <Locations />
+
     </div>
   );
 }
