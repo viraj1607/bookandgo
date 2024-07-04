@@ -13,9 +13,9 @@ const HotelCard = ({ hotelData = {} }) => {
     aminities,
   } = hotelData;
 
-  if (!img || !hotelName) {
-    return <div className="text-red-500">Hotel data is missing.</div>;
-  }
+  // if (!img || !hotelName) {
+  //   return <div className="text-red-500">Hotel data is missing.</div>;
+  // }
 
   return (
     <div className="flex flex-col md:flex-row h-fit shadow-custom-grey p-4 my-8 mx-4 md:mx-16 rounded-xl">
