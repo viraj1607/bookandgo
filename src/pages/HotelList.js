@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import HotelCard from "../components/HotelCard";
 import Filters from "../components/Filters";
 
@@ -68,6 +68,8 @@ const hotelList = [
 ];
 
 const HotelList = () => {
+  const [showFilters, setShowFilters] = useState(false);
+
   return (
     <div>
       <div className="bg-[#E5F4FF] p-4">
@@ -82,13 +84,26 @@ const HotelList = () => {
       <div className="flex flex-wrap">
         <div className="w-full md:w-[80%]">
           {hotelList.map((val, ind) => {
-            return <HotelCard hotelData={val} />;
+            return <HotelCard key={ind} hotelData={val} />;
           })}
         </div>
-        <div className="w-full md:w-[20%]">
+        <div className="hidden md:block w-[20%]">
           <Filters />
         </div>
       </div>
+
+      <button
+        onClick={() => setShowFilters(!showFilters)}
+        className="md:hidden fixed bottom-4 right-4 bg-blue-500 text-white p-2 rounded z-60"
+      >
+        {showFilters ? "Close Filters" : "Open Filters"}
+      </button>
+
+      {showFilters && (
+        <div className="md:hidden fixed inset-0 bg-white p-4 z-50">
+          <Filters />
+        </div>
+      )}
     </div>
   );
 };
