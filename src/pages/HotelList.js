@@ -69,16 +69,30 @@ const hotelList = [
 
 const HotelList = () => {
   const [showFilters, setShowFilters] = useState(false);
+  const [selectedSortOption, setSelectedSortOption] = useState("Popular");
+  const handleSortOptionClick = (option) => {
+    setSelectedSortOption(option);
+    // Add your sorting logic here based on the selected option
+  };
 
   return (
     <div>
       <div className="bg-[#E5F4FF] p-4">
         <ul className="flex justify-evenly flex-wrap">
           <li className="font-bold">Sort By:</li>
-          <li className="cursor-pointer">Popular</li>
-          <li className="cursor-pointer">Ratings</li>
-          <li className="cursor-pointer">Price(High)</li>
-          <li className="cursor-pointer">Price(Low)</li>
+          {["Popular", "Ratings", "Price(High)", "Price(Low)"].map((option) => (
+            <li
+              key={option}
+              className={`cursor-pointer ${
+                selectedSortOption === option
+                  ? "font-bold custom-underline"
+                  : ""
+              }`}
+              onClick={() => handleSortOptionClick(option)}
+            >
+              {option}
+            </li>
+          ))}
         </ul>
       </div>
       <div className="flex flex-wrap">

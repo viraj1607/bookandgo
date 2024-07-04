@@ -70,10 +70,10 @@ export const mostViewedHotelsList = [
 
 const RecommendAndMostViewed = ({ title, hotels }) => {
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex justify-center items-center my-4">
       <div className="p-4 w-full max-w-screen-xl">
         <div className="section-recommended">
-          <h1 className="section-recommended-text">{title}</h1>
+          <h1 className="font-bold text-center text-[30px]">{title}</h1>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[25px] pt-4">
           {hotels?.map((hotel, index) => (

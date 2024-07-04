@@ -410,7 +410,7 @@ body {
     width: 246px;
     height: 110px;
     flex-shrink: 0;
-    transition: background 0.3s;
+    transition: background-color 0.3s ease;
     cursor: pointer;
 }
 
@@ -600,4 +600,9 @@ body {
     .header img {
         height: 2rem;
     }
+}
+
+.custom-underline {
+    text-decoration: underline #EB2226;
+
 }
