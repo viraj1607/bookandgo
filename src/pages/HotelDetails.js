@@ -9,12 +9,14 @@ import Locations from '../components/Locations'; // Import the Locations compone
 import HeaderContainer from '../components/HeaderContainer';
 import LoginSignup from '../components/LoginSignup';
 import HotelInfo from '../components/HotelInfo';
+import { useLocation } from 'react-router-dom';
 
 const HotelDetails = () => {
+  const { state } = useLocation();
+  const { hotelData } = state || {};
   return (
     <div>
-     
-      <HotelInfo/>
+      {hotelData ? <HotelInfo hotelData={hotelData} /> : <p>No hotel data available.</p>}
     </div>
   );
 }
