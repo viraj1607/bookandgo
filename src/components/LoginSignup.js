@@ -5,7 +5,7 @@ import { Hiking_Video } from "../utils/constants";
 import axios from "axios";
 import { useAuth } from "../utils/AuthContext";
 
-const LoginSignup = () => {
+const LoginSignup = ({ onClose }) => {
   const [isSignIn, setIsSignIn] = useState(true);
   const name = useRef(null);
   const email = useRef(null);
@@ -25,7 +25,8 @@ const LoginSignup = () => {
       );
       const dataSignIn = await signin.data;
       console.log(dataSignIn);
-      login();
+      login(dataSignIn.token);
+      onClose();
     } else {
       const objSignUp = {
         name: name.current.value,
@@ -38,7 +39,8 @@ const LoginSignup = () => {
       );
       const data = await signup.data;
       console.log(data);
-      login();
+      login(data.token);
+      onClose();
     }
   };
 
@@ -47,24 +49,24 @@ const LoginSignup = () => {
   };
 
   return (
-    <div className="w-full md:w-3/4 lg:w-2/4 flex rounded-md absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 shadow-lg border border-solid border-black">
-      <div className="w-6/12">
+    <div className="w-full md:w-3/4 flex flex-col md:flex-row rounded-md fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[3000] bg-white shadow-custom-grey">
+      <div className="w-full md:w-6/12">
         <video
-          className="w-full h-full rounded-md"
+          className="w-full h-full object-cover rounded-md"
           src={Hiking_Video}
           autoPlay
           loop
           muted
         ></video>
       </div>
-      <div className="w-6/12 bg-[#FFFFFF4D] py-4 px-8">
-        <h2 className="text-[#002475] font-bold text-3xl">
+      <div className="w-full md:w-6/12 bg-white bg-opacity-75 py-8 px-6 md:px-8 flex flex-col justify-center">
+        <h2 className="text-[#002475] font-bold text-3xl mb-6">
           {isSignIn ? "Sign In" : "Sign Up"}
         </h2>
         {!isSignIn && (
           <TextField
             inputRef={name}
-            className="w-full my-4"
+            className="w-full !my-4"
             id="name"
             label="Name"
             variant="outlined"
@@ -72,25 +74,24 @@ const LoginSignup = () => {
         )}
         <TextField
           inputRef={email}
-          className="w-full my-4"
+          className="w-full !my-4"
           id="email"
           label="Email"
           variant="outlined"
         />
         <TextField
           inputRef={password}
-          className="w-full my-4"
+          className="w-full !my-4"
           id="password"
           label="Password"
           variant="outlined"
           type="password"
         />
-        <br />
         <Mbutton
           onclick={handleSubmit}
           value={isSignIn ? "Sign In" : "Sign Up"}
         />
-        <p>
+        <p className="mt-4">
           {isSignIn ? "New User? Sign Up" : "Already Registered? Sign In"}{" "}
           <span
             className="cursor-pointer text-[#002475] font-bold"
