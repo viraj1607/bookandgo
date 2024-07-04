@@ -1,10 +1,10 @@
 import React from "react";
-import { RouterProvider, createBrowserRouter, Outlet } from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import Admin from "./pages/Admin";
 import HotelList from "./pages/HotelList";
 import UserProfile from "./pages/UserProfile";
-import Layout from './pages/Layout';
+import Layout from "./pages/Layout";
 import ProtectedRoute from "./ProtectedRoute";
 import { AuthProvider } from "./utils/AuthContext";
 
