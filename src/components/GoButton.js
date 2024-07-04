@@ -10,7 +10,7 @@ const GoButton = () => {
 
   return (
     <div className="flex justify-center mt-[-35px]">
-      <div className="go-button" onClick={handleGoButtonClick}>
+      <div className="go-button flex justify-center items-center w-[180px] md:w-[280px] h-[69px]" onClick={handleGoButtonClick}>
         <span className="go-button-text">GO</span>
         <div className="go-button-icon">
           <svg xmlns="http://www.w3.org/2000/svg" width="50" height="38" viewBox="0 0 50 38" fill="none">
