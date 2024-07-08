@@ -13,7 +13,13 @@ body {
 
 .container {
     background-color: #FFF;
-    width: 100%;
+    width: 2561px;
+}
+
+@media (min-width: 1441px) and (max-width: 2561px) {
+    .container {
+        max-width: 100%;
+    }
 }
 
 @media (min-width: 1280px) and (max-width: 1441px) {
@@ -40,405 +46,18 @@ body {
     }
 }
 
-/* Custom class for half rectangle background */
-.bg-half-rectangle {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    height: 307px;
-    margin: 0 auto;
-    border-radius: 32px;
-    border: 1px solid rgba(0, 0, 0, 0.10);
-    background: #FFF;
-    box-shadow: 0px 12px 24px 0px rgba(0, 0, 0, 0.10);
-}
-
-@media (max-width: 1280px) {
-    .bg-half-rectangle {
-        max-width: 90%;
-    }
-}
-
-@media (max-width: 835px) {
-    .bg-half-rectangle {
-        border-radius: 28px;
-        height: 250px;
-        max-width: 93%;
-    }
-}
-
-@media (min-width: 425px) and (max-width: 768px) {
-    .bg-half-rectangle {
-        border-radius: 28px;
-        height: 250px;
-        max-width: 93%;
-    }
-}
-
-.card {
-    width: 290px;
-    height: 307px;
-    flex-shrink: 0;
-    border-radius: 20px;
-    background: #FFF;
-    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.25);
-    overflow: hidden;
-    /* Ensures content does not spill out */
-    margin-left: -5px;
-}
-
-@media (max-width: 1024px) {
-    .card {
-        width: 265px;
-    }
-}
-
-@media (max-width: 835px) {
-    .card {
-        width: 200px;
-        height: 270px;
-    }
-}
-
-@media (min-width: 425px) and (max-width: 768px) {
-    .card {
-        width: 200px;
-        height: 270px;
-    }
-}
-
-.card-image {
-    width: 290px;
-    height: 160px;
-    flex-shrink: 0;
-    background: lightgray 50% / cover no-repeat;
-}
-
-@media (max-width: 835px) {
-    .card-image {
-        width: 200px;
-        height: 130px;
-    }
-}
-
-@media (min-width: 425px) and (max-width: 768px) {
-    .card-image {
-        width: 200px;
-        height: 130px;
-    }
-}
-
-.card-content {
-    padding: 16px;
-    /* Adjust padding as needed */
-}
-
-.card-title,
-.card-price {
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-}
-
-@media (max-width: 835px) {
-
-    .card-title,
-    .card-price {
-        font-size: 15px;
-        font-weight: 700;
-    }
-}
-
-@media (min-width: 425px) and (max-width: 768px) {
-
-    .card-title,
-    .card-price {
-        font-size: 15px;
-        font-weight: 700;
-    }
-}
-
-.card-location,
-.card-per-night {
-    color: #6F6F6F;
-    font-family: 'Inter';
-    font-size: 10px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-}
-
-.card-amenities {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-}
-
-.card-amenity {
-    display: flex;
-    align-items: center;
-}
-
-.card-amenity .icon {
-    width: 13px;
-    height: 13px;
-    flex-shrink: 0;
-    margin-right: 4px;
-}
-
-.card-amenity span {
-    color: #000;
-    font-family: 'Inter';
-    font-size: 10px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-}
-
-.card-stars {
-    display: flex;
-    justify-content: center;
-    margin-top: 8px;
-}
-
-/* Custom styles for typography */
-.typography-heading {
-    color: #000;
-    font-family: 'Inter';
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 800;
-    line-height: normal;
-}
-
-@media (max-width: 835px) {
-    .typography-heading {
-        font-size: 30px;
-    }
-}
-
-@media (min-width: 425px) and (max-width: 768px) {
-    .typography-heading {
-        font-size: 30px;
-    }
-}
-
-.typography-subheading {
-    color: #EB2226;
-}
-
-.date-range {
-    color: #000;
-    text-align: right;
-    font-family: 'Inter';
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-}
-
-@media (max-width: 835px) {
-    .date-range {
-        font-size: 15px;
-    }
-}
-
-@media (min-width: 425px) and (max-width: 768px) {
-    .date-range {
-        font-size: 15px;
-    }
-}
-
 
 /*------------------------------------     GoButton.js     ------------------------------------*/
 
 
-/* Button styles */
-.go-button {
-    width: 280px;
-    height: 69px;
-    flex-shrink: 0;
-    border-radius: 34.5px;
-    background: #EB2226;
-    box-shadow: 0px 5px 10px 4px rgba(0, 0, 0, 0.20);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.go-button:hover {
-    transform: scale(1.05);
-}
-
-.go-button-text {
-    color: #FFF;
-    font-family: 'Inter', sans-serif;
-    font-size: 50px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 110%;
-    /* 55px */
-}
-
-.go-button-icon {
-    margin-left: 10px;
-}
-
-.go-button-icon svg {
-    width: 50px;
-    height: 38px;
-}
-
-
 /*------------------------------------     AdBanner.js     ------------------------------------*/
-
-
-.ad-banner {
-    width: 100%;
-    height: 134px;
-    flex-shrink: 0;
-    background: lightgray;
-    margin-top: 145px;
-}
-
-@media (max-width: 835px) {
-    .ad-banner {
-        margin-top: 120px;
-    }
-}
-
-@media (min-width: 425px) and (max-width: 768px) {
-    .ad-banner {
-        margin-top: 120px;
-    }
-}
-
-
-/*------------------------------------     ImageStack.js     ------------------------------------*/
-
-
-.bg-main-rectangle {
-    position: relative;
-    width: 1332px;
-    height: 631px;
-    border-radius: 41px;
-    background: url('./imgs/beach.png') lightgray 50% / cover no-repeat;
-    z-index: 3;
-    margin: 0 auto;
-}
-
-@media (max-width: 1280px) {
-    .bg-main-rectangle {
-        max-width: 90%;
-    }
-}
-
-@media (max-width: 1024px) {
-    .bg-main-rectangle {
-        height: 550px;
-    }
-}
-
-.bg-second-rectangle {
-    position: absolute;
-    top: 37%;
-    left: 50%;
-    transform: translate(-50%, -25%);
-    width: 1268px;
-    height: 561px;
-    border-radius: 41px;
-    background: #D9D9D9;
-    z-index: 2;
-}
-
-@media (max-width: 1280px) {
-    .bg-second-rectangle {
-        max-width: 80%;
-    }
-}
-
-@media (max-width: 1024px) {
-    .bg-second-rectangle {
-        top: 27%;
-    }
-}
-
-.bg-third-rectangle {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -15%);
-    width: 1126px;
-    height: 498px;
-    border-radius: 41px;
-    background: #EAEAEA;
-    z-index: 1;
-}
-
-@media (max-width: 1280px) {
-    .bg-third-rectangle {
-        max-width: 70%;
-    }
-}
-
-@media (max-width: 1024px) {
-    .bg-third-rectangle {
-        top: 30%;
-    }
-}
-
-.stacked-card-container .text-center {
-    position: absolute;
-    top: 40px;
-}
-
-.main-text {
-    color: #000;
-    text-align: center;
-    font-family: 'Inter', sans-serif;
-    font-size: 60px;
-    font-weight: 800;
-}
-
-@media (max-width: 1024px) {
-    .main-text {
-        font-size: 40px;
-    }
-}
-
-.highlight-text {
-    color: #FFF;
-    font-family: 'Inter', sans-serif;
-    font-size: 60px;
-    font-weight: 800;
-}
-
-@media (max-width: 1024px) {
-    .highlight-text {
-        font-size: 40px;
-    }
-}
-
-.logo {
-    width: 148px;
-    height: 44px;
-    background: url('./imgs/logo.png') 100% / cover no-repeat;
-    margin-top: 20px;
-    margin: 0 auto;
-}
-
 
 /*------------------------------------     Offers.js     ------------------------------------*/
 
 
 .offers-container {
-    position: relative;
     width: 1296px;
     height: 479px;
-    background: #FFF;
     border-radius: 20px;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.20);
     margin: 100px auto 20px;
@@ -462,6 +81,12 @@ body {
 @media (min-width: 425px) and (max-width: 768px) {
     .offers-container {
         height: 400px;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 426px) {
+    .offers-container {
+        margin-top: 60px;
     }
 }
 
@@ -496,12 +121,11 @@ body {
 
 .offers-scroll::-webkit-scrollbar {
     display: none;
-    /* Hide scrollbar for WebKit browsers */
 }
 
 .offers-scroll {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .offers-grid {
@@ -560,14 +184,12 @@ body {
 }
 
 .offer-image {
-    width: 150px;
-    height: 100%;
     object-fit: cover;
+    padding: 5px;
 }
 
 .offer-details {
     padding: 16px;
-    /* Adjust padding as needed */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -627,9 +249,7 @@ body {
 .arrow-icon {
     position: absolute;
     top: 20px;
-    /* Adjust to position the arrow */
     right: 20px;
-    /* Adjust to position the arrow */
     width: 40.5px;
     height: 21px;
     flex-shrink: 0;
@@ -639,56 +259,10 @@ body {
 
 /*------------------------------------     Locations.js     ------------------------------------*/
 
-
-.locations-container {
-    width: 1291px;
-    height: 293px;
-    flex-shrink: 0;
-    border-radius: 23px 23px 0px 0px;
-    background: #FFF;
-    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.15);
-    margin: 60px auto 0px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
 @media (max-width: 1280px) {
     .locations-container {
         max-width: 90%;
     }
-}
-
-.locations-grid {
-    gap: 10px 60px;
-    /* Gap between columns and rows */
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-}
-
-@media (max-width: 1280px) {
-    .locations-grid {
-        column-gap: 20px;
-    }
-}
-
-.location-item {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    text-align: left;
-}
-
-.location-image {
-    width: 87.223px;
-    height: 87.223px;
-    border-radius: 50%;
-    background: #D9D9D9;
-    overflow: hidden;
-    margin-right: 20px;
 }
 
 @media (max-width: 1024px) {
@@ -696,12 +270,6 @@ body {
         width: 70px;
         height: 70px;
     }
-}
-
-.location-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
 }
 
 .location-name {
@@ -732,17 +300,6 @@ body {
 /*------------------------------------     Footer.js     ------------------------------------*/
 
 
-.footer-container {
-    width: 100%;
-    height: 264px;
-    background: #002475;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 40px 180px;
-    box-sizing: border-box;
-}
-
 @media (min-width: 425px) and (max-width: 768px) {
     .footer-container {
         padding: 2.5rem;
@@ -755,30 +312,10 @@ body {
     }
 }
 
-.footer-content {
-    display: flex;
-    align-items: flex-start;
-    /* Align content at the top */
-    justify-content: space-between;
-    width: 100%;
-}
-
-.footer-logo {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-}
-
-.footer-logo img {
-    width: 148px;
-}
-
 .footer-icons {
     display: flex;
     gap: 20px;
     margin-top: auto;
-    /* Move icons to the bottom */
 }
 
 .footer-links {
@@ -833,24 +370,6 @@ body {
 /*------------------------------------     HeaderContainer.js     ------------------------------------*/
 
 
-.header-container {
-    width: 800px;
-    height: 110px;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-radius: 18px;
-    background: #FFF;
-    box-shadow: 0px 12px 24px 0px rgba(0, 0, 0, 0.10);
-    border: 1px solid rgba(0, 0, 0, 0.20);
-    margin: -350px auto 0;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 20px;
-    z-index: 1000;
-}
-
 @media (max-width: 1280px) {
     .header-container {
         margin-top: -280px;
@@ -891,20 +410,20 @@ body {
     width: 246px;
     height: 110px;
     flex-shrink: 0;
-    transition: background 0.3s;
+    transition: background-color 0.3s ease;
     cursor: pointer;
 }
 
 @media (min-width: 425px) and (max-width: 768px) {
     .section {
-        width: 175px;
-        height: 80px;
+        width: 177px;
+        height: 110px;
     }
 }
 
-@media (max-width: 835px) {
+@media (min-width: 320px) and (max-width: 426px) {
     .section {
-        width: 175px;
+        width: 118px;
         height: 80px;
     }
 }
@@ -1012,6 +531,12 @@ body {
     margin-top: 15px;
 }
 
+@media (min-width: 320px) and (max-width: 426px) {
+    .text {
+        display: none;
+    }
+}
+
 @media (min-width: 425px) and (max-width: 768px) {
     .text {
         margin-top: 10px;
@@ -1051,7 +576,7 @@ body {
     }
 }
 
-@media (min-width: 425px) and (max-width: 768px){
+@media (min-width: 425px) and (max-width: 768px) {
     .hero-section {
         height: 550px;
     }
@@ -1075,4 +600,9 @@ body {
     .header img {
         height: 2rem;
     }
+}
+
+.custom-underline {
+    text-decoration: underline #EB2226;
+
 }

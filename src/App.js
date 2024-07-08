@@ -30,9 +30,9 @@ function App() {
         {
           path: "/hotellist",
           element: (
-            // <ProtectedRoute>
+            <ProtectedRoute>
               <HotelList />
-            // </ProtectedRoute>
+            </ProtectedRoute>
           ),
         },
         {
