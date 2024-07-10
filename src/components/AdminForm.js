@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import { FormControl, MenuItem, Select, InputLabel } from "@mui/material";
-import TextArea from "../components/TextArea";
+import TextArea from "./TextArea";
 
 const AdminForm = ({ params }) => {
   const [city, setCity] = useState("");
