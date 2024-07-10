@@ -1,5 +1,5 @@
 import React from "react";
-import SearchDisplay from "../components/SearchDisplay";
+import SearchDisplayFlights from "../components/SearchDisplayFlights";
 import HeroSection from "../components/HeroSection";
 import GoButton from "../components/GoButton";
 import AdBanner from "../components/AdBanner";
@@ -7,19 +7,18 @@ import StackedCard from "../components/StackedCard";
 import Offers from "../components/Offers";
 import Locations from "../components/Locations";
 import HeaderContainer from "../components/HeaderContainer";
-import SearchCard from "../components/SearchBar";
+import FlightsSearchBar from "../components/FlightsSearchBar";
 import RecommendAndMostViewed, { recommendedHotelsList, mostViewedHotelsList } from '../components/RecommendAndMostViewed';
 
 
-function Home() {
+function Flights() {
   return (
     <div className="container">
       <HeroSection />
       <HeaderContainer />
-
-      <SearchCard />
+      <FlightsSearchBar />
       <GoButton />
-      <SearchDisplay />
+      <SearchDisplayFlights />
       <AdBanner imageUrl="/path/to/ad-image.jpg" />
       <StackedCard />
       <Offers />
@@ -30,4 +29,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Flights;

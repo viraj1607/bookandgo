@@ -7,7 +7,7 @@ import logo from '../imgs/logo.png'; // Ensure this path is correct
 
 const Footer = () => {
   return (
-    <div className="footer-container flex items-center justify-between w-full h-auto bg-blue-950 px-6 md:px-[180px] py-10 md:py-[40px] box-border">
+    <div className="footer-container flex items-center justify-between w-full h-auto bg-blue-950 px-6 md:px-[50px] lg:px-[180px] py-10 md:py-[40px] box-border">
       <div className="footer-content flex flex-col md:flex-row items-start justify-between w-full gap-8 md:gap-0">
         <div className="footer-logo flex flex-col items-start gap-[20px]">
           <img className='w-[148px]' src={logo} alt="Logo" />
