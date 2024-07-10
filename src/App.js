@@ -6,6 +6,8 @@ import HotelList from "./pages/HotelList";
 import UserProfile from "./pages/UserProfile";
 import Layout from "./pages/Layout";
 import HotelDetails from "./pages/HotelDetails";
+import Flights from "./pages/Flights";
+import HolidayPackages from "./pages/HolidayPackages";
 import ProtectedRoute from "./ProtectedRoute";
 import { AuthProvider } from "./utils/AuthContext";
 
@@ -31,7 +33,7 @@ function App() {
           path: "/hotellist",
           element: (
             // <ProtectedRoute>
-              <HotelList />
+            <HotelList />
             // </ProtectedRoute>
           ),
         },
@@ -50,6 +52,14 @@ function App() {
               <HotelDetails />
             </ProtectedRoute>
           ),
+        },
+        {
+          path: "/flights",
+          element: <Flights />,
+        },
+        {
+          path: "/holiday-packages",
+          element: <HolidayPackages />,
         },
       ],
     },
