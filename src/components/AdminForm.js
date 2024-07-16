@@ -301,7 +301,7 @@ const AdminForm = ({ params }) => {
             onChange={handleImageChange}
             className="my-4"
           />
-          <Button variant="contained" color="primary" onClick={handleUpload}>
+          <Button variant="contained" color="success" onClick={handleUpload}>
             Upload Images
           </Button>
           <div>
@@ -313,8 +313,7 @@ const AdminForm = ({ params }) => {
         <Button
           type="submit"
           variant="contained"
-          color="primary"
-          className="mt-4"
+          className="mt-4 !bg-[#002475]"
         >
           Submit
         </Button>
