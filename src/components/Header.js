@@ -12,13 +12,20 @@ const Header = ({ onSignInClick }) => {
         <img className="h-14 cursor-pointer" src={Logo} alt="Logo" />
       </Link>
       {isAuthenticated ? (
-        <Link to="/userprofile">
-          <img
-            className="h-10 cursor-pointer"
-            src={ProfileIcon}
-            alt="Profile"
-          />
-        </Link>
+        <div className="flex items-center">
+          {localStorage.getItem("user") === "admin@gmail.com" && (
+            <Link to="/admin/hotel">
+              <span className="mr-8 text-white font-semibold">Admin Panel</span>
+            </Link>
+          )}
+          <Link to="/userprofile">
+            <img
+              className="h-10 cursor-pointer"
+              src={ProfileIcon}
+              alt="Profile"
+            />
+          </Link>
+        </div>
       ) : (
         <span
           className="text-white font-semibold cursor-pointer"
