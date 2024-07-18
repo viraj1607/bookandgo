@@ -18,7 +18,7 @@ const HeroSection = () => {
 
   return (
     <div
-      className="hero-section"
+      className="hero-section md:h-[100vh]"
       style={{ backgroundImage: `url(${images[currentImage]}` }}
     >
        
