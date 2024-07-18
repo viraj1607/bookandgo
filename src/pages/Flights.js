@@ -1,6 +1,6 @@
 import React from "react";
 import SearchDisplayFlights from "../components/SearchDisplayFlights";
-import HeroSection from "../components/HeroSection";
+import FlightsHeroSection from "../components/FlightsHeroSection";
 import GoButton from "../components/GoButton";
 import AdBanner from "../components/AdBanner";
 import StackedCard from "../components/StackedCard";
@@ -14,7 +14,7 @@ import RecommendAndMostViewed, { recommendedHotelsList, mostViewedHotelsList } f
 function Flights() {
   return (
     <div className="container">
-      <HeroSection />
+      <FlightsHeroSection />
       <HeaderContainer />
       <FlightsSearchBar />
       <GoButton />

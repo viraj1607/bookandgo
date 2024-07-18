@@ -62,10 +62,6 @@ const SearchCard = () => {
             <input type="radio" className="form-radio text-blue-600" name="groupType" value="group" />
             <span className="ml-2">Group Deals</span>
           </label>
-          <label className="inline-flex items-center md:ml-0">
-            <input type="radio" className="form-radio text-blue-600" name="groupType" value="upto4" />
-            <span className="ml-2">Up to 4 Rooms</span>
-          </label>
         </div>
       </div>
       <div className="w-[360px] h-[auto] xl:w-[100%] lg:w-[100%] md:w-[95%] flex-shrink-0 border-2 border-gray-300 rounded-xl md:border-2 md:border-gray-300 md:rounded-2xl mx-auto p-4 md:p-6 md:flex md:flex-row flex md:flex-nowrap flex-wrap justify-between items-start gap-4 md:gap-0">
