@@ -21,7 +21,7 @@ const SignInPopup = () => {
             <h2 className="text-2xl font-bold mb-4">Sign In to Get More Deals</h2>
             <p className="mb-6">Unlock exclusive offers by signing in!</p>
             <button
-              className="w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700"
+              className="w-full py-2 px-4 bg-[#002475] text-white font-semibold rounded-md hover:bg-blue-700"
               onClick={handleClose}
             >
               Sign In
