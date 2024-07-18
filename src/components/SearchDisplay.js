@@ -13,7 +13,7 @@ const hotels = [
     name: "DoubleTree",
     location: "New York",
     price: 243,
-    imageUrl: require("../imgs/doubletreebyhilton.webp"), // Replace with actual image URL
+    imageUrl: require("../imgs/doubletreebyhilton.webp"),
     amenities: ["Free WiFi", "Breakfast Included", "Parking Available", "Pet Friendly"],
     rating: 5,
   },
@@ -21,7 +21,7 @@ const hotels = [
     name: "Holiday Inn",
     location: "New York",
     price: 187,
-    imageUrl: require("../imgs/holidayinnexpress.webp"), // Replace with actual image URL
+    imageUrl: require("../imgs/holidayinnexpress.webp"),
     amenities: ["Free WiFi", "Breakfast Included", "Parking Available", "Pet Friendly"],
     rating: 5,
   },
@@ -29,7 +29,7 @@ const hotels = [
     name: "Hyatt Grand",
     location: "New York",
     price: 266,
-    imageUrl: require("../imgs/hyattgrand.webp"), // Replace with actual image URL
+    imageUrl: require("../imgs/hyattgrand.webp"), //
     amenities: ["Free WiFi", "Breakfast Included", "Parking Available", "Pet Friendly"],
     rating: 5,
   },
@@ -39,7 +39,7 @@ const SearchDisplay = () => {
   return (
     <div className="flex justify-center items-center mt-9">
       <div className="p-4">
-        <div className="relative bg-white shadow-2xl mx-auto my-0 rounded-3xl border border-slate-300 border-solid h-[307px] z-10 p-3 md:px-8 md:py-4 w-[395px] md:w-[95%] xl:w-[1340px]">
+        <div className="relative bg-white shadow-2xl mx-auto my-0 rounded-3xl border border-slate-300 border-solid h-[307px] z-20 p-3 md:px-8 md:py-4 w-[395px] md:w-[95%] xl:w-[1340px]">
           <div className="flex justify-between items-center mb-4 md:m-0 gap-[8px]">
             <div className="flex">
               <h2 className="md:text-[40px] text-[30px] font-extrabold">For <span className="text-rose-600">New York</span></h2>

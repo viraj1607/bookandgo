@@ -1,3 +1,4 @@
+// App.js
 import React from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
@@ -10,6 +11,7 @@ import Flights from "./pages/Flights";
 import HolidayPackages from "./pages/HolidayPackages";
 import ProtectedRoute from "./ProtectedRoute";
 import { AuthProvider } from "./utils/AuthContext";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 function App() {
   const appRouter = createBrowserRouter([
@@ -67,9 +69,9 @@ function App() {
 
   return (
     <AuthProvider>
-      <div className="App">
+      <ErrorBoundary>
         <RouterProvider router={appRouter} />
-      </div>
+      </ErrorBoundary>
     </AuthProvider>
   );
 }

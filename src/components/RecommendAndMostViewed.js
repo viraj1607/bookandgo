@@ -1,5 +1,3 @@
-// recomend.js
-
 import React from "react";
 import jetblue from "../imgs/jetblue.jpeg";
 import american from "../imgs/american.jpg";
