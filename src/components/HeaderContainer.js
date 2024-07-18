@@ -17,7 +17,7 @@ const HeaderContainer = () => {
         <p className="text">Flights</p>
       </Link>
       <div className="divider"></div>
-      <Link to="/holidaypackages" className="section holiday-packages">
+      <Link to="/holiday-packages" className="section holiday-packages">
         <img src={HolidayPackagesIcon} alt="Holiday Packages" className="icon" />
         <p className="text">Holiday Packages</p>
       </Link>

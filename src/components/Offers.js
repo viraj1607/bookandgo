@@ -69,25 +69,27 @@ const Offers = () => {
     }
   };
 
+    // box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.20);
+
   return (
-    <div className="offers-container relative p-6 rounded-lg shadow-md" style={{ backgroundImage: `url(${bgImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-      <h2 className="offers-title mb-4">Offers</h2>
-      <div className="offers-scroll" ref={offersContainerRef}>
-        <div className="offers-grid">
+    <div className="relative flex flex-col p-6 shadow-custom-shadow-2 md:w-[1296px] md:h-[479px] rounded-[25px] md:mt-[100px] md:mb-[20px] md:mx-auto md:p-[20px]" style={{ backgroundImage: `url(${bgImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <h2 className="text-[40px] font-bold">Offers</h2>
+      <div className="flex flex-row w-full h-[calc(100% - 60px)] overflow-x-auto overflow-y-hidden p-2" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }} ref={offersContainerRef}>
+        <div className="grid grid-cols-[repeat(4,_463px)] grid-rows-[repeat(2,_170px)] gap-[20px] w-full">
           {offers.map((offer, index) => (
-            <div key={index} className="offer-card">
-              <img src={offer.imageUrl} alt={offer.title} className="offer-image w-[114px] lg:w-[139px]" />
-              <div className="offer-details">
-                <p className="offer-category">{offer.category}</p>
-                <h3 className="offer-title">{offer.title}</h3>
-                <p className="offer-description">{offer.description}</p>
-                <a href="#" className="offer-cta">{offer.cta}</a>
+            <div key={index} className="offer-card flex felx-row items-start w-[463px] h-[170px] border-solid border-2 border-slate-200 rounded-[20px] overflow-hidden bg-white">
+              <img src={offer.imageUrl} alt={offer.title} className="offer-image w-[114px] lg:w-[139px] p-[5px] object-cover" />
+              <div className="offer-details flex flex-col justify-center p-[16px]">
+                <p className="offer-category text-[12px] font-medium text-slate-500">{offer.category}</p>
+                <h3 className="offer-title w-[262px] text-[22px] font-semibold my-[5px]">{offer.title}</h3>
+                <p className="offer-description text-[12px] text-slate-600 font-medium">{offer.description}</p>
+                <a href="#" className="offer-cta text-[13px] font-bold no-underline mt-[7px] block text-sky-600">{offer.cta}</a>
               </div>
             </div>
           ))}
         </div>
       </div>
-      <div className="arrow-icon" onClick={scrollRight}>
+      <div className="arrow-icon absolute top-[20px] right-[20px] w-[40.5px] h-[21px] shrink-0 cursor-pointer" onClick={scrollRight}>
         <svg xmlns="http://www.w3.org/2000/svg" width="45" height="25" viewBox="0 0 45 25" fill="none">
           <path d="M2 13H39" stroke="#0081DE" stroke-width="3" stroke-linecap="round"/>
           <path d="M32 2L42.5 13L32 23" stroke="#0081DE" stroke-width="3" stroke-linecap="round"/>
