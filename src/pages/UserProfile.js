@@ -1,10 +1,27 @@
 import { Box, TextField } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useAuth } from "../utils/AuthContext";
+import axios from "axios";
 
 const UserProfile = () => {
   const [isProfile, setIsProfile] = useState(true);
-  const {logout}=useAuth()
+  const [userData,setUserData]=useState(null)
+  const { logout } = useAuth();
+
+  const getUserData = async () => {
+    const user = await axios.get("http://localhost:5000/api/auth/", {
+      headers: {
+        Authorization: "Bearer " + localStorage.getItem("token"),
+      },
+    });
+    const data = await user.data;
+    console.log(data);
+    setUserData(data)
+  };
+
+  useEffect(() => {
+    getUserData();
+  }, []);
   return (
     <div className="flex flex-col md:flex-row items-center justify-center md:justify-start p-4 md:p-8">
       <div className="flex flex-col shadow-custom-grey rounded-lg items-center p-8 m-8 w-full md:w-auto">
@@ -14,9 +31,21 @@ const UserProfile = () => {
           alt="User"
         />
         <ul className="my-8 text-center md:text-left">
-          <li className="my-2 cursor-pointer hover:underline" onClick={() => setIsProfile(true)}>Profile</li>
-          <li className="my-2 cursor-pointer hover:underline" onClick={() => setIsProfile(false)}>Login Details</li>
-          <li className="my-2 cursor-pointer hover:underline" onClick={logout}>Logout</li>
+          <li
+            className="my-2 cursor-pointer hover:underline"
+            onClick={() => setIsProfile(true)}
+          >
+            Profile
+          </li>
+          <li
+            className="my-2 cursor-pointer hover:underline"
+            onClick={() => setIsProfile(false)}
+          >
+            Login Details
+          </li>
+          <li className="my-2 cursor-pointer hover:underline" onClick={logout}>
+            Logout
+          </li>
         </ul>
       </div>
       <div className="border-2 border-gray-300 m-4 p-8 rounded-lg w-full md:w-auto">
@@ -25,16 +54,46 @@ const UserProfile = () => {
         </h2>
         {isProfile ? (
           <Box className="space-y-4">
-            <TextField fullWidth id="user" label="Name" variant="outlined" />
-            <TextField fullWidth id="gender" label="Gender" variant="outlined" />
-            <TextField fullWidth id="address" label="Address" variant="outlined" />
-            <TextField fullWidth id="province" label="Province" variant="outlined" />
-            <TextField fullWidth id="pincode" label="Pin Code" variant="outlined" />
+            <TextField fullWidth id="user" variant="outlined" value={userData && userData.name}/>
+            <TextField
+              fullWidth
+              id="gender"
+              label="Gender"
+              variant="outlined"
+            />
+            <TextField
+              fullWidth
+              id="address"
+              label="Address"
+              variant="outlined"
+            />
+            <TextField
+              fullWidth
+              id="province"
+              label="Province"
+              variant="outlined"
+            />
+            <TextField
+              fullWidth
+              id="pincode"
+              label="Pin Code"
+              variant="outlined"
+            />
           </Box>
         ) : (
           <Box className="space-y-4">
-            <TextField fullWidth id="mobile" label="Mobile No." variant="outlined" />
-            <TextField fullWidth id="email" label="Email Id" variant="outlined" />
+            <TextField
+              fullWidth
+              id="mobile"
+              label="Mobile No."
+              variant="outlined"
+            />
+            <TextField
+              fullWidth
+              id="email"
+              value={userData && userData.email}
+              variant="outlined"
+            />
           </Box>
         )}
       </div>
