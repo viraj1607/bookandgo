@@ -6,13 +6,13 @@ import HolidayForm from "../components/HolidayForm";
 
 const Admin = () => {
   const params = useParams();
-//   useEffect(() => {
-//     console.log(params);
-//   }, []);
+  useEffect(() => {
+    console.log(params);
+  }, []);
   return (
     <div className="flex">
       <Sidebar />
-      {(params.id == "holiday" ? <HolidayForm /> : <AdminForm params={params.id}/>)}
+      {(params.id === "holiday" ? <HolidayForm /> : <AdminForm params={params.id}/>)}
     </div>
   );
 };

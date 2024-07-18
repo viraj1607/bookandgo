@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   return (
-    <div className="bg-slate-300 w-2/12 h-screen p-8">
+    <div className="bg-slate-300 w-2/12 p-8">
       <ul>
         <li className="my-2 text-red-700 font-bold text-lg">
           <Link to="/admin/hotel">Hotel</Link>
