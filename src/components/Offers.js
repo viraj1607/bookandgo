@@ -70,10 +70,10 @@ const Offers = () => {
   };
   
   return (
-    <div className="relative flex flex-col p-6 shadow-custom-shadow-2 md:w-[1296px] md:h-[479px] rounded-[25px] md:mt-[100px] md:mb-[20px] md:mx-auto md:p-[20px]" style={{ backgroundImage: `url(${bgImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-      <h2 className="text-[40px] font-bold">Offers</h2>
+    <div className="offers-container relative flex flex-col p-6 shadow-custom-shadow-2 md:w-[1296px] md:h-[479px] rounded-[25px] md:mt-[100px] md:mb-[20px] mx-auto md:p-[20px]" style={{ backgroundImage: `url(${bgImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <h2 className="offers-title text-[40px] font-bold">Offers</h2>
       <div className="flex flex-row w-full h-[calc(100% - 60px)] overflow-x-auto overflow-y-hidden p-2" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }} ref={offersContainerRef}>
-        <div className="grid grid-cols-[repeat(4,_463px)] grid-rows-[repeat(2,_170px)] gap-[20px] w-full">
+        <div className="offers-grid grid grid-cols-[repeat(4,_463px)] grid-rows-[repeat(2,_170px)] gap-[20px] w-full">
           {offers.map((offer, index) => (
             <div key={index} className="offer-card flex felx-row items-start w-[463px] h-[170px] border-solid border-2 border-slate-200 rounded-[20px] overflow-hidden bg-white">
               <img src={offer.imageUrl} alt={offer.title} className="offer-image w-[114px] lg:w-[139px] p-[5px] object-cover" />
