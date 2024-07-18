@@ -6,6 +6,31 @@
 @tailwind utilities;
 
 
+/* DealComponent.css */
+
+/* DealComponent.css */
+
+/* DealComponent.css */
+
+@keyframes slideUp {
+    0% {
+      transform: translateY(50%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-in-out;
+  }
+    
+
+
+
+
 body {
     background-color: #FFF;
     font-family: 'Inter', sans-serif;

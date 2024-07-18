@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import heroImage1 from '../imgs/heroimg1.jpg';
 import heroImage2 from '../imgs/heroimg2.jpg';
 import heroImage3 from '../imgs/heroimg3.jpg';
+import DealComponent from './DealComponent';
 
 const images = [heroImage1,heroImage2,heroImage3];
 
@@ -21,6 +22,7 @@ const HeroSection = () => {
       className="hero-section lg:h-[100vh]"
       style={{ backgroundImage: `url(${images[currentImage]}` }}
     >
+      <DealComponent />
     </div>
     
   );
