@@ -3,33 +3,33 @@ import bgImage from '../imgs/offers.png';
 
 const destinations = [
   {
-    city: "Vancouver",
-    price: "$7500",
-    imageUrl: require('../imgs/vancouver.png')
-  },
-  {
-    city: "Montreal",
+    city: "India",
     price: "$1500",
-    imageUrl: require('../imgs/montreal.png')
+    imageUrl: require('../imgs/india.png')
   },
   {
-    city: "Calgary",
-    price: "$1700",
-    imageUrl: require('../imgs/calgary.png')
+    city: "Europe",
+    price: "$1500",
+    imageUrl: require('../imgs/europe.png')
   },
   {
-    city: "Quebec",
-    price: "$1800",
-    imageUrl: require('../imgs/quebec 0.png')
+    city: "Thailand",
+    price: "$1500",
+    imageUrl: require('../imgs/thailand.png')
   },
   {
-    city: "Toronto",
-    price: "$1400",
-    imageUrl: require('../imgs/toronto.png')
+    city: "Bali",
+    price: "$1500",
+    imageUrl: require('../imgs/bali.png')
+  },
+  {
+    city: "Maldives",
+    price: "$1500",
+    imageUrl: require('../imgs/maldives.png')
   },
 ];
 
-const BestSellingDestinations = () => {
+const InternationalDestinations = () => {
   const containerRef = useRef(null);
 
   const scrollRight = () => {
@@ -40,8 +40,8 @@ const BestSellingDestinations = () => {
 
   return (
     <div className="relative flex flex-col p-6 shadow-custom-shadow-2 md:w-[1296px] md:h-[479px] rounded-[25px] md:mt-[100px] md:mb-[20px] md:mx-auto md:p-[20px]" style={{ backgroundImage: `url(${bgImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-      <h2 className="text-[40px] font-bold">Best selling destinations</h2>
-      <div className="flex flex-row w-full h-[390px]overflow-x-auto overflow-y-hidden p-2" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }} ref={containerRef}>
+      <h2 className="text-[40px] font-bold">International Destinations!</h2>
+      <div className="flex flex-row w-full h-[390px] overflow-x-auto overflow-y-hidden p-2" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }} ref={containerRef}>
         <div className="grid grid-cols-[repeat(6,_252px)] gap-[20px] w-full">
           {destinations.map((destination, index) => (
             <div key={index} className="flex flex-col items-start w-[252px] h-[354px] p-2 border rounded-3xl bg-white shadow-lg">
@@ -64,4 +64,4 @@ const BestSellingDestinations = () => {
   );
 };
 
-export default BestSellingDestinations;
+export default InternationalDestinations;

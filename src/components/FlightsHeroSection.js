@@ -1,5 +1,5 @@
 import React from 'react';
-import videoFile from '../imgs/fvideo.mp4'; // Update this path to your video file location
+import videoFile from '../imgs/fvideo.mp4';
 
 const FlightsHeroSection = () => {
   return (
@@ -8,7 +8,6 @@ const FlightsHeroSection = () => {
         <source src={videoFile} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      {/* Add any additional content or elements here */}
     </div>
   );
 };

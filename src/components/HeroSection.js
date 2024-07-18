@@ -21,9 +21,6 @@ const HeroSection = () => {
       className="hero-section md:h-[100vh]"
       style={{ backgroundImage: `url(${images[currentImage]}` }}
     >
-       
-      {/* Add any additional content or elements here */}
-     
     </div>
     
   );

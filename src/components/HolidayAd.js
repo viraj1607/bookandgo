@@ -1,5 +1,5 @@
 import React from 'react';
-import adImage from '../imgs/heroimg1.jpg'; // Adjust the path and image name accordingly
+import adImage from '../imgs/heroimg1.jpg';
 
 const HolidaysAd = () => {
   return (

@@ -3,7 +3,7 @@ import facebookIcon from './icons/facebook.svg';
 import linkedinIcon from './icons/linkedin.svg';
 import youtubeIcon from './icons/youtube.svg';
 import instagramIcon from './icons/instagram.svg';
-import logo from '../imgs/logo.png'; // Ensure this path is correct
+import logo from '../imgs/logo.png';
 
 const Footer = () => {
   return (

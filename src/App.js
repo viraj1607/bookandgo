@@ -11,7 +11,7 @@ import Flights from "./pages/Flights";
 import HolidayPackages from "./pages/HolidayPackages";
 import ProtectedRoute from "./ProtectedRoute";
 import { AuthProvider } from "./utils/AuthContext";
-import ErrorBoundary from "./components/ErrorBoundary"; // import ErrorBoundary
+import ErrorBoundary from "./components/ErrorBoundary";
 
 function App() {
   const appRouter = createBrowserRouter([
