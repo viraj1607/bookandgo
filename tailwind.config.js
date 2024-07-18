@@ -13,6 +13,9 @@ module.exports = {
       position: {
         'webkit-sticky': '-webkit-sticky',
       },
+      fontFamily: {
+        inter: ['Inter', 'sans-serif'],
+      },
     },
   },
   plugins: [],

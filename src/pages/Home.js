@@ -16,7 +16,6 @@ function Home() {
     <div className="container">
       <HeroSection />
       <HeaderContainer />
-
       <SearchCard />
       <GoButton />
       <SearchDisplay />
