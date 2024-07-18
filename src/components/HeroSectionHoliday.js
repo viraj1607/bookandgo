@@ -1,5 +1,5 @@
 import React from 'react';
-import heroImageHoliday from '../imgs/holiday.jpg'; // Import your single holiday image
+import heroImageHoliday from '../imgs/holiday.jpg';
 
 const HeroSectionHoliday = () => {
   return (
@@ -7,7 +7,6 @@ const HeroSectionHoliday = () => {
       className="hero-section bg-cover bg-center h-[600px] md:h-[100vh]"
       style={{ backgroundImage: `url(${heroImageHoliday})` }}
     >
-      {/* Add any additional content or elements here */}
     </div>
   );
 };

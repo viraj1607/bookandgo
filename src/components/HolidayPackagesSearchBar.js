@@ -168,13 +168,13 @@ const HolidayPackagesSearchBar = () => {
 
             {activeTab === 'trending' && (
                 <div className="flex justify-center mt-4 md:mt-[-20px]">
-                    <div className="flex space-x-4">
+                    <div className="flex space-x-4 gap-[40px]">
                         {locationSuggestions.slice(0, 5).map((location, index) => (
                             <div key={index} className="flex flex-col items-center">
                                 <img
                                     src="https://via.placeholder.com/100"
                                     alt={location.label}
-                                    className="w-[100px] h-[100px] object-cover rounded-xl"
+                                    className="w-[150px] h-[150px] object-cover rounded-xl"
                                 />
                                 <Typography variant="body2" className="text-[#606060] font-normal text-[16px] leading-[110%]">{location.label}</Typography>
                             </div>

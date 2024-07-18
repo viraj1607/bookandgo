@@ -13,7 +13,7 @@ const hotels = [
     name: "DoubleTree",
     location: "New York",
     price: 243,
-    imageUrl: require("../imgs/doubletreebyhilton.webp"), // Replace with actual image URL
+    imageUrl: require("../imgs/doubletreebyhilton.webp"),
     amenities: ["Free WiFi", "Breakfast Included", "Parking Available", "Pet Friendly"],
     rating: 5,
   },
@@ -21,7 +21,7 @@ const hotels = [
     name: "Holiday Inn",
     location: "New York",
     price: 187,
-    imageUrl: require("../imgs/holidayinnexpress.webp"), // Replace with actual image URL
+    imageUrl: require("../imgs/holidayinnexpress.webp"),
     amenities: ["Free WiFi", "Breakfast Included", "Parking Available", "Pet Friendly"],
     rating: 5,
   },
@@ -29,7 +29,7 @@ const hotels = [
     name: "Hyatt Grand",
     location: "New York",
     price: 266,
-    imageUrl: require("../imgs/hyattgrand.webp"), // Replace with actual image URL
+    imageUrl: require("../imgs/hyattgrand.webp"), //
     amenities: ["Free WiFi", "Breakfast Included", "Parking Available", "Pet Friendly"],
     rating: 5,
   },

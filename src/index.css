@@ -5,7 +5,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Apply the Inter font to the entire website */
+
 body {
     background-color: #FFF;
     font-family: 'Inter', sans-serif;
@@ -45,11 +45,6 @@ body {
         max-width: 100%;
     }
 }
-
-
-/*------------------------------------     GoButton.js     ------------------------------------*/
-
-/*------------------------------------     AdBanner.js     ------------------------------------*/
 
 /*------------------------------------     Offers.js     ------------------------------------*/
 

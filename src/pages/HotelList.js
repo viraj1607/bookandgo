@@ -72,7 +72,6 @@ const HotelList = () => {
   const [selectedSortOption, setSelectedSortOption] = useState("Popular");
   const handleSortOptionClick = (option) => {
     setSelectedSortOption(option);
-    // Add your sorting logic here based on the selected option
   };
 
   return (

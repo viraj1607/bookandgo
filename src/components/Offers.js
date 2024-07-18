@@ -42,21 +42,21 @@ const offers = [
     title: "Flights by American Airlines",
     description: "connecting Saskatchewan",
     cta: "BOOK NOW",
-    imageUrl: require("../imgs/06.png"), // Replace with actual image URL
+    imageUrl: require("../imgs/06.png"),
   },
   {
     category: "INTL FLIGHTS",
     title: "Flights to Europe",
     description: "Enjoy 25% off on all flights to Europe",
     cta: "BOOK NOW",
-    imageUrl: require("../imgs/01.png"), // Replace with actual image URL
+    imageUrl: require("../imgs/01.png"),
   },
   {
     category: "DOM HOTELS",
     title: "Staycation Deals",
     description: "Get up to 50% off on local hotels",
     cta: "BOOK NOW",
-    imageUrl: require("../imgs/02.png"), // Replace with actual image URL
+    imageUrl: require("../imgs/02.png"),
   },
 ];
 
@@ -68,9 +68,7 @@ const Offers = () => {
       offersContainerRef.current.scrollBy({ left: 300, behavior: 'smooth' });
     }
   };
-
-    // box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.20);
-
+  
   return (
     <div className="relative flex flex-col p-6 shadow-custom-shadow-2 md:w-[1296px] md:h-[479px] rounded-[25px] md:mt-[100px] md:mb-[20px] md:mx-auto md:p-[20px]" style={{ backgroundImage: `url(${bgImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
       <h2 className="text-[40px] font-bold">Offers</h2>
