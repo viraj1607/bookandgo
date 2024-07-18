@@ -40,7 +40,11 @@ const FlightsSearchBar = () => {
   ];
 
   return (
+<<<<<<< HEAD
     <div className="max-w-[1205px] h-[610px] md:h-[443px] xl:w-[100%] lg:w-[90%] md:w-[90%] mx-auto pt-15 md:pt-[4rem] px-6 pb-6 md:border-2 md:border-gray-300 md:rounded-[40px] bg-white md:shadow-md mt-[-65px] md:mt-[-40px]  md:flex md:flex-col" style={{ boxShadow: '0px 12px 24px 0px rgba(0, 0, 0, 0.10)' }}>
+=======
+    <div className="relative max-w-[1205px] h-[610px] md:h-[443px] xl:w-[100%] lg:w-[90%] md:w-[90%] mx-auto pt-15 md:pt-[4rem] px-6 pb-6 md:border-2 md:border-gray-300 md:rounded-[40px] bg-white md:shadow-md mt-[-65px] md:mt-[-40px] md:h-[410px] md:flex md:flex-col" style={{ boxShadow: '0px 12px 24px 0px rgba(0, 0, 0, 0.10)' }}>
+>>>>>>> a73eb38dc9471cae6294e8c7d4be2f0f44e46cf2
       <div className="text-center mb-6">
         <h2 className="text-4xl hidden md:block font-semibold text-[#008EC4]">Good Morning!</h2>
         <p className="text-sm md:text-lg text-gray-600">

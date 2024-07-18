@@ -1,8 +1,8 @@
 import React from "react";
 import SearchDisplayFlights from "../components/SearchDisplayFlights";
-import HeroSection from "../components/HeroSection";
+import FlightsHeroSection from "../components/FlightsHeroSection";
 import GoButton from "../components/GoButton";
-import AdBanner from "../components/AdBanner";
+import AdBanner1 from "../components/AdBanner1";
 import StackedCard from "../components/StackedCard";
 import Offers from "../components/Offers";
 import Locations from "../components/Locations";
@@ -14,12 +14,12 @@ import RecommendAndMostViewed, { recommendedHotelsList, mostViewedHotelsList } f
 function Flights() {
   return (
     <div className="container">
-      <HeroSection />
+      <FlightsHeroSection />
       <HeaderContainer />
       <FlightsSearchBar />
       <GoButton />
       <SearchDisplayFlights />
-      <AdBanner imageUrl="/path/to/ad-image.jpg" />
+      <AdBanner1 imageUrl="/path/to/ad-image.jpg" />
       <StackedCard />
       <Offers />
       <RecommendAndMostViewed title={'Recommended for you'} hotels={recommendedHotelsList}/>
