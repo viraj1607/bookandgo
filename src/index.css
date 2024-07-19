@@ -14,19 +14,20 @@
 
 @keyframes slideUp {
     0% {
-      transform: translateY(50%);
-      opacity: 0;
+        transform: translateY(50%);
+        opacity: 0;
     }
+
     100% {
-      transform: translateY(0);
-      opacity: 1;
+        transform: translateY(0);
+        opacity: 1;
     }
-  }
-  
-  .animate-slide-up {
+}
+
+.animate-slide-up {
     animation: slideUp 0.5s ease-in-out;
-  }
-    
+}
+
 
 
 
