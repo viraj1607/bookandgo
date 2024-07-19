@@ -12,6 +12,7 @@ import ProtectedRoute from './ProtectedRoute';
 import { AuthProvider } from './utils/AuthContext';
 import ErrorBoundary from './components/ErrorBoundary';
 import LogoAnimation from './components/LogoAnimation';
+import './i18n'; // Ensure this import is correctly resolving
 
 const App = () => {
   const [showContent, setShowContent] = useState(false);

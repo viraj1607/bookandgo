@@ -1,6 +1,9 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const StackedCard = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="pt-8 md:pt-9">
       <div className="relative">
@@ -9,9 +12,9 @@ const StackedCard = () => {
         <div className="relative w-[370px] md:w-[1332px] h-[410px] md:h-[545px] rounded-[41px] bg-cover bg-center bg-no-repeat bg-[url('./imgs/beach.png')] z-[3] m-auto md:max-w-[90%] flex justify-center items-center">
           <div className="text-center absolute top-[40px]">
             <h1 className="text-[#000] text-center text-[23px] font-[800] md:text-[43px] lg:text-[60px]">
-              Next Destination to Explore
+              {t('next_destination_to_explore')}
               <br />
-              the <span className="text-[#FFF]">World's</span> Beauty with
+              {t('the')} <span className="text-[#FFF]">{t('worlds')}</span> {t('beauty_with')}
             </h1>
             <div className="w-[130px] md:w-[200px] h-[30px] md:h-[44px] bg-cover bg-center bg-no-repeat bg-[url('./imgs/logo.png')] mt-[20px] m-auto"></div>
           </div>
