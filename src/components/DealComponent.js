@@ -15,8 +15,8 @@ const DealComponent = () => {
   }, [words]);
 
   return (
-    <div className="relative top-[-70px] left-0 flex justify-center mx-[440px] text-white text-base md:text-2xl lg:text-[25px]">
-      <p className="px-4 py-3 font-medium text-center">
+    <div className="relative top-[0px] left-0 flex justify-center text-white text-base md:text-2xl lg:text-[25px]">
+      <p className="px-4 py-3 font-medium border-r-2 border-b-2 border-l-2 rounded-b-2xl">
         {t("exciting_deals_on")} <span key={currentWord} className="inline-block animate-slide-up font-bold">{words[currentWord]}</span>
       </p>
     </div>

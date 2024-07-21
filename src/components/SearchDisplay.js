@@ -42,12 +42,12 @@ const SearchDisplay = () => {
   return (
     <div className="flex justify-center items-center mt-9">
       <div className="p-4">
-        <div className="relative bg-white shadow-2xl mx-auto my-0 rounded-3xl border border-slate-300 border-solid h-[307px] z-20 p-3 md:px-8 md:py-4 w-[395px] md:w-[95%] xl:w-[1340px]">
+        <div className="relative bg-white shadow-2xl mx-auto my-0 rounded-3xl border border-slate-300 border-solid h-[307px] z-20 p-3 md:px-8 md:py-4 max-[376px]:w-[290px] w-[395px] md:w-[95%] xl:w-[1340px]">
           <div className="flex justify-between items-center mb-4 md:m-0 gap-[8px]">
             <div className="flex">
-              <h2 className="md:text-[40px] text-[30px] font-extrabold">{t('For')} <span className="text-rose-600">New York</span></h2>
+              <h2 className="md:text-[40px] text-[20px] sm:text-[30px] max-[376px]:font-semibold font-extrabold">{t('For')} <span className="text-rose-600">New York</span></h2>
             </div>
-            <span className="text-right font-medium md:text-[20px] text-[15px]">23 May'24 - 24 May'24</span>
+            <span className="text-right font-medium md:text-[20px] sm:text-[15px] text-[10px]">23 May'24 - 24 May'24</span>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-[20px] md:gap-[25px] pt-0 md:pt-4 justify-items-center">
             {hotels.map((hotel, index) => (
