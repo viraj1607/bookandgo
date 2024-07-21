@@ -39,9 +39,9 @@ const BestSellingDestinations = () => {
   };
 
   return (
-    <div className="relative flex flex-col p-4 shadow-custom-shadow-2 w-[380px] md:w-[675px] lg:w-[90%] h-[350px] md:h-[479px] rounded-[25px] mt-[40px] md:mt-[65px] lg:mt-[100px] lg:mt-[100px] mb-[40px] md:mb-[20px] mx-auto md:p-[20px]" style={{ backgroundImage: `url(${bgImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-      <h2 className="text-[22px] md:text-[40px] font-bold">Best selling destinations</h2>
-      <div className="flex flex-row w-full h-[390px]overflow-x-auto overflow-y-hidden p-2" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }} ref={containerRef}>
+    <div className="relative flex flex-col p-4 shadow-custom-shadow-2 max-[376px]:w-[285px] w-[380px] md:w-[675px] lg:w-[90%] max-[376px]:h-[395px] md:h-[479px] rounded-[25px] mt-[40px] md:mt-[65px] lg:mt-[100px] lg:mt-[100px] mb-[40px] md:mb-[20px] mx-auto md:p-[20px]" style={{ backgroundImage: `url(${bgImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <h2 className="max-[376px]:text-[23px] text-[22px] md:text-[40px] font-bold">Best selling destinations</h2>
+      <div className="flex flex-row w-full h-[390px] overflow-x-auto overflow-y-hidden p-2" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }} ref={containerRef}>
         <div className="grid grid-cols-[repeat(6,_252px)] gap-[20px] w-full">
           {destinations.map((destination, index) => (
             <div key={index} className="flex flex-col items-start w-[252px] h-[270px] md:h-[354px] p-2 border rounded-3xl bg-white shadow-lg">

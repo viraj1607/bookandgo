@@ -26,7 +26,7 @@ const Footer = () => {
             </button>
           </div>
         </div>
-        <div className="footer-links">
+        <div className="footer-links max-[376px]:flex-col">
           <div className="footer-section">
             <h3 className="footer-heading">Quick Links</h3>
             <ul className="footer-list">
