@@ -51,7 +51,7 @@ const FlightsSearchBar = () => {
             <span className="text-blue-900">go</span>
           </span>
         </p>
-        <div className="w-[370px] xl:w-[100%] lg:w-[90%] md:w-[90%] h-0 border-t-2 border-gray-300 mt-4 mx-auto"></div>
+        <div className="w-[285px] sm:w-[370px] xl:w-[100%] lg:w-[90%] md:w-[90%] h-0 border-t-2 border-gray-300 mt-4 mx-auto"></div>
         <div className="flex justify-center space-x-8 mt-4">
           <label className="inline-flex items-center md:ml-0">
             <input type="radio" className="form-radio text-blue-600" name="tripType" value="oneway" checked={tripType === 'oneway'} onChange={() => setTripType('oneway')} />
@@ -67,7 +67,7 @@ const FlightsSearchBar = () => {
           </label>
         </div>
       </div>
-      <div className="w-[360px] h-[auto] xl:w-[100%] lg:w-[100%] md:w-[95%] flex-shrink-0 border-2 border-gray-300 rounded-xl md:border-2 md:border-gray-300 md:rounded-2xl mx-auto p-4 md:p-6 md:flex md:flex-row flex md:flex-nowrap flex-wrap justify-between items-start gap-4 md:gap-0">
+      <div className="max-[376px]:w-[270px] w-[360px] h-[auto] xl:w-[100%] lg:w-[100%] md:w-[95%] flex-shrink-0 border-2 border-gray-300 rounded-xl md:border-2 md:border-gray-300 md:rounded-2xl mx-auto p-4 md:p-6 md:flex md:flex-row flex md:flex-nowrap flex-wrap justify-between items-start gap-4 md:gap-0">
         <div className="flex flex-col justify-between w-[calc(50%-10px)] md:w-[200px] lg:mx-2 md:mx-2 mb-4 md:mb-0">
           <h4 className="text-[#606060] font-normal text-[16px] leading-[110%] md:text-[16px]">From</h4>
           <Autocomplete

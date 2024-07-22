@@ -14,19 +14,20 @@
 
 @keyframes slideUp {
     0% {
-      transform: translateY(50%);
-      opacity: 0;
+        transform: translateY(50%);
+        opacity: 0;
     }
+
     100% {
-      transform: translateY(0);
-      opacity: 1;
+        transform: translateY(0);
+        opacity: 1;
     }
-  }
-  
-  .animate-slide-up {
+}
+
+.animate-slide-up {
     animation: slideUp 0.5s ease-in-out;
-  }
-    
+}
+
 
 
 
@@ -34,11 +35,6 @@
 body {
     background-color: #FFF;
     font-family: 'Inter', sans-serif;
-}
-
-.container {
-    background-color: #FFF;
-    width: 2561px;
 }
 
 @media (min-width: 1441px) and (max-width: 2561px) {
@@ -304,18 +300,6 @@ body {
     }
 }
 
-.section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 246px;
-    height: 110px;
-    flex-shrink: 0;
-    transition: background-color 0.3s ease;
-    cursor: pointer;
-}
-
 @media (min-width: 425px) and (max-width: 768px) {
     .section {
         width: 177px;
@@ -325,17 +309,9 @@ body {
 
 @media (min-width: 320px) and (max-width: 426px) {
     .section {
-        width: 118px;
+        width: 85px;
         height: 80px;
     }
-}
-
-.section.hotels {
-    border-radius: 18px 0px 0px 18px;
-}
-
-.section.holiday-packages {
-    border-radius: 0px 18px 18px 0px;
 }
 
 .section:hover {
@@ -487,10 +463,6 @@ body {
 
 /*------------------------------------     Header.js     ------------------------------------*/
 
-.header img {
-    height: 2.5rem;
-    cursor: pointer;
-}
 
 @media (min-width: 425px) and (max-width: 768px) {
     .header img {
