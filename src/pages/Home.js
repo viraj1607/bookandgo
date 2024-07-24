@@ -18,7 +18,7 @@ function Home() {
       <HeroSection />
       <HeaderContainer />
       <SearchCard />
-      <GoButton />
+      {/* <GoButton /> */}
       <SearchDisplay />
       <AdBanner1 imageUrl="/path/to/ad-image.jpg" />
       <StackedCard />
