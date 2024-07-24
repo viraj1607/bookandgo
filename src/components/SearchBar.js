@@ -27,12 +27,25 @@ const SearchCard = () => {
   };
 
   const locationSuggestions = [
-    { label: "New York", value: "New York" },
-    { label: "London", value: "London" },
-    { label: "Paris", value: "Paris" },
     { label: "Toronto", value: "Toronto" },
-    { label: "New Delhi", value: "New Delhi" },
-    { label: "Mumbai", value: "Mumbai" },
+    { label: "Montreal", value: "Montreal" },
+    { label: "Vancouver", value: "Vancouver" },
+    { label: "Calgary", value: "Calgary" },
+    { label: "Edmonton", value: "Edmonton" },
+    { label: "Ottawa", value: "Ottawa" },
+    { label: "Winnipeg", value: "Winnipeg" },
+    { label: "Quebec City", value: "Quebec City" },
+    { label: "Hamilton", value: "Hamilton" },
+    { label: "Kitchener", value: "Kitchener" },
+    { label: "London", value: "London" },
+    { label: "Halifax", value: "Halifax" },
+    { label: "Victoria", value: "Victoria" },
+    { label: "Saskatoon", value: "Saskatoon" },
+    { label: "St. John's", value: "St. John's" },
+    { label: "Windsor", value: "Windsor" },
+    { label: "Oshawa", value: "Oshawa" },
+    { label: "Barrie", value: "Barrie" },
+    { label: "Kelowna", value: "Kelowna" },
   ];
 
   const roomsAndGuestsOptions = [
