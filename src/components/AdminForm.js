@@ -29,7 +29,7 @@ const AdminForm = ({ params }) => {
   const [category, setCategory] = useState("");
   const [address, setAddress] = useState("");
   const [reviews, setReviews] = useState(0);
-  const [landmark, setLandmark] = useState("");
+  const [nearby, setNearby] = useState("");
   const [latitude, setLatitude] = useState("");
   const [longitude, setLongitude] = useState("");
   const [image360, setImage360] = useState("");
@@ -119,7 +119,7 @@ const AdminForm = ({ params }) => {
       ...commonData,
       address,
       reviews,
-      landmark,
+      nearby,
       city,
       province,
       amenities,
@@ -171,7 +171,7 @@ const AdminForm = ({ params }) => {
       setCategory("");
       setAddress("");
       setReviews(0);
-      setLandmark("");
+      setNearby("");
       setLatitude("");
       setLongitude("");
       setImage360("");
@@ -233,11 +233,11 @@ const AdminForm = ({ params }) => {
                 onChange={(e) => setReviews(e.target.value)}
               />
               <TextField
-                id="landmark"
-                label="Landmark"
+                id="nearby"
+                label="Nearby"
                 variant="outlined"
-                value={landmark}
-                onChange={(e) => setLandmark(e.target.value)}
+                value={nearby}
+                onChange={(e) => setNearby(e.target.value)}
               />
               <FormControl fullWidth>
                 <InputLabel id="city">City</InputLabel>
