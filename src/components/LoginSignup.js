@@ -25,6 +25,7 @@ const LoginSignup = ({ onClose }) => {
       );
       const dataSignIn = await signin.data;
       console.log(dataSignIn);
+      localStorage.setItem("user",dataSignIn.user.email)
       login(dataSignIn.token);
       onClose();
     } else {
@@ -39,6 +40,7 @@ const LoginSignup = ({ onClose }) => {
       );
       const data = await signup.data;
       console.log(data);
+      localStorage.setItem("user",data.user.email)
       login(data.token);
       onClose();
     }
