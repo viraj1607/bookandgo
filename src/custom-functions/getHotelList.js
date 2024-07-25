@@ -11,6 +11,7 @@ export const getHotelList = async (location, priceRange) => {
       },
     });
     console.log(response.data);
+    return response.data
   } catch (error) {
     console.error("Error fetching hotels:", error);
   }

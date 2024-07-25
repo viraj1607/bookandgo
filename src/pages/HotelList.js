@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import HotelCard from "../components/HotelCard";
 import Filters from "../components/Filters";
+import { AppContext } from "../AppContext";
 
 const hotelList = [
   {
@@ -70,9 +71,14 @@ const hotelList = [
 const HotelList = () => {
   const [showFilters, setShowFilters] = useState(false);
   const [selectedSortOption, setSelectedSortOption] = useState("Popular");
+  const {hotels}=useContext(AppContext)
   const handleSortOptionClick = (option) => {
     setSelectedSortOption(option);
   };
+
+  useEffect(()=>{
+    console.log(hotels && hotels)
+  },[hotels])
 
   return (
     <div>
@@ -96,7 +102,7 @@ const HotelList = () => {
       </div>
       <div className="flex flex-wrap">
         <div className="w-full md:w-[80%]">
-          {hotelList.map((val, ind) => {
+          {hotels.length>0 && hotels.map((val, ind) => {
             return <HotelCard key={ind} hotelData={val} />;
           })}
         </div>
