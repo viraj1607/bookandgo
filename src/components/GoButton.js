@@ -2,12 +2,13 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-const GoButton = () => {
+const GoButton = ({onSubmit}) => {
   const navigate = useNavigate();
   const { t } = useTranslation();
 
   const handleGoButtonClick = () => {
     navigate('/hotellist');
+    onSubmit()
   };
 
   return (

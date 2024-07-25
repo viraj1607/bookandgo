@@ -13,7 +13,7 @@ import ProtectedRoute from './ProtectedRoute';
 import { AuthProvider } from './utils/AuthContext';
 import ErrorBoundary from './components/ErrorBoundary';
 import LogoAnimation from './components/LogoAnimation';
-import './i18n'; // Ensure this import is correctly resolving
+import './i18n';
 
 const App = () => {
   const [showContent, setShowContent] = useState(false);
@@ -29,7 +29,7 @@ const App = () => {
   return (
     <div className="App">
       {!showContent && <LogoAnimation />}
-      <div className={showContent ? '' : 'hidden'}>
+      <div className={showContent ? "" : "hidden"}>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
