@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import HotelCard from "../components/HotelCard";
 import Filters from "../components/Filters";
+import { AppContext } from "../AppContext";
 
 const hotelList = [
   {
@@ -70,9 +71,14 @@ const hotelList = [
 const HotelList = () => {
   const [showFilters, setShowFilters] = useState(false);
   const [selectedSortOption, setSelectedSortOption] = useState("Popular");
+  const {hotels}=useContext(AppContext)
   const handleSortOptionClick = (option) => {
     setSelectedSortOption(option);
   };
+
+  useEffect(()=>{
+    console.log(hotels && hotels)
+  },[hotels])
 
   return (
     <div>
