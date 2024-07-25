@@ -13,6 +13,7 @@ import { AuthProvider } from "./utils/AuthContext";
 import ErrorBoundary from "./components/ErrorBoundary";
 import LogoAnimation from "./components/LogoAnimation";
 import FlightList from "./pages/FlightList";
+import HolidayList from "./pages/HolidayList";
 import "./i18n";
 import { ContextProvider } from "./AppContext";
 import Support from './pages/Support';
@@ -38,6 +39,7 @@ const App = () => {
             <Route path="admin/:id" element={<ProtectedRoute><Admin /></ProtectedRoute>} />
             <Route path="hotellist" element={<HotelList />} />
             <Route path="flightlist" element={<FlightList />} />
+            <Route path="holidaylist" element={<HolidayList />} />
             <Route path="userprofile" element={<ProtectedRoute><UserProfile /></ProtectedRoute>} />
             <Route path="hoteldetails" element={<ProtectedRoute><HotelDetails /></ProtectedRoute>} />
             <Route path="flights" element={<Flights />} />
