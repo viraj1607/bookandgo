@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import HotelCard from "../components/HotelCard";
 import Filters from "../components/Filters";
+import HeroHotelList from "../components/HeroHotelList";
+import HeaderContainerList from "../components/HeaderContainerList";
 
 const hotelList = [
   {
@@ -76,7 +78,9 @@ const HotelList = () => {
 
   return (
     <div>
-      <div className="bg-[#E5F4FF] p-4">
+      <HeroHotelList />
+      <HeaderContainerList />
+      <div className="bg-[#E5F4FF] p-4 mt-4">
         <ul className="flex justify-evenly flex-wrap">
           <li className="font-bold">Sort By:</li>
           {["Popular", "Ratings", "Price(High)", "Price(Low)"].map((option) => (
