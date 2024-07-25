@@ -1,34 +1,45 @@
 import React, { useState } from "react";
-import FlightCard from "../components/FlightCard";
-import FiltersFlight from "../components/FiltersFlight";
-import HeroFlightList from "../components/HeroFlightList";
+import HolidayCard from "../components/HolidayCard";
+import FiltersHoliday from "../components/FiltersHoliday";
+import HeroHolidayList from "../components/HeroHolidayList";
 import HeaderContainerList from "../components/HeaderContainerList";
+import vanImage from "../imgs/van1.png";
 
-const flightList = [
+const holidayList = [
   {
-    img: "https://via.placeholder.com/150",
-    flightName: "Delta Airlines",
-    city: "New York",
-    landmark: "JFK Airport",
-    price: "150",
-    rating: 4.5,
-    description: "Comfortable flight with great service.",
-    amenities: ["In-flight Entertainment", "WiFi", "Meals Included"],
+    img: vanImage,
+    packageName: "All-Inclusive 3N",
+    duration: "3N/4D Vancouver",
+    price: "1500",
+    amenities: [
+      "Breakfast Included",
+      "Swimming Pool",
+      "Kids Play Area",
+      "Indoor Games",
+      "Bar",
+      "Paid Airport Transfers",
+      "Paid Shuttle Services",
+    ],
   },
   {
-    img: "https://via.placeholder.com/150",
-    flightName: "American Airlines",
-    city: "Los Angeles",
-    landmark: "LAX Airport",
-    price: "200",
-    rating: 4.7,
-    description: "Excellent service and comfort.",
-    amenities: ["In-flight Entertainment", "WiFi", "Meals Included"],
+    img: vanImage,
+    packageName: "All-Inclusive 4N",
+    duration: "4N/5D Vancouver",
+    price: "1800",
+    amenities: [
+      "Breakfast Included",
+      "Swimming Pool",
+      "Kids Play Area",
+      "Indoor Games",
+      "Bar",
+      "Paid Airport Transfers",
+      "Paid Shuttle Services",
+    ],
   },
-  // Add more flights as needed
+  // Add more holiday packages as needed
 ];
 
-const FlightList = () => {
+const HolidayList = () => {
   const [showFilters, setShowFilters] = useState(false);
   const [selectedSortOption, setSelectedSortOption] = useState("Popular");
 
@@ -38,12 +49,12 @@ const FlightList = () => {
 
   return (
     <div>
-      <HeroFlightList />
+      <HeroHolidayList />
       <HeaderContainerList />
       <div className="bg-[#E5F4FF] p-4 mt-4">
         <ul className="flex justify-evenly flex-wrap">
           <li className="font-bold">Sort By:</li>
-          {["Departure", "Duration", "Arrival", "Price"].map((option) => (
+          {["Package Name", "Duration", "Price"].map((option) => (
             <li
               key={option}
               className={`cursor-pointer ${
@@ -58,14 +69,14 @@ const FlightList = () => {
           ))}
         </ul>
       </div>
-      <div className="flex flex-wrap">
+      <div className="flex flex-nowrap">
         <div className="w-full md:w-[72%] lg:w-[78%]">
-          {flightList.map((val, ind) => {
-            return <FlightCard key={ind} flightData={val} />;
+          {holidayList.map((val, ind) => {
+            return <HolidayCard key={ind} holidayData={val} />;
           })}
         </div>
         <div className="hidden md:block w-[20%] md:w-[28%] lg:w-[22%]">
-          <FiltersFlight />
+          <FiltersHoliday />
         </div>
       </div>
 
@@ -78,11 +89,11 @@ const FlightList = () => {
 
       {showFilters && (
         <div className="md:hidden fixed inset-0 bg-white p-4 z-50">
-          <FiltersFlight />
+          <FiltersHoliday />
         </div>
       )}
     </div>
   );
 };
 
-export default FlightList;
+export default HolidayList;
