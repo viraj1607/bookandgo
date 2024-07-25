@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Admin from './pages/Admin';
 import HotelList from './pages/HotelList';
+import FlightList from './pages/FlightList';
 import UserProfile from './pages/UserProfile';
 import Layout from './pages/Layout';
 import HotelDetails from './pages/HotelDetails';
@@ -34,6 +35,7 @@ const App = () => {
             <Route index element={<Home />} />
             <Route path="admin/:id" element={<ProtectedRoute><Admin /></ProtectedRoute>} />
             <Route path="hotellist" element={<HotelList />} />
+            <Route path="flightlist" element={<FlightList />} />
             <Route path="userprofile" element={<ProtectedRoute><UserProfile /></ProtectedRoute>} />
             <Route path="hoteldetails" element={<ProtectedRoute><HotelDetails /></ProtectedRoute>} />
             <Route path="flights" element={<Flights />} />
