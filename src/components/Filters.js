@@ -28,7 +28,7 @@ const Filters = () => {
     setVal(newValue);
   };
   return (
-    <div className="my-8 mx-4 md:mx-10">
+    <div className="my-8 mx-4 md:mx-0">
       <h2 className="text-xl md:text-[25px] font-bold">Select Filters</h2>
       <FormControl className="!my-4">
         <FormLabel
@@ -47,7 +47,7 @@ const Filters = () => {
           <FormControlLabel value="five" control={<Radio />} label="5 Star" />
         </RadioGroup>
       </FormControl>
-      <Box sx={{ width: 250 }} className="!my-4">
+      <Box sx={{ width: 120 }} className="!my-4">
         <Slider
           marks={marks}
           step={10}
