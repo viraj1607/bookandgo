@@ -70,7 +70,7 @@ const Offers = () => {
   };
   
   return (
-    <div className="offers-container relative flex flex-col p-6 shadow-custom-shadow-2 md:w-[1296px] md:h-[479px] rounded-[25px] md:mt-[100px] md:mb-[20px] mx-auto md:p-[20px]" style={{ backgroundImage: `url(${bgImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+    <div className="offers-container relative flex flex-col p-6 shadow-custom-shadow-2 md:w-[1296px] lg:h-[479px] rounded-[25px] md:mt-[100px] md:mb-[20px] mx-auto md:p-[20px]" style={{ backgroundImage: `url(${bgImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
       <h2 className="offers-title text-[40px] font-bold">Offers</h2>
       <div className="flex flex-row w-full h-[calc(100% - 60px)] overflow-x-auto overflow-y-hidden p-2" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }} ref={offersContainerRef}>
         <div className="offers-grid grid grid-cols-[repeat(4,_463px)] grid-rows-[repeat(2,_170px)] gap-[20px] w-full">
