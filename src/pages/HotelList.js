@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import HotelCard from "../components/HotelCard";
 import Filters from "../components/Filters";
+import HeroHotelList from "../components/HeroHotelList";
+import HeaderContainerList from "../components/HeaderContainerList";
+import hiltonImage from "../imgs/hiltongardeninn.webp";
+import { AppContext } from "../AppContext";
 
-const hotelList = [
+const predefinedHotels = [
   {
-    img: "https://s3-alpha-sig.figma.com/img/1e62/1dad/e56ee28e11d0dff458b97d7da821d243?Expires=1720396800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=aMjKXaHOoWocMDNKovg~8YVPZ5yH2VOKSAKfa6nnQ6DFwrnSsjHfwf6WvF0FDGiV~~IHBgYE83ar7DAtMG5wZT9wcwHUrF~3CZJEUMqZ~Oz8h~H51BqdPkT58t-Ldj3RYo-BhISZg8dpcMyUTwZqrJBkst2btntHjd~Hs2UgYbNJz1qIDme~4Z4~PuP4QPfG8PkqHdKaBmWyaPW3oxScLGDZ3nYfyxs~KFzeqUT~NO3gr6hqseBO-bTb-UKgGHieSvXCPfMiCXOzi~SEmqq1THX7w-fo-~gixE1TcYMNn49XoVgJsQesv8xk8ZJP4h3-TNuP7YSEhsarhgVwaDzeUg__",
+    imageURLs: [hiltonImage],
     hotelName: "Hilton Garden Inn",
     city: "New York",
     landmark: "Near John F. Kennedy International Airport",
@@ -70,22 +74,28 @@ const hotelList = [
 const HotelList = () => {
   const [showFilters, setShowFilters] = useState(false);
   const [selectedSortOption, setSelectedSortOption] = useState("Popular");
+  const {hotels}=useContext(AppContext)
+
   const handleSortOptionClick = (option) => {
     setSelectedSortOption(option);
   };
 
+  useEffect(() => {
+    console.log(hotels);
+  }, [hotels]);
+
   return (
     <div>
-      <div className="bg-[#E5F4FF] p-4">
+      <HeroHotelList />
+      <HeaderContainerList />
+      <div className="bg-[#E5F4FF] p-4 mt-4">
         <ul className="flex justify-evenly flex-wrap">
           <li className="font-bold">Sort By:</li>
           {["Popular", "Ratings", "Price(High)", "Price(Low)"].map((option) => (
             <li
               key={option}
               className={`cursor-pointer ${
-                selectedSortOption === option
-                  ? "font-bold custom-underline"
-                  : ""
+                selectedSortOption === option ? "font-bold custom-underline" : ""
               }`}
               onClick={() => handleSortOptionClick(option)}
             >
@@ -96,9 +106,13 @@ const HotelList = () => {
       </div>
       <div className="flex flex-wrap">
         <div className="w-full md:w-[80%]">
-          {hotelList.map((val, ind) => {
-            return <HotelCard key={ind} hotelData={val} />;
-          })}
+          {hotels.length > 0 ? (
+            hotels.map((val, ind) => {
+              return <HotelCard key={ind} hotelData={val} />;
+            })
+          ) : (
+            <p>No hotels available</p>
+          )}
         </div>
         <div className="hidden md:block w-[20%]">
           <Filters />

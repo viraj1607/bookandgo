@@ -1,7 +1,7 @@
 import React from "react";
 import SearchDisplayFlights from "../components/SearchDisplayFlights";
 import FlightsHeroSection from "../components/FlightsHeroSection";
-import GoButton from "../components/GoButton";
+import GoButtonFlights from "../components/GoButtonFlights";
 import AdBanner1 from "../components/AdBanner1";
 import StackedCard from "../components/StackedCard";
 import Offers from "../components/Offers";
@@ -17,7 +17,7 @@ function Flights() {
       <FlightsHeroSection />
       <HeaderContainer />
       <FlightsSearchBar />
-      <GoButton />
+      <GoButtonFlights />
       <SearchDisplayFlights />
       <AdBanner1 imageUrl="/path/to/ad-image.jpg" />
       <StackedCard />

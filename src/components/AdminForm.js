@@ -29,10 +29,10 @@ const AdminForm = ({ params }) => {
   const [category, setCategory] = useState("");
   const [address, setAddress] = useState("");
   const [reviews, setReviews] = useState(0);
-  const [landmark, setLandmark] = useState("");
+  const [nearby, setNearby] = useState("");
   const [latitude, setLatitude] = useState("");
   const [longitude, setLongitude] = useState("");
-  const [image360, setImage360] = useState("");
+  const [image360, setImage360] = useState(null);
   const [images, setImages] = useState([]);
   const [imageURLs, setImageURLs] = useState([]);
 
@@ -43,6 +43,34 @@ const AdminForm = ({ params }) => {
 
   const handleImageChange = (e) => {
     setImages([...e.target.files]);
+  };
+
+  const handleImage360Change = (e) => {
+    setImage360(e.target.files[0]);
+  };
+
+  const handle360ImageUpload = () => {
+    if (image360) {
+      const storageRef = ref(storage, `images360/${image360.name}`);
+      const uploadTask = uploadBytesResumable(storageRef, image360);
+
+      uploadTask.on(
+        "state_changed",
+        (snapshot) => {
+          const progress =
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          setUploadProgress(progress);
+        },
+        (error) => {
+          console.error(error);
+        },
+        async () => {
+          const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
+          setImage360(downloadURL);
+          alert("360 Image uploaded successfully!");
+        }
+      );
+    }
   };
 
   const handleUpload = () => {
@@ -119,7 +147,7 @@ const AdminForm = ({ params }) => {
       ...commonData,
       address,
       reviews,
-      landmark,
+      nearby,
       city,
       province,
       amenities,
@@ -161,7 +189,7 @@ const AdminForm = ({ params }) => {
     setPrice(0);
     setImageURL("");
     setUploadProgress(0);
-    textArea.props.value = ""; 
+    textArea.props.value = "";
 
     if (params === "hotel") {
       setCity("");
@@ -171,7 +199,7 @@ const AdminForm = ({ params }) => {
       setCategory("");
       setAddress("");
       setReviews(0);
-      setLandmark("");
+      setNearby("");
       setLatitude("");
       setLongitude("");
       setImage360("");
@@ -233,11 +261,11 @@ const AdminForm = ({ params }) => {
                 onChange={(e) => setReviews(e.target.value)}
               />
               <TextField
-                id="landmark"
-                label="Landmark"
+                id="nearby"
+                label="Nearby"
                 variant="outlined"
-                value={landmark}
-                onChange={(e) => setLandmark(e.target.value)}
+                value={nearby}
+                onChange={(e) => setNearby(e.target.value)}
               />
               <FormControl fullWidth>
                 <InputLabel id="city">City</InputLabel>
@@ -387,13 +415,22 @@ const AdminForm = ({ params }) => {
                 value={longitude}
                 onChange={(e) => setLongitude(e.target.value)}
               />
-              <TextField
-                id="image360"
-                label="360 Image URL"
-                variant="outlined"
-                value={image360}
-                onChange={(e) => setImage360(e.target.value)}
-              />
+              <div className="col-span-2">
+                <label htmlFor="image360-upload">Upload 360 Image</label>
+                <input
+                  type="file"
+                  id="image360-upload"
+                  accept="image/*"
+                  onChange={handleImage360Change}
+                />
+                <Button
+                  onClick={handle360ImageUpload}
+                  variant="contained"
+                  color="success"
+                >
+                  Upload 360 Image
+                </Button>
+              </div>
             </>
           ) : (
             <>
