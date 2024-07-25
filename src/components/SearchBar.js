@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Autocomplete, TextField, Slider, Typography } from "@mui/material";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useTranslation } from "react-i18next";
 import { getHotelList } from "../custom-functions/getHotelList";
 import GoButton from "./GoButton";
+import { AppContext } from "../AppContext";
+
 
 const SearchCard = () => {
   const { t } = useTranslation();
@@ -13,6 +15,7 @@ const SearchCard = () => {
   const [checkOutDate, setCheckOutDate] = useState(null);
   const [priceRange, setPriceRange] = useState([0, 1000]);
   const [roomsAndGuests, setRoomsAndGuests] = useState(null);
+  const { setHotels } = useContext(AppContext);
 
   const handleLocationChange = (event, newValue) => {
     setLocation(newValue);
@@ -57,9 +60,10 @@ const SearchCard = () => {
     { label: "4 Rooms, 5 Guests", value: "4r5g" },
   ];
 
-  const handleSubmit = () => {
+  const handleSubmit = async() => {
     // e.preventDefault();
-    getHotelList(location, priceRange);
+    const hotels = await getHotelList(location, priceRange);
+    setHotels(hotels);
   };
 
   return (
