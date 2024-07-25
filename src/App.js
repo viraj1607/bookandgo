@@ -43,9 +43,9 @@ const App = () => {
             <Route
               path="hotellist"
               element={
-                <ProtectedRoute>
+                // <ProtectedRoute>
                   <HotelList />
-                </ProtectedRoute>
+                // </ProtectedRoute>
               }
             />
             <Route
@@ -59,9 +59,9 @@ const App = () => {
             <Route
               path="hoteldetails"
               element={
-                <ProtectedRoute>
+                // <ProtectedRoute>
                   <HotelDetails />
-                </ProtectedRoute>
+                // </ProtectedRoute>
               }
             />
             <Route path="flights" element={<Flights />} />
