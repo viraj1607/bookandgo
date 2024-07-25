@@ -102,7 +102,7 @@ const HotelList = () => {
       </div>
       <div className="flex flex-wrap">
         <div className="w-full md:w-[80%]">
-          {hotelList.map((val, ind) => {
+          {hotels.length>0 && hotels.map((val, ind) => {
             return <HotelCard key={ind} hotelData={val} />;
           })}
         </div>
