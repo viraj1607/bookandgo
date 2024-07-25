@@ -20,7 +20,7 @@ const LoginSignup = ({ onClose }) => {
       };
 
       const signin = await axios.post(
-        "http://localhost:5000/api/auth/signin",
+        "http://localhost:8000/api/auth/signin",
         objSignIn
       );
       const dataSignIn = await signin.data;
@@ -35,7 +35,7 @@ const LoginSignup = ({ onClose }) => {
         password: password.current.value,
       };
       const signup = await axios.post(
-        "http://localhost:5000/api/auth/signup",
+        "http://localhost:8000/api/auth/signup",
         objSignUp
       );
       const data = await signup.data;

@@ -3,7 +3,7 @@ import axios from "axios";
 export const getHotelList = async (location, priceRange) => {
   
   try {
-    const response = await axios.get("http://localhost:5000/api/hotels", {
+    const response = await axios.get("http://localhost:8000/api/hotels", {
       params: {
         city: location?.value,
         minPrice: priceRange[0],

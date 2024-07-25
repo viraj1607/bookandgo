@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const getHotelDetails = async (id) => {
   try {
-    const response = await axios.get(`http://localhost:5000/api/hotels/${id}`); 
+    const response = await axios.get(`http://localhost:8000/api/hotels/${id}`); 
     console.log(response.data);
     return response.data;
   } catch (error) {

@@ -21,7 +21,7 @@ export const AuthProvider = ({ children }) => {
     const token = localStorage.getItem("token");
     if (token) {
       axios
-        .post("http://localhost:5000/api/auth/validate", { token })
+        .post("http://localhost:8000/api/auth/validate", { token })
         .then((response) => {
           if (response.data.valid) {
             setIsAuthenticated(true);
