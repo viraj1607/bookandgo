@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import HotelCard from "../components/HotelCard";
 import Filters from "../components/Filters";
 import HeroHotelList from "../components/HeroHotelList";
 import HeaderContainerList from "../components/HeaderContainerList";
 import hiltonImage from "../imgs/hiltongardeninn.webp";
+import { AppContext } from "../AppContext";
 
 const predefinedHotels = [
   {
@@ -73,7 +74,7 @@ const predefinedHotels = [
 const HotelList = () => {
   const [showFilters, setShowFilters] = useState(false);
   const [selectedSortOption, setSelectedSortOption] = useState("Popular");
-  const [hotels, setHotels] = useState(predefinedHotels);
+  const {hotels}=useContext(AppContext)
 
   const handleSortOptionClick = (option) => {
     setSelectedSortOption(option);
