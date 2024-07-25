@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import FlightCard from "../components/FlightCard";
 import FiltersFlight from "../components/FiltersFlight";
+import HeroFlightList from "../components/HeroFlightList";
+import HeaderContainerList from "../components/HeaderContainerList";
 
 const flightList = [
   {
@@ -36,7 +38,9 @@ const FlightList = () => {
 
   return (
     <div>
-      <div className="bg-[#E5F4FF] p-4">
+      <HeroFlightList />
+      <HeaderContainerList />
+      <div className="bg-[#E5F4FF] p-4 mt-4">
         <ul className="flex justify-evenly flex-wrap">
           <li className="font-bold">Sort By:</li>
           {["Departure", "Duration", "Arrival", "Price"].map((option) => (

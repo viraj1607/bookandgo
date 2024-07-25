@@ -28,5 +28,22 @@
     "Free WiFi": "WiFi gratuit",
     "Breakfast Included": "Petit déjeuner inclus",
     "Parking Available": "Parking disponible",
-    "Pet Friendly": "Animaux acceptés"
+    "Pet Friendly": "Animaux acceptés",
+    "faq": "Questions fréquemment posées",
+    "faq1_question": "Comment créer un compte ?",
+    "faq1_answer": "Pour créer un compte, cliquez sur le bouton 'Se connecter', puis sélectionnez 'Créer un compte'. Suivez les instructions pour terminer le processus.",
+    "faq2_question": "Comment réinitialiser mon mot de passe ?",
+    "faq2_answer": "Cliquez sur 'Mot de passe oublié' sur la page de connexion et suivez les instructions pour réinitialiser votre mot de passe.",
+    "contact_info": "Informations de contact",
+    "address": "123 rue principale, Anytown, USA",
+    "phone": "Téléphone : (123) 456-7890",
+    "email": "Email : support@bookngo.com",
+    "support_form": "Formulaire de support",
+    "name": "Nom",
+    "enter_name": "Entrez votre nom",
+    "enter_email": "Entrez votre email",
+    "message": "Message",
+    "enter_message": "Entrez votre message",
+    "submit": "Soumettre",
+    "footer_text": "© 2024 BookNGo. Tous droits réservés."
 }

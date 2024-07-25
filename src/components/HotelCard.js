@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 
 const HotelCard = ({ hotelData = {} }) => {
   const {
-    imageURLs,
-    name,
+    img,
+    hotelName,
     city,
-    nearby,
+    landmark,
     price,
-    reviews,
+    rating,
     description,
     amenities,
   } = hotelData;
@@ -28,17 +28,17 @@ const HotelCard = ({ hotelData = {} }) => {
           <div className="w-full h-64 overflow-hidden rounded-xl">
             <img
               className="w-full h-full object-cover"
-              src={imageURLs[0]}
-              alt={name}
+              src={img}
+              alt={hotelName}
             />
           </div>
         </div>
         <div className="md:ml-4 mt-4 md:mt-0 w-full md:w-2/3">
           <div className="flex flex-col md:flex-row justify-between mb-2">
             <div>
-              <h2 className="font-bold text-2xl md:text-[35px]">{name}</h2>
+              <h2 className="font-bold text-2xl md:text-[35px]">{hotelName}</h2>
               <p className="text-[#6F6F6F] text-lg md:text-[20px]">{city}</p>
-              <span className="text-[#00B0F3]">{nearby}</span>
+              <span className="text-[#00B0F3]">{landmark}</span>
             </div>
             <div className="mt-4 md:mt-0">
               <h2 className="font-bold text-2xl md:text-[35px]">${price}</h2>
@@ -49,7 +49,7 @@ const HotelCard = ({ hotelData = {} }) => {
           </div>
           <Rating
             name="half-rating-read"
-            defaultValue={reviews}
+            defaultValue={rating}
             precision={0.1}
             readOnly
           />

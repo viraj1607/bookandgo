@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
@@ -13,8 +12,10 @@ import ProtectedRoute from "./ProtectedRoute";
 import { AuthProvider } from "./utils/AuthContext";
 import ErrorBoundary from "./components/ErrorBoundary";
 import LogoAnimation from "./components/LogoAnimation";
-import "./i18n"; // Ensure this import is correctly resolving
+import FlightList from "./pages/FlightList";
+import "./i18n";
 import { ContextProvider } from "./AppContext";
+import Support from './pages/Support';
 
 const App = () => {
   const [showContent, setShowContent] = useState(false);
@@ -41,6 +42,7 @@ const App = () => {
             <Route path="hoteldetails" element={<ProtectedRoute><HotelDetails /></ProtectedRoute>} />
             <Route path="flights" element={<Flights />} />
             <Route path="holiday-packages" element={<HolidayPackages />} />
+            <Route path="support" element={<Support />} />
           </Route>
         </Routes>
       </div>
