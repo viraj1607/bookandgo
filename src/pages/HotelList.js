@@ -1,9 +1,8 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import HotelCard from "../components/HotelCard";
 import Filters from "../components/Filters";
 import HeroHotelList from "../components/HeroHotelList";
 import HeaderContainerList from "../components/HeaderContainerList";
-import { AppContext } from "../AppContext";
 import hiltonImage from "../imgs/hiltongardeninn.webp";
 
 const predefinedHotels = [
@@ -74,7 +73,7 @@ const predefinedHotels = [
 const HotelList = () => {
   const [showFilters, setShowFilters] = useState(false);
   const [selectedSortOption, setSelectedSortOption] = useState("Popular");
-  const { hotels } = useContext(AppContext);
+  const [hotels, setHotels] = useState(predefinedHotels);
 
   const handleSortOptionClick = (option) => {
     setSelectedSortOption(option);
@@ -83,8 +82,6 @@ const HotelList = () => {
   useEffect(() => {
     console.log(hotels);
   }, [hotels]);
-
-  const displayHotels = hotels.length > 0 ? hotels : predefinedHotels;
 
   return (
     <div>
@@ -108,8 +105,8 @@ const HotelList = () => {
       </div>
       <div className="flex flex-wrap">
         <div className="w-full md:w-[80%]">
-          {displayHotels.length > 0 ? (
-            displayHotels.map((val, ind) => {
+          {hotels.length > 0 ? (
+            hotels.map((val, ind) => {
               return <HotelCard key={ind} hotelData={val} />;
             })
           ) : (
