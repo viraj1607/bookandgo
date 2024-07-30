@@ -8,18 +8,75 @@ import {
   InputLabel,
   Button,
 } from "@mui/material";
-import TextArea from "./TextArea";
+import { TextareaAutosize} from '@mui/material';
+import { styled } from '@mui/system';
 import { storage } from "../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import axios from "axios";
 
 const AdminForm = ({ params }) => {
+  const blue = {
+    100: "#DAECFF",
+    200: "#b6daff",
+    400: "#3399FF",
+    500: "#007FFF",
+    600: "#0072E5",
+    900: "#003A75",
+  };
+
+  const grey = {
+    50: "#F3F6F9",
+    100: "#E5EAF2",
+    200: "#DAE2ED",
+    300: "#C7D0DD",
+    400: "#B0B8C4",
+    500: "#9DA8B7",
+    600: "#6B7A90",
+    700: "#434D5B",
+    800: "#303740",
+    900: "#1C2025",
+  };
+
+  const Textarea = styled(TextareaAutosize)(
+    ({ theme }) => `
+    box-sizing: border-box;
+    width: 220px !important;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.5;
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: ${theme.palette.mode === "dark" ? grey[300] : grey[900]};
+    background: ${theme.palette.mode === "dark" ? grey[900] : "#fff"};
+    border: 1px solid ${theme.palette.mode === "dark" ? grey[700] : grey[200]};
+    box-shadow: 0px 2px 2px ${
+      theme.palette.mode === "dark" ? grey[900] : grey[50]
+    };
+
+    &:hover {
+      border-color: ${blue[400]};
+    }
+
+    &:focus {
+      border-color: ${blue[400]};
+      box-shadow: 0 0 0 3px ${
+        theme.palette.mode === "dark" ? blue[600] : blue[200]
+      };
+    }
+
+    // firefox
+    &:focus-visible {
+      outline: 0;
+    }
+  `
+  );
   // Common state
   const [name, setName] = useState("");
   const [price, setPrice] = useState(0);
   const [imageURL, setImageURL] = useState("");
   const [uploadProgress, setUploadProgress] = useState(0);
-  const textArea = TextArea();
+  // const textArea = TextArea();
 
   // Hotel state
   const [city, setCity] = useState("");
@@ -35,7 +92,7 @@ const AdminForm = ({ params }) => {
   const [image360, setImage360] = useState(null);
   const [images, setImages] = useState([]);
   const [imageURLs, setImageURLs] = useState([]);
-
+  const [description, setDescription] = useState("");
   // Flight state
   const [from, setFrom] = useState("");
   const [to, setTo] = useState("");
@@ -139,7 +196,7 @@ const AdminForm = ({ params }) => {
     const commonData = {
       name,
       price,
-      description: textArea.props.value,
+      description,
       imageURL,
     };
 
@@ -165,7 +222,7 @@ const AdminForm = ({ params }) => {
       to,
       tripType,
     };
-
+    console.log("common", commonData);
     const data = params === "hotel" ? hotelData : flightData;
 
     try {
@@ -189,7 +246,7 @@ const AdminForm = ({ params }) => {
     setPrice(0);
     setImageURL("");
     setUploadProgress(0);
-    textArea.props.value = "";
+    setDescription("");
 
     if (params === "hotel") {
       setCity("");
@@ -462,13 +519,12 @@ const AdminForm = ({ params }) => {
               </FormControl>
             </>
           )}
-          <TextField
-            id="description"
-            label="Description"
-            variant="outlined"
-            multiline
-            rows={4}
-            {...textArea.props}
+          <Textarea
+            aria-label="minimum height"
+            minRows={3}
+            placeholder="Description"
+            value={description}
+            onChange={(e)=>setDescription(e.target.value)}
           />
 
           {params === "hotel" ? (
