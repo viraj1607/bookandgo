@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Rating from "@mui/material/Rating";
 import { Link } from "react-router-dom";
 
@@ -12,6 +12,7 @@ const HotelCard = ({ hotelData = {} }) => {
     reviews,
     description,
     amenities,
+    _id
   } = hotelData;
 
   const truncateText = (text, length) => {
@@ -20,9 +21,12 @@ const HotelCard = ({ hotelData = {} }) => {
     }
     return text;
   };
+  useEffect(()=>{
+    console.log("_id",_id)
+  })
 
   return (
-    <Link to="/hoteldetails" state={{ hotelData }}>
+    <Link to={`/hoteldetails/${_id}`} state={{ hotelData }}>
       <div className="flex flex-col md:flex-row shadow-custom-grey p-4 my-8 mx-4 md:mx-16 rounded-xl">
         <div className="w-full md:w-1/3">
           <div className="w-full h-64 overflow-hidden rounded-xl">

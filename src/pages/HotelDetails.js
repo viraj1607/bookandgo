@@ -1,15 +1,23 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import HotelInfo from '../components/HotelInfo';
-import { useLocation } from 'react-router-dom';
 import { getHotelDetails } from '../custom-functions/getHotelDetails';
+import { useParams } from 'react-router-dom';
 
 const HotelDetails = () => {
-  const { state } = useLocation();
-  const { hotelData } = state || {};
+  const [hotelData,setHotelData]=useState(null)
+  const { hotelId } = useParams();
+
 
   useEffect(()=>{
-      getHotelDetails("6696c3a14b2414bee03eebc1")
-  },[])
+    const fetchHotelDetails = async () => {
+      const detail = await getHotelDetails(hotelId);
+      setHotelData(detail);
+    };
+
+    if (hotelId) {
+      fetchHotelDetails();
+    }
+  },[hotelData])
   return (
     <div>
       {hotelData ? <HotelInfo hotelData={hotelData} /> : <p>No hotel data available.</p>}
