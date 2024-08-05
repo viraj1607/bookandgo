@@ -26,20 +26,20 @@ const HotelInfo = ({ hotelData }) => {
     return <div>Hotel not found</div>;
   }
 
-  //   const {
-  //     img,
-  //     hotelName,
-  //     city,
-  //     landmark,
-  //     price,
-  //     rating,
-  //     description,
-  //     amenities,
-  //   } = hotelData;
+    const {
+      img,
+      hotelName,
+      city,
+      landmark,
+      price,
+      rating,
+      description,
+      amenities,
+    } = hotelData;
 
   return (
-    <div className="hotel-info-container w-full md:w-3/4 p-4 ">
-      <div className="flex flex-col h-fit p-4 my-8 mx-4 md:mx-16">
+    <div className="hotel-info-container ">
+      <div className="flex flex-col h-fit p-4 my-8 mx-4 ">
         <div className="grid grid-cols-3 grid-rows-2 gap-8">
           <div className="col-span-2 row-span-2">
             <img
