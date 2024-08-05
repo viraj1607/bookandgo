@@ -11,6 +11,38 @@ const HotelDetails = () => {
   const [hotelData,setHotelData]=useState(null)
   const { hotelId } = useParams();
 
+  const sampleUnits = [
+    {
+      imageUrl: 'path/to/unit1.jpg',
+      title: 'Standard Room',
+      size: '250 sq ft',
+      internet: 'Free Wi-Fi',
+      sleeps: '2 guests',
+      bed: '1 Queen Bed',
+      petFriendly: 'No Pets Allowed',
+      price: 120,
+    },
+    {
+      imageUrl: 'path/to/unit2.jpg',
+      title: 'Deluxe Suite',
+      size: '400 sq ft',
+      internet: 'High-Speed Internet',
+      sleeps: '4 guests',
+      bed: '1 King Bed + 1 Sofa Bed',
+      petFriendly: 'Pet Friendly',
+      price: 180,
+    },
+    {
+      imageUrl: 'path/to/unit3.jpg',
+      title: 'Family Room',
+      size: '550 sq ft',
+      internet: 'Free Wi-Fi',
+      sleeps: '6 guests',
+      bed: '2 Queen Beds',
+      petFriendly: 'No Pets Allowed',
+      price: 220,
+    },
+  ];
 
 
   useEffect(()=>{
