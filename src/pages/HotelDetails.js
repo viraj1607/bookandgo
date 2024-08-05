@@ -1,51 +1,29 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import HotelInfo from '../components/HotelInfo';
 import RoomCard from '../components/RoomCard'; 
 import UnitCard from '../components/UnitCard';
 import { useLocation } from 'react-router-dom';
 import hotelDetailImg from "../imgs/hotelDetailImg.png";
 import { getHotelDetails } from '../custom-functions/getHotelDetails';
+import { useParams } from 'react-router-dom';
 
 const HotelDetails = () => {
-  const { state } = useLocation();
-  const { hotelData } = state || {};
+  const [hotelData,setHotelData]=useState(null)
+  const { hotelId } = useParams();
 
-  const sampleUnits = [
-    {
-      imageUrl: 'path/to/unit1.jpg',
-      title: 'Standard Room',
-      size: '250 sq ft',
-      internet: 'Free Wi-Fi',
-      sleeps: '2 guests',
-      bed: '1 Queen Bed',
-      petFriendly: 'No Pets Allowed',
-      price: 120,
-    },
-    {
-      imageUrl: 'path/to/unit2.jpg',
-      title: 'Deluxe Suite',
-      size: '400 sq ft',
-      internet: 'High-Speed Internet',
-      sleeps: '4 guests',
-      bed: '1 King Bed + 1 Sofa Bed',
-      petFriendly: 'Pet Friendly',
-      price: 180,
-    },
-    {
-      imageUrl: 'path/to/unit3.jpg',
-      title: 'Family Room',
-      size: '550 sq ft',
-      internet: 'Free Wi-Fi',
-      sleeps: '6 guests',
-      bed: '2 Queen Beds',
-      petFriendly: 'No Pets Allowed',
-      price: 220,
-    },
-  ];
 
-  // useEffect(()=>{
-  //     getHotelDetails("6696c3a14b2414bee03eebc1")
-  // },[])
+
+  useEffect(()=>{
+    const fetchHotelDetails = async () => {
+      const detail = await getHotelDetails(hotelId);
+      setHotelData(detail);
+    };
+
+    if (hotelId) {
+      fetchHotelDetails();
+    }
+  },[hotelData])
+
   return (
     <div className="hotel-details-container flex gap-6 p-10">
       <div className="hotel-info-column w-8/12">

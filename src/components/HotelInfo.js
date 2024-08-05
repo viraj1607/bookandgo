@@ -43,21 +43,21 @@ const HotelInfo = ({ hotelData }) => {
         <div className="grid grid-cols-3 grid-rows-2 gap-8">
           <div className="col-span-2 row-span-2">
             <img
-              src={hotelData.img}
+              src={hotelData.imageURLs[0]}
               alt="Image 1"
               className="rounded-xl w-full h-full object-cover"
             />
           </div>
           <div className="col-span-1 row-span-1">
             <img
-              src={hotelData.img}
+              src={hotelData.imageURLs[1]}
               alt="Image 2"
               className="rounded-xl w-full h-full object-cover"
             />
           </div>
           <div className="col-span-1 row-span-1">
             <img
-              src={hotelData.img}
+              src={hotelData.imageURLs[2]}
               alt="Image 3"
               className="rounded-xl w-full h-full object-cover"
             />
@@ -69,7 +69,7 @@ const HotelInfo = ({ hotelData }) => {
           </span>
           <Rating
             name="half-rating-read"
-            defaultValue={hotelData.rating}
+            defaultValue={hotelData.reviews}
             precision={0.1}
             readOnly
           />

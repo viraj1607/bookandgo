@@ -521,7 +521,7 @@ const AdminForm = ({ params }) => {
           )}
           <Textarea
             aria-label="minimum height"
-            minRows={3}
+            minRows={3} 
             placeholder="Description"
             value={description}
             onChange={(e)=>setDescription(e.target.value)}
