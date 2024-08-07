@@ -26,7 +26,7 @@ const flights = [
     fromCity: "Washington",
     toCity: "New York",
     travelDates: "Fri., May 31 - Sun., Jun. 2",
-    imageUrl: require("../imgs/jetblue-airlines.png"),
+    imageUrl: require("../imgs/jetblue.jpeg"),
   },
   {
     from: "DCA",
@@ -35,7 +35,7 @@ const flights = [
     fromCity: "Washington",
     toCity: "New York",
     travelDates: "Fri., May 31 - Sun., Jun. 2",
-    imageUrl: require("../imgs/spirit-airlines.png"),
+    imageUrl: require("../imgs/spirit-airlines.jpg"),
   },
 ];
 

@@ -1,17 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Rating from "@mui/material/Rating";
 import { Link } from "react-router-dom";
 
 const HotelCard = ({ hotelData = {} }) => {
   const {
-    img,
-    hotelName,
+    imageURLs,
+    name,
     city,
-    landmark,
+    nearby,
     price,
-    rating,
+    reviews,
     description,
     amenities,
+    _id
   } = hotelData;
 
   const truncateText = (text, length) => {
@@ -20,25 +21,28 @@ const HotelCard = ({ hotelData = {} }) => {
     }
     return text;
   };
+  useEffect(()=>{
+    console.log("_id",_id)
+  })
 
   return (
-    <Link to="/hoteldetails" state={{ hotelData }}>
+    <Link to={`/hoteldetails/${_id}`} state={{ hotelData }}>
       <div className="flex flex-col md:flex-row shadow-custom-grey p-4 my-8 mx-4 md:mx-16 rounded-xl">
         <div className="w-full md:w-1/3">
           <div className="w-full h-64 overflow-hidden rounded-xl">
             <img
               className="w-full h-full object-cover"
-              src={img}
-              alt={hotelName}
+              src={imageURLs[0]}
+              alt={name}
             />
           </div>
         </div>
         <div className="md:ml-4 mt-4 md:mt-0 w-full md:w-2/3">
           <div className="flex flex-col md:flex-row justify-between mb-2">
             <div>
-              <h2 className="font-bold text-2xl md:text-[35px]">{hotelName}</h2>
+              <h2 className="font-bold text-2xl md:text-[35px]">{name}</h2>
               <p className="text-[#6F6F6F] text-lg md:text-[20px]">{city}</p>
-              <span className="text-[#00B0F3]">{landmark}</span>
+              <span className="text-[#00B0F3]">{nearby}</span>
             </div>
             <div className="mt-4 md:mt-0">
               <h2 className="font-bold text-2xl md:text-[35px]">${price}</h2>
@@ -49,7 +53,7 @@ const HotelCard = ({ hotelData = {} }) => {
           </div>
           <Rating
             name="half-rating-read"
-            defaultValue={rating}
+            defaultValue={reviews}
             precision={0.1}
             readOnly
           />
