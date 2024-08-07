@@ -68,7 +68,7 @@ const Offers = () => {
       offersContainerRef.current.scrollBy({ left: 300, behavior: 'smooth' });
     }
   };
-  
+
   return (
     <div className="offers-container relative flex flex-col p-6 shadow-custom-shadow-2 md:w-[1296px] lg:h-[479px] rounded-[25px] md:mt-[100px] md:mb-[20px] mx-auto md:p-[20px]" style={{ backgroundImage: `url(${bgImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
       <h2 className="offers-title text-[40px] font-bold">Offers</h2>
@@ -89,8 +89,8 @@ const Offers = () => {
       </div>
       <div className="arrow-icon absolute top-[20px] right-[20px] w-[40.5px] h-[21px] shrink-0 cursor-pointer" onClick={scrollRight}>
         <svg xmlns="http://www.w3.org/2000/svg" width="45" height="25" viewBox="0 0 45 25" fill="none">
-          <path d="M2 13H39" stroke="#0081DE" stroke-width="3" stroke-linecap="round"/>
-          <path d="M32 2L42.5 13L32 23" stroke="#0081DE" stroke-width="3" stroke-linecap="round"/>
+          <path d="M2 13H39" stroke="#0081DE" stroke-width="3" stroke-linecap="round" />
+          <path d="M32 2L42.5 13L32 23" stroke="#0081DE" stroke-width="3" stroke-linecap="round" />
         </svg>
       </div>
     </div>
