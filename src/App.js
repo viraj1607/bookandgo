@@ -8,6 +8,7 @@ import Layout from "./pages/Layout";
 import HotelDetails from "./pages/HotelDetails";
 import Flights from "./pages/Flights";
 import HolidayPackages from "./pages/HolidayPackages";
+import FlightDetails from "./pages/FlightDetails"; // Add this import
 import ProtectedRoute from "./ProtectedRoute";
 import { AuthProvider } from "./utils/AuthContext";
 import ErrorBoundary from "./components/ErrorBoundary";
@@ -40,6 +41,7 @@ const App = () => {
             <Route path="hotellist" element={<HotelList />} />
             <Route path="flightlist" element={<FlightList />} />
             <Route path="holidaylist" element={<HolidayList />} />
+            <Route path="flightdetails" element={<FlightDetails />} /> {/* Add this route */}
             <Route path="userprofile" element={<ProtectedRoute><UserProfile /></ProtectedRoute>} />
             <Route path="hoteldetails" element={<ProtectedRoute><HotelDetails /></ProtectedRoute>} />
             <Route path="flights" element={<Flights />} />
