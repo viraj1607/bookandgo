@@ -1,31 +1,69 @@
+// FlightList.js
 import React, { useState } from "react";
 import FlightCard from "../components/FlightCard";
 import FiltersFlight from "../components/FiltersFlight";
 import HeroFlightList from "../components/HeroFlightList";
 import HeaderContainerList from "../components/HeaderContainerList";
 
+// Ensure these images are in your imgs folder
+import deltaLogo from "../imgs/delta-airlines.png";
+import americanLogo from "../imgs/american-airlines.png";
+import jetblueLogo from "../imgs/jetblue-airlines.png";
+import spiritLogo from "../imgs/spirit-airlines.png";
+
 const flightList = [
   {
-    img: "https://via.placeholder.com/150",
+    img: deltaLogo, // Delta Airlines logo
     flightName: "Delta Airlines",
-    city: "New York",
-    landmark: "JFK Airport",
-    price: "150",
-    rating: 4.5,
-    description: "Comfortable flight with great service.",
-    amenities: ["In-flight Entertainment", "WiFi", "Meals Included"],
+    departureTime: "06:00",
+    arrivalTime: "09:00",
+    departureCity: "New York",
+    arrivalCity: "Los Angeles",
+    price: "350",
+    duration: "6h 30m",
+    stops: "Non-stop",
+    departureCode: "JFK",
+    arrivalCode: "LAX"
   },
   {
-    img: "https://via.placeholder.com/150",
+    img: americanLogo, // American Airlines logo
     flightName: "American Airlines",
-    city: "Los Angeles",
-    landmark: "LAX Airport",
-    price: "200",
-    rating: 4.7,
-    description: "Excellent service and comfort.",
-    amenities: ["In-flight Entertainment", "WiFi", "Meals Included"],
+    departureTime: "13:00",
+    arrivalTime: "16:45",
+    departureCity: "Chicago",
+    arrivalCity: "Miami",
+    price: "280",
+    duration: "3h 45m",
+    stops: "1 Stop",
+    departureCode: "ORD",
+    arrivalCode: "MIA"
   },
-  // Add more flights as needed
+  {
+    img: jetblueLogo, // JetBlue Airlines logo
+    flightName: "JetBlue Airlines",
+    departureTime: "08:30",
+    arrivalTime: "12:30",
+    departureCity: "San Francisco",
+    arrivalCity: "New York",
+    price: "420",
+    duration: "5h 00m",
+    stops: "Non-stop",
+    departureCode: "SFO",
+    arrivalCode: "JFK"
+  },
+  {
+    img: spiritLogo, // Spirit Airlines logo
+    flightName: "Southwest Airlines",
+    departureTime: "19:15",
+    arrivalTime: "21:30",
+    departureCity: "Houston",
+    arrivalCity: "Denver",
+    price: "220",
+    duration: "2h 15m",
+    stops: "Non-stop",
+    departureCode: "HOU",
+    arrivalCode: "DEN"
+  },
 ];
 
 const FlightList = () => {
@@ -47,9 +85,7 @@ const FlightList = () => {
             <li
               key={option}
               className={`cursor-pointer ${
-                selectedSortOption === option
-                  ? "font-bold custom-underline"
-                  : ""
+                selectedSortOption === option ? "font-bold custom-underline" : ""
               }`}
               onClick={() => handleSortOptionClick(option)}
             >
@@ -60,9 +96,9 @@ const FlightList = () => {
       </div>
       <div className="flex flex-wrap">
         <div className="w-full md:w-[72%] lg:w-[78%]">
-          {flightList.map((val, ind) => {
-            return <FlightCard key={ind} flightData={val} />;
-          })}
+          {flightList.map((flight, index) => (
+            <FlightCard key={index} flightData={flight} />
+          ))}
         </div>
         <div className="hidden md:block w-[20%] md:w-[28%] lg:w-[22%]">
           <FiltersFlight />
