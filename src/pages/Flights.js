@@ -8,8 +8,7 @@ import Offers from "../components/Offers";
 import Locations from "../components/Locations";
 import HeaderContainer from "../components/HeaderContainer";
 import FlightsSearchBar from "../components/FlightsSearchBar";
-import RecommendAndMostViewed, { recommendedHotelsList, mostViewedHotelsList } from '../components/RecommendAndMostViewed';
-
+import RecommendAndMostViewed, { Mostviewflights } from '../components/RecommendAndMostViewed';
 
 function Flights() {
   return (
@@ -22,8 +21,8 @@ function Flights() {
       <AdBanner1 imageUrl="/path/to/ad-image.jpg" />
       <StackedCard />
       <Offers />
-      <RecommendAndMostViewed title={'Recommended for you'} hotels={recommendedHotelsList}/>
-      <RecommendAndMostViewed title={'Most Viewed'} hotels={mostViewedHotelsList}/> 
+      {/* Pass the correct data as props */}
+      <RecommendAndMostViewed title={'Recommended for you'} flights={Mostviewflights} />
       <Locations />
     </div>
   );
