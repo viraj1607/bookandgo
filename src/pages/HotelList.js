@@ -5,19 +5,17 @@ import HeroHotelList from "../components/HeroHotelList";
 import HeaderContainerList from "../components/HeaderContainerList";
 import { AppContext } from "../AppContext";
 
-
-
 const HotelList = () => {
   const [showFilters, setShowFilters] = useState(false);
   const [selectedSortOption, setSelectedSortOption] = useState("Popular");
-  const {hotels}=useContext(AppContext)
+  const { hotels } = useContext(AppContext);
 
   const handleSortOptionClick = (option) => {
     setSelectedSortOption(option);
   };
 
   useEffect(() => {
-    console.log(hotels);
+    console.log("Hotels Data:", hotels); // Log hotels data for debugging
   }, [hotels]);
 
   return (
@@ -44,6 +42,7 @@ const HotelList = () => {
         <div className="w-full md:w-[80%]">
           {hotels.length > 0 ? (
             hotels.map((val, ind) => {
+              console.log("Hotel Data:", val); // Log each hotel's data
               return <HotelCard key={ind} hotelData={val} />;
             })
           ) : (
