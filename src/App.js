@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import React from "react";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import Admin from "./pages/Admin";
 import HotelList from "./pages/HotelList";
@@ -19,16 +19,33 @@ import "./i18n";
 import { ContextProvider } from "./AppContext";
 import Support from './pages/Support';
 
-const App = () => {
-  const [showContent, setShowContent] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowContent(true);
-    }, 4000); // Duration of the video
-
-    return () => clearTimeout(timer);
-  }, []);
+function App() {
+  const appRouter = createBrowserRouter([
+    {
+      path: "/",
+      element: (
+        <>
+          <Header />
+          <Tabs
+            tabs={[
+              {
+                label: "Flight Booking",
+                content: <Home />,
+              },
+              {
+                label: "Hotel Booking",
+                content: <div>Hotels to explore</div>,
+              },
+              {
+                label: "Car Rental",
+                content: <div>Available rental Cars .</div>,
+              },
+            ]}
+          />
+        </>
+      ),
+    },
+  ]);
 
   return (
     <div className="App">
