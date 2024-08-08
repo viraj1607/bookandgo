@@ -67,7 +67,7 @@ const Header = ({ onSignInClick }) => {
             </div>
           ) : (
             <span
-              className="relative text-white font-semibold cursor-pointer z-[50]"
+              className="relative text-white font-semibold cursor-pointer z-[100]"
               onClick={onSignInClick}
             >
               {t('sign_in')}
