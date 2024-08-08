@@ -17,8 +17,9 @@ import FlightList from "./pages/FlightList";
 import HolidayList from "./pages/HolidayList";
 import "./i18n";
 import { ContextProvider } from "./AppContext";
-import Support from './pages/Support';
-import SignInPopup from './components/SignInPopup'; // Import SignInPopup
+import Support from "./pages/Support";
+import SignInPopup from "./components/SignInPopup"; // Import SignInPopup
+import VirtualTour from "./pages/VirtualTour";
 
 const App = () => {
   const [showContent, setShowContent] = useState(false);
@@ -44,13 +45,71 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
-            <Route path="admin/:id" element={<ProtectedRoute><Admin /></ProtectedRoute>} />
-            <Route path="hotellist" element={<HotelList />} />
-            <Route path="flightlist" element={<FlightList />} />
-            <Route path="holidaylist" element={<HolidayList />} />
-            <Route path="flightdetails" element={<FlightDetails />} /> {/* Add this route */}
-            <Route path="userprofile" element={<ProtectedRoute><UserProfile /></ProtectedRoute>} />
-            <Route path="hoteldetails/:hotelId" element={<ProtectedRoute><HotelDetails /></ProtectedRoute>} />
+            <Route
+              path="admin/:id"
+              element={
+                <ProtectedRoute>
+                  <Admin />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="hotellist"
+              element={
+                <ProtectedRoute>
+                  <HotelList />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/virtual-tour/:hotelId"
+              element={
+                <ProtectedRoute>
+                  <VirtualTour />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="flightlist"
+              element={
+                <ProtectedRoute>
+                  <FlightList />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="holidaylist"
+              element={
+                <ProtectedRoute>
+                  <HolidayList />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="flightdetails"
+              element={
+                <ProtectedRoute>
+                  <FlightDetails />
+                </ProtectedRoute>
+              }
+            />{" "}
+            {/* Add this route */}
+            <Route
+              path="userprofile"
+              element={
+                <ProtectedRoute>
+                  <UserProfile />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="hoteldetails/:hotelId"
+              element={
+                <ProtectedRoute>
+                  <HotelDetails />
+                </ProtectedRoute>
+              }
+            />
             <Route path="flights" element={<Flights />} />
             <Route path="holiday-packages" element={<HolidayPackages />} />
             <Route path="support" element={<Support />} />
