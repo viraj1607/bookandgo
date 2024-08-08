@@ -1,5 +1,5 @@
 import React from "react";
-import GoButton from "../components/GoButton";
+import GoButtonHoliday from "../components/GoButtonHoliday";
 import AdBanner from "../components/AdBanner";
 import Locations from "../components/Locations";
 import HeaderContainer from "../components/HeaderContainer";
@@ -16,7 +16,7 @@ function HolidayPackages() {
       <HeroSectionHoliday />
       <HeaderContainer />
       <HolidayPackagesSearchBar />
-      <GoButton />
+      <GoButtonHoliday />
       <HolidayAd />
       <AdBanner imageUrl="/path/to/ad-image.jpg" />
       <BestSellingDestinations />

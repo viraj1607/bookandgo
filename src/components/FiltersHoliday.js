@@ -9,8 +9,8 @@ import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
 import Typography from "@mui/material/Typography";
 
-const MAX = 100;  
-const MIN = 0;
+const MAX = 6500;
+const MIN = 1000;
 const marks = [
   {
     value: MIN,
@@ -22,11 +22,12 @@ const marks = [
   },
 ];
 
-const Filters = () => {
+const FiltersHoliday = () => {
   const [val, setVal] = React.useState(MIN);
   const handleChange = (_, newValue) => {
     setVal(newValue);
   };
+
   return (
     <div className="my-8 mx-4 md:mx-0">
       <h2 className="text-xl md:text-[25px] font-bold">Select Filters</h2>
@@ -39,18 +40,20 @@ const Filters = () => {
         </FormLabel>
         <RadioGroup
           aria-labelledby="demo-radio-buttons-group-label"
-          defaultValue="three"
+          defaultValue="honeymoon"
           name="radio-buttons-group"
         >
-          <FormControlLabel value="three" control={<Radio />} label="3 Star" />
-          <FormControlLabel value="four" control={<Radio />} label="4 Star" />
-          <FormControlLabel value="five" control={<Radio />} label="5 Star" />
+          <FormControlLabel value="honeymoon" control={<Radio />} label="Honeymoon" />
+          <FormControlLabel value="adventure" control={<Radio />} label="Adventure" />
+          <FormControlLabel value="culture" control={<Radio />} label="Culture" />
+          <FormControlLabel value="offbeat" control={<Radio />} label="Offbeat" />
+          <FormControlLabel value="wildlife" control={<Radio />} label="Wildlife" />
         </RadioGroup>
       </FormControl>
       <Box sx={{ width: 120 }} className="!my-4">
         <Slider
           marks={marks}
-          step={10}
+          step={500}
           value={val}
           valueLabelDisplay="auto"
           min={MIN}
@@ -77,16 +80,18 @@ const Filters = () => {
 
       <FormGroup className="!my-4">
         <FormLabel className="!text-lg md:!text-[20px] !font-bold">
-          Aminities
+          Amenities
         </FormLabel>
         <FormControlLabel control={<Checkbox />} label="Breakfast Included" />
-        <FormControlLabel control={<Checkbox />} label="Bar" />
         <FormControlLabel control={<Checkbox />} label="Swimming Pool" />
-        <FormControlLabel control={<Checkbox />} label="Indoor Games" />
         <FormControlLabel control={<Checkbox />} label="Kids Play Area" />
+        <FormControlLabel control={<Checkbox />} label="Indoor Games" />
+        <FormControlLabel control={<Checkbox />} label="Bar" />
+        <FormControlLabel control={<Checkbox />} label="Paid Airport Transfers" />
+        <FormControlLabel control={<Checkbox />} label="Paid Shuttle Services" />
       </FormGroup>
     </div>
   );
 };
 
-export default Filters;
+export default FiltersHoliday;
