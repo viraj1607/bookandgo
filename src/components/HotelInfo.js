@@ -110,7 +110,7 @@ const HotelInfo = ({ hotelData }) => {
           </div>
         </div>
         <div className="flex items-center mt-4">
-          <span className="font-bold text-2xl md:text-[35px] mr-4">
+          <span className="font-bold text-[20px] lg:text-[35px] mr-4">
             {name} {/* Display the name here */}
           </span>
           <Rating
