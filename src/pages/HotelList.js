@@ -11,6 +11,7 @@ const HotelList = () => {
   const { hotels } = useContext(AppContext);
   const [sortedHotels, setSortedHotels] = useState([]);
 
+
   const handleSortOptionClick = (option) => {
     setSelectedSortOption(option);
     let sortedData = [...hotels];
@@ -34,7 +35,11 @@ const HotelList = () => {
   };
 
   useEffect(() => {
+
+    console.log("Hotels Data:", hotels); // Log hotels data for debugging
+
     setSortedHotels(hotels); // Initialize with the unsorted list of hotels
+
   }, [hotels]);
 
   return (

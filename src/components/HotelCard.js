@@ -21,9 +21,11 @@ const HotelCard = ({ hotelData = {} }) => {
     }
     return text;
   };
-  useEffect(()=>{
-    console.log("_id",_id)
-  })
+
+  useEffect(() => {
+    console.log("Hotel ID:", _id); // Log hotel ID
+    console.log("Hotel Name:", name); // Log hotel name
+  }, [_id, name]);
 
   return (
     <Link to={`/hoteldetails/${_id}`} state={{ hotelData }}>
@@ -44,7 +46,7 @@ const HotelCard = ({ hotelData = {} }) => {
               <p className="text-[#6F6F6F] text-lg md:text-[20px]">{city}</p>
               <span className="text-[#00B0F3]">{nearby}</span>
             </div>
-            <div className="mt-4 md:mt-0">
+            <div className="mt-4 md:mt-0 pl-4">
               <h2 className="font-bold text-2xl md:text-[35px]">${price}</h2>
               <span className="text-[#6F6F6F] text-right">
                 +taxes <br /> per night
