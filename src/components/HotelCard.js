@@ -21,9 +21,11 @@ const HotelCard = ({ hotelData = {} }) => {
     }
     return text;
   };
-  useEffect(()=>{
-    console.log("_id",_id)
-  })
+
+  useEffect(() => {
+    console.log("Hotel ID:", _id); // Log hotel ID
+    console.log("Hotel Name:", name); // Log hotel name
+  }, [_id, name]);
 
   return (
     <Link to={`/hoteldetails/${_id}`} state={{ hotelData }}>
