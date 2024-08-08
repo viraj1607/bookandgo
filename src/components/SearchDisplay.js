@@ -3,13 +3,12 @@ import { useTranslation } from "react-i18next";
 import Rating from "@mui/material/Rating";
 import { Link } from "react-router-dom";
 
-const SearchDisplay = ({ randomHotelsData={} }) => {
+const SearchDisplay = ({ randomHotelsData}) => {
   const { t } = useTranslation();
-  const {  _id} = randomHotelsData;
-  console.log("id",_id);
+  
 
   return (
-    <Link to={`/hoteldetails/${_id}`} state={{ randomHotelsData }}>
+    
       <div className="flex justify-center items-center mt-9">
         <div className="p-4">
           <div className="relative bg-white shadow-2xl mx-auto my-0 rounded-3xl border border-slate-300 border-solid h-[307px] z-20 p-3 md:px-8 md:py-4 max-[376px]:w-[290px] w-[395px] md:w-[95%] xl:w-[1340px]">
@@ -25,6 +24,7 @@ const SearchDisplay = ({ randomHotelsData={} }) => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-[20px] md:gap-[25px] pt-0 md:pt-4 justify-items-center">
               {randomHotelsData.map((hotel, index) => (
+                <Link to={`/hoteldetails/${hotel._id}`} state={{ hotel }}>
                 <div
                   key={index}
                   className={`w-full max-w-[290px] h-[285px] rounded-3xl shadow-2xl truncate bg-white md:max-w-[300px] md:h-[350px] lg:h-[307px] sm:max-w-[200px] sm:h-[270px] ${
@@ -72,12 +72,12 @@ const SearchDisplay = ({ randomHotelsData={} }) => {
                     </div>
                   </div>
                 </div>
+                </Link>
               ))}
             </div>
           </div>
         </div>
       </div>
-    </Link>
   );
 };
 
