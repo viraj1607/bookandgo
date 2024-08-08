@@ -1,91 +1,152 @@
 import React from "react";
-import jetblue from "../imgs/jetblue.jpeg";
-import american from "../imgs/american.jpg";
-import delta from "../imgs/delta.jpeg";
-import spiritAirlines from "../imgs/spirit-airlines.jpg";
 
-export const recommendedHotelsList = [
+export const Recomflights = [
   {
-    name: "Hilton Garden Inn",
-    location: "New York",
-    price: 200,
-    imageUrl: require("../imgs/hiltongardeninn.webp"),
+    from: "DCA",
+    to: "JFK",
+    price: 250,
+    fromCity: "Washington",
+    toCity: "New York",
+    travelDates: "Fri., May 31 - Sun., Jun. 2",
+    imageUrl: require("../imgs/american-airlines.png"),
   },
   {
-    name: "DoubleTree",
-    location: "New York",
-    price: 243,
-    imageUrl: require("../imgs/doubletreebyhilton.webp"),
+    from: "DCA",
+    to: "JFK",
+    price: 257,
+    fromCity: "Washington",
+    toCity: "New York",
+    travelDates: "Fri., May 31 - Sun., Jun. 2",
+    imageUrl: require("../imgs/delta-airlines.png"),
   },
   {
-    name: "Holiday Inn Express",
-    location: "New York",
-    price: 187,
-    imageUrl: require("../imgs/holidayinnexpress.webp"),
+    from: "DCA",
+    to: "JFK",
+    price: 270,
+    fromCity: "Washington",
+    toCity: "New York",
+    travelDates: "Fri., May 31 - Sun., Jun. 2",
+    imageUrl: require("../imgs/jetblue.jpeg"),
   },
   {
-    name: "Hyatt Grand",
-    location: "New York",
-    price: 266,
-    imageUrl: require("../imgs/hyattgrand.webp"),
+    from: "DCA",
+    to: "JFK",
+    price: 250,
+    fromCity: "Washington",
+    toCity: "New York",
+    travelDates: "Fri., May 31 - Sun., Jun. 2",
+    imageUrl: require("../imgs/spirit-airlines.jpg"),
   },
 ];
 
 export const Mostviewflights = [
   {
-    name: "Hyatt Grand",
-    location: "New York",
-    price: 266,
-    imageUrl: require("../imgs/hyattgrand.webp"),
+    from: "DCA",
+    to: "JFK",
+    price: 250,
+    fromCity: "Washington",
+    toCity: "New York",
+    travelDates: "Fri., May 31 - Sun., Jun. 2",
+    imageUrl: require("../imgs/american-airlines.png"),
   },
   {
-    name: "DoubleTree",
-    location: "New York",
-    price: 243,
-    imageUrl: require("../imgs/doubletreebyhilton.webp"),
+    from: "DCA",
+    to: "JFK",
+    price: 257,
+    fromCity: "Washington",
+    toCity: "New York",
+    travelDates: "Fri., May 31 - Sun., Jun. 2",
+    imageUrl: require("../imgs/delta-airlines.png"),
   },
   {
-    name: "Hilton Garden Inn",
-    location: "New York",
-    price: 200,
-    imageUrl: require("../imgs/hiltongardeninn.webp"),
+    from: "DCA",
+    to: "JFK",
+    price: 270,
+    fromCity: "Washington",
+    toCity: "New York",
+    travelDates: "Fri., May 31 - Sun., Jun. 2",
+    imageUrl: require("../imgs/jetblue.jpeg"),
   },
   {
-    name: "Holiday Inn Express",
-    location: "New York",
-    price: 187,
-    imageUrl: require("../imgs/holidayinnexpress.webp"),
+    from: "DCA",
+    to: "JFK",
+    price: 250,
+    fromCity: "Washington",
+    toCity: "New York",
+    travelDates: "Fri., May 31 - Sun., Jun. 2",
+    imageUrl: require("../imgs/spirit-airlines.jpg"),
   },
 ];
 
-const RecommendAndMostViewed = ({ title, hotels }) => {
+const RecommendAndMostViewed = () => {
   return (
-    <div className="flex justify-center items-center my-4">
-      <div className="p-4 w-full max-w-screen-xl">
-        <div className="section-recommended">
-          <h1 className="font-bold text-center text-[30px]">{title}</h1>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[25px] pt-4">
-          {hotels?.map((hotel, index) => (
-            <div key={index} className="card bg-white rounded-2xl shadow-lg">
-              <img src={hotel.imageUrl} className="rounded-t-2xl"></img>
-              {/* <div className="card-image" style={{ backgroundImage: `url(${hotel.imageUrl})` }}></div> */}
-              {/* <hr className="my-2" /> */}
-              <div className="card-content p-2">
-                <div className="flex justify-between items-center">
-                  <h3 className="card-title">{hotel.name}</h3>
-                  <p className="card-price">${hotel.price}</p>
-                </div>
-                <div className="flex justify-between items-center">
-                  <p className="card-location">{hotel.location}</p>
-                  <span className="card-per-night">per night</span>
+    <div className="flex justify-center items-center mt-9">
+      <div className="p-4">
+        <div className="flex justify-center items-center">
+            <h2 className="md:text-[40px] text-[20px] sm:text-[30px] font-semibold font-extrabold">Recommended For You</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-[20px] md:gap-[25px] pt-0 md:pt-4 justify-items-center">
+            {Recomflights.map((flight, index) => (
+              <div
+                key={index}
+                className={`w-full max-w-[290px] h-[285px] rounded-3xl shadow-2xl truncate bg-white md:max-w-[300px] md:h-[350px] lg:h-[307px] sm:max-w-[200px] sm:h-[270px] ${index > 1 ? 'hidden md:block' : ''} ${index > 0 ? 'hidden lg:block' : ''}`}
+              >
+                <div className="w-[290px] h-[100px] bg-cover bg-center md:w-[300px] md:h-[160px] sm:w-[200px] sm:h-[130px]" style={{ backgroundImage: `url(${flight.imageUrl})` }}></div>
+                <div className="p-2 md:p-3">
+                  <div className="flex justify-between items-center">
+                    <div>
+                      <h3 className="font-semibold text-[20px] md:text-[25px]">{flight.from} ⇆ {flight.to}</h3>
+                      <div className="flex justify-between items-center">
+                        <p className="font-medium text-[12px] text-slate-500">{flight.fromCity}</p>
+                        <p className="font-medium text-[12px] text-slate-500">{flight.toCity}</p>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <p className="font-semibold text-[#000] text-[20px]">${flight.price}</p>
+                      <span className="font-medium text-[12px] text-slate-500">roundtrip</span>
+                    </div>
+                  </div>
+                  <div className="text-left mt-2">
+                    <span className="font-semibold text-[12px] text-rose-600">{flight.travelDates}</span>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          <div className="flex justify-center items-center mt-10">
+            <h2 className="md:text-[40px] text-[20px] sm:text-[30px] font-semibold font-extrabold">Most Viewd</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-[20px] md:gap-[25px] pt-0 md:pt-4 justify-items-center">
+            {Mostviewflights.map((flight, index) => (
+              <div
+                key={index}
+                className={`w-full max-w-[290px] h-[285px] rounded-3xl shadow-2xl truncate bg-white md:max-w-[300px] md:h-[350px] lg:h-[307px] sm:max-w-[200px] sm:h-[270px] ${index > 1 ? 'hidden md:block' : ''} ${index > 0 ? 'hidden lg:block' : ''}`}
+              >
+                <div className="w-[290px] h-[100px] bg-cover bg-center md:w-[300px] md:h-[160px] sm:w-[200px] sm:h-[130px]" style={{ backgroundImage: `url(${flight.imageUrl})` }}></div>
+                <div className="p-2 md:p-3">
+                  <div className="flex justify-between items-center">
+                    <div>
+                      <h3 className="font-semibold text-[20px] md:text-[25px]">{flight.from} ⇆ {flight.to}</h3>
+                      <div className="flex justify-between items-center">
+                        <p className="font-medium text-[12px] text-slate-500">{flight.fromCity}</p>
+                        <p className="font-medium text-[12px] text-slate-500">{flight.toCity}</p>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <p className="font-semibold text-[#000] text-[20px]">${flight.price}</p>
+                      <span className="font-medium text-[12px] text-slate-500">roundtrip</span>
+                    </div>
+                  </div>
+                  <div className="text-left mt-2">
+                    <span className="font-semibold text-[12px] text-rose-600">{flight.travelDates}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
   );
 };
 
