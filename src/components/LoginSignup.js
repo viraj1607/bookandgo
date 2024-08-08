@@ -4,6 +4,7 @@ import Mbutton from "./Mbutton";
 import { Hiking_Video } from "../utils/constants";
 import axios from "axios";
 import { useAuth } from "../utils/AuthContext";
+import { useTranslation } from 'react-i18next';
 
 const LoginSignup = ({ onClose }) => {
   const [isSignIn, setIsSignIn] = useState(true);
@@ -11,6 +12,7 @@ const LoginSignup = ({ onClose }) => {
   const email = useRef(null);
   const password = useRef(null);
   const { login } = useAuth();
+  const { t } = useTranslation();
 
   const handleSubmit = async () => {
     if (isSignIn) {
@@ -75,7 +77,7 @@ const LoginSignup = ({ onClose }) => {
           &times;
         </button>
         <h2 className="text-[#002475] font-bold text-3xl mb-6">
-          {isSignIn ? "Sign In" : "Sign Up"}
+          {isSignIn ? t("sign_in") : t("sign_up")}
         </h2>
         <form onKeyPress={handleKeyPress}>
           {!isSignIn && (
@@ -83,7 +85,7 @@ const LoginSignup = ({ onClose }) => {
               inputRef={name}
               className="w-full !my-4 rounded-md"
               id="name"
-              label="Name"
+              label={t("name")}
               variant="outlined"
               InputProps={{
                 style: {
@@ -96,7 +98,7 @@ const LoginSignup = ({ onClose }) => {
             inputRef={email}
             className="w-full !my-4 rounded-md"
             id="email"
-            label="Email"
+            label={t("email")}
             variant="outlined"
             InputProps={{
               style: {
@@ -108,7 +110,7 @@ const LoginSignup = ({ onClose }) => {
             inputRef={password}
             className="w-full !my-4 rounded-md"
             id="password"
-            label="Password"
+            label={t("password")}
             variant="outlined"
             type="password"
             InputProps={{
@@ -119,28 +121,28 @@ const LoginSignup = ({ onClose }) => {
           />
           <Mbutton
             onclick={handleSubmit}
-            value={isSignIn ? "Sign In" : "Sign Up"}
+            value={isSignIn ? t("sign_in") : t("sign_up")}
           />
         </form>
         <p className="mt-4">
           {isSignIn ? (
             <>
-              New User?{" "}
+              {t("new_user")}{" "}
               <span
                 className="cursor-pointer text-[#002475] font-bold"
                 onClick={handleSignIn}
               >
-                Sign Up
+                {t("sign_up")}
               </span>
             </>
           ) : (
             <>
-              Already Registered?{" "}
+              {t("already_registered")}{" "}
               <span
                 className="cursor-pointer text-[#002475] font-bold"
                 onClick={handleSignIn}
               >
-                Sign In
+                {t("sign_in")}
               </span>
             </>
           )}

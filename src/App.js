@@ -1,5 +1,5 @@
-import React from "react";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Admin from "./pages/Admin";
 import HotelList from "./pages/HotelList";
@@ -40,7 +40,7 @@ const App = () => {
     <div className="App">
       {!showContent && <LogoAnimation />}
       <div className={showContent ? "" : "hidden"}>
-        <SignInPopup /> {/* Add SignInPopup component */}
+        {!isAuthenticated && <SignInPopup />} {/* Add SignInPopup component */}
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />

@@ -12,6 +12,7 @@ import {
 import React, { useEffect, useState } from "react";
 import { useAuth } from "../utils/AuthContext";
 import axios from "axios";
+import { useTranslation } from 'react-i18next';
 
 const UserProfile = () => {
   const [isProfile, setIsProfile] = useState(true);
@@ -26,6 +27,7 @@ const UserProfile = () => {
   });
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const { logout } = useAuth();
+  const { t } = useTranslation();
 
   const getUserData = async () => {
     try {
@@ -89,22 +91,22 @@ const UserProfile = () => {
             className="my-2 cursor-pointer hover:underline"
             onClick={() => setIsProfile(true)}
           >
-            Profile
+            {t("profile")}
           </li>
           <li
             className="my-2 cursor-pointer hover:underline"
             onClick={() => setIsProfile(false)}
           >
-            Login Details
+            {t("login_details")}
           </li>
           <li className="my-2 cursor-pointer hover:underline" onClick={logout}>
-            Logout
+            {t("logout")}
           </li>
         </ul>
       </div>
       <div className="border-2 border-gray-300 m-4 p-8 rounded-3xl w-full md:w-auto">
         <h2 className="font-bold text-3xl mb-4">
-          {isProfile ? "Profile" : "Login Details"}
+          {isProfile ? t("profile") : t("login_details")}
         </h2>
         <form onSubmit={handleSubmit}>
           {isProfile ? (
@@ -112,7 +114,7 @@ const UserProfile = () => {
               <TextField
                 fullWidth
                 id="name"
-                label="Name"
+                label={t("name")}
                 variant="outlined"
                 sx={{
                   '& .MuiOutlinedInput-root': {
@@ -123,14 +125,14 @@ const UserProfile = () => {
                 onChange={handleChange}
               />
               <FormControl fullWidth variant="outlined">
-                <InputLabel id="gender-label">Gender</InputLabel>
+                <InputLabel id="gender-label">{t("gender")}</InputLabel>
                 <Select
                   labelId="gender-label"
                   id="gender"
                   name="gender"
                   value={userData.gender}
                   onChange={handleChange}
-                  label="Gender"
+                  label={t("gender")}
                   sx={{
                     '& .MuiOutlinedInput-root': {
                       borderRadius: '15px',
@@ -143,15 +145,15 @@ const UserProfile = () => {
                   <MenuItem value="">
                     <em>None</em>
                   </MenuItem>
-                  <MenuItem value="Male">Male</MenuItem>
-                  <MenuItem value="Female">Female</MenuItem>
-                  <MenuItem value="Other">Other</MenuItem>
+                  <MenuItem value="Male">{t("male")}</MenuItem>
+                  <MenuItem value="Female">{t("female")}</MenuItem>
+                  <MenuItem value="Other">{t("other")}</MenuItem>
                 </Select>
               </FormControl>
               <TextField
                 fullWidth
                 id="address"
-                label="Address"
+                label={t("address")}
                 variant="outlined"
                 sx={{
                   '& .MuiOutlinedInput-root': {
@@ -164,7 +166,7 @@ const UserProfile = () => {
               <TextField
                 fullWidth
                 id="province"
-                label="Province"
+                label={t("province")}
                 variant="outlined"
                 sx={{
                   '& .MuiOutlinedInput-root': {
@@ -177,7 +179,7 @@ const UserProfile = () => {
               <TextField
                 fullWidth
                 id="pincode"
-                label="Pin Code"
+                label={t("pin_code")}
                 variant="outlined"
                 sx={{
                   '& .MuiOutlinedInput-root': {
@@ -193,7 +195,7 @@ const UserProfile = () => {
               <TextField
                 fullWidth
                 id="mobile"
-                label="Mobile No."
+                label={t("mobile_no")}
                 variant="outlined"
                 sx={{
                   '& .MuiOutlinedInput-root': {
@@ -206,7 +208,7 @@ const UserProfile = () => {
               <TextField
                 fullWidth
                 id="email"
-                label="Email"
+                label={t("email")}
                 variant="outlined"
                 sx={{
                   '& .MuiOutlinedInput-root': {
@@ -232,7 +234,7 @@ const UserProfile = () => {
               textTransform: 'none',
             }}
           >
-            Save Changes
+            {t("save_changes")}
           </Button>
         </form>
       </div>
@@ -243,7 +245,7 @@ const UserProfile = () => {
         anchorOrigin={{ vertical: "top", horizontal: "center" }}
       >
         <Alert onClose={handleCloseSnackbar} severity="success">
-          User data updated successfully!
+          {t("user_data_updated_successfully")}
         </Alert>
       </Snackbar>
     </div>

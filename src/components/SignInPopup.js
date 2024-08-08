@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useAuth } from '../utils/AuthContext'; // Adjust the path according to your project structure
+import { useAuth } from '../utils/AuthContext';
+import { useTranslation } from 'react-i18next'; // Import useTranslation hook
 
 const SignInPopup = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { isAuthenticated, loading } = useAuth();
+  const { t } = useTranslation(); // Initialize useTranslation
 
   useEffect(() => {
     if (!loading && !isAuthenticated) {
@@ -30,13 +32,13 @@ const SignInPopup = () => {
             >
               &times;
             </button>
-            <h2 className="text-2xl font-bold mb-4">Sign In to Get More Deals</h2>
-            <p className="mb-6">Unlock exclusive offers by signing in!</p>
+            <h2 className="text-2xl font-bold mb-4">{t('sign_in_to_get_more_deals')}</h2>
+            <p className="mb-6">{t('unlock_exclusive_offers_by_signing_in')}</p>
             <button
               className="w-full py-2 px-4 bg-[#002475] text-white font-semibold rounded-md hover:bg-blue-700"
               onClick={handleClose}
             >
-              Sign In
+              {t('sign_in')}
             </button>
           </div>
         </div>

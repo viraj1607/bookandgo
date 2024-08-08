@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import bgImage from '../imgs/offers.png';
 
 const destinations = [
@@ -30,6 +31,7 @@ const destinations = [
 ];
 
 const InternationalDestinations = () => {
+  const { t } = useTranslation();
   const containerRef = useRef(null);
 
   const scrollRight = () => {
@@ -40,15 +42,15 @@ const InternationalDestinations = () => {
 
   return (
     <div className="relative flex flex-col p-4 shadow-custom-shadow-2 max-[376px]:w-[285px] w-[380px] md:w-[675px] lg:w-[90%] max-[376px]:h-[395px] md:h-[479px] rounded-[25px] mt-[40px] md:mt-[65px] lg:mt-[100px] lg:mt-[100px] mb-[40px] md:mb-[20px] mx-auto md:p-[20px]" style={{ backgroundImage: `url(${bgImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-      <h2 className="text-[22px] md:text-[40px] font-bold">International Destinations!</h2>
+      <h2 className="text-[22px] md:text-[40px] font-bold">{t('international_destinations')}</h2>
       <div className="flex flex-row w-full h-[390px] overflow-x-auto overflow-y-hidden p-2" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }} ref={containerRef}>
         <div className="grid grid-cols-[repeat(6,_252px)] gap-[20px] w-full">
           {destinations.map((destination, index) => (
             <div key={index} className="flex flex-col items-start w-[252px] h-[270px] md:h-[354px] p-2 border rounded-3xl bg-white shadow-lg">
-              <img src={destination.imageUrl} alt={destination.city} className="w-[238px] h-[195px] md:h-[282px] rounded-2xl object-cover" />
+              <img src={destination.imageUrl} alt={t(destination.city)} className="w-[238px] h-[195px] md:h-[282px] rounded-2xl object-cover" />
               <div className="mt-2 ml-2">
-                <h3 className="text-xl font-semibold">{destination.city}</h3>
-                <p className="text-sm text-gray-600">From {destination.price} per person</p>
+                <h3 className="text-xl font-semibold">{t(destination.city)}</h3>
+                <p className="text-sm text-gray-600">{t('from_price_per_person', { price: destination.price })}</p>
               </div>
             </div>
           ))}

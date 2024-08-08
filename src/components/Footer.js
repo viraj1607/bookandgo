@@ -4,8 +4,11 @@ import linkedinIcon from './icons/linkedin.svg';
 import youtubeIcon from './icons/youtube.svg';
 import instagramIcon from './icons/instagram.svg';
 import logo from '../imgs/logo.png';
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="footer-container flex items-center justify-between w-full h-auto bg-[#002475] px-6 md:px-[30px] lg:px-[50px] xl:p-20 py-10 md:py-[20px] lg:py-[30px] box-border">
       <div className="footer-content flex flex-col md:flex-row items-start justify-between w-full gap-8 md:gap-0">
@@ -28,27 +31,27 @@ const Footer = () => {
         </div>
         <div className="flex gap-[30px] lg:gap-[80px] max-[376px]:flex-col">
           <div className="flex flex-col">
-            <h3 className="text-white text-[17px] font-semibold mb-[10px]">Top Destinations</h3>
+            <h3 className="text-white text-[17px] font-semibold mb-[10px]">{t('footer.top_destinations')}</h3>
             <ul className="list-none p-0 gap-[2px] md:gap-6 flex flex-col">
-              <li className="text-white font-inter text-base font-medium leading-6">Hotels in New York</li>
-              <li className="text-white font-inter text-base font-medium leading-6">Hotels in Montreal</li>
-              <li className="text-white font-inter text-base font-medium leading-6">Hotels in Vancouver</li>
+              <li className="text-white font-inter text-base font-medium leading-6">{t('footer.hotels_in_ny')}</li>
+              <li className="text-white font-inter text-base font-medium leading-6">{t('footer.hotels_in_montreal')}</li>
+              <li className="text-white font-inter text-base font-medium leading-6">{t('footer.hotels_in_vancouver')}</li>
             </ul>
           </div>
           <div className="flex flex-col">
-            <h3 className="text-white text-[17px] font-semibold mb-[10px]">Top countries & regions</h3>
+            <h3 className="text-white text-[17px] font-semibold mb-[10px]">{t('footer.top_countries_regions')}</h3>
             <ul className="list-none p-0 gap-[2px] md:gap-6 flex flex-col">
-              <li className="text-white font-inter text-base font-medium leading-6">India</li>
-              <li className="text-white font-inter text-base font-medium leading-6">Canada</li>
-              <li className="text-white font-inter text-base font-medium leading-6">America</li>
+              <li className="text-white font-inter text-base font-medium leading-6">{t('footer.india')}</li>
+              <li className="text-white font-inter text-base font-medium leading-6">{t('footer.canada')}</li>
+              <li className="text-white font-inter text-base font-medium leading-6">{t('footer.america')}</li>
             </ul>
           </div>
           <div className="flex flex-col">
-            <h3 className="text-white text-[17px] font-semibold mb-[10px]">Support & FAQs</h3>
+            <h3 className="text-white text-[17px] font-semibold mb-[10px]">{t('footer.support_faqs')}</h3>
             <ul className="list-none p-0 gap-[2px] md:gap-6 flex flex-col">
-              <li className="text-white font-inter text-base font-medium leading-6">Your Bookings</li>
-              <li className="text-white font-inter text-base font-medium leading-6">FAQs</li>
-              <li className="text-white font-inter text-base font-medium leading-6">Contact Us</li>
+              <li className="text-white font-inter text-base font-medium leading-6">{t('footer.your_bookings')}</li>
+              <li className="text-white font-inter text-base font-medium leading-6">{t('footer.faqs')}</li>
+              <li className="text-white font-inter text-base font-medium leading-6">{t('footer.contact_us')}</li>
             </ul>
           </div>
         </div>
