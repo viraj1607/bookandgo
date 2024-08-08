@@ -1,11 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useAuth } from '../utils/AuthContext'; // Adjust the path according to your project structure
 
 const SignInPopup = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
+  const { isAuthenticated, loading } = useAuth();
+
+  useEffect(() => {
+    if (!loading && !isAuthenticated) {
+      setIsOpen(true);
+    }
+  }, [isAuthenticated, loading]);
 
   const handleClose = () => {
     setIsOpen(false);
   };
+
+  if (loading) {
+    return null; // You can return a loading spinner or null while loading
+  }
 
   return (
     <>

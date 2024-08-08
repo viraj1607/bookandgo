@@ -10,7 +10,7 @@ import Flights from "./pages/Flights";
 import HolidayPackages from "./pages/HolidayPackages";
 import FlightDetails from "./pages/FlightDetails"; // Add this import
 import ProtectedRoute from "./ProtectedRoute";
-import { AuthProvider } from "./utils/AuthContext";
+import { AuthProvider, useAuth } from "./utils/AuthContext";
 import ErrorBoundary from "./components/ErrorBoundary";
 import LogoAnimation from "./components/LogoAnimation";
 import FlightList from "./pages/FlightList";
@@ -18,39 +18,29 @@ import HolidayList from "./pages/HolidayList";
 import "./i18n";
 import { ContextProvider } from "./AppContext";
 import Support from './pages/Support';
+import SignInPopup from './components/SignInPopup'; // Import SignInPopup
 
-function App() {
-  const appRouter = createBrowserRouter([
-    {
-      path: "/",
-      element: (
-        <>
-          <Header />
-          <Tabs
-            tabs={[
-              {
-                label: "Flight Booking",
-                content: <Home />,
-              },
-              {
-                label: "Hotel Booking",
-                content: <div>Hotels to explore</div>,
-              },
-              {
-                label: "Car Rental",
-                content: <div>Available rental Cars .</div>,
-              },
-            ]}
-          />
-        </>
-      ),
-    },
-  ]);
+const App = () => {
+  const [showContent, setShowContent] = useState(false);
+  const { isAuthenticated, loading } = useAuth();
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowContent(true);
+    }, 4000); // Duration of the video
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>; // Optional: You can show a loading spinner here
+  }
 
   return (
     <div className="App">
       {!showContent && <LogoAnimation />}
       <div className={showContent ? "" : "hidden"}>
+        <SignInPopup /> {/* Add SignInPopup component */}
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />

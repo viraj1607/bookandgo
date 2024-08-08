@@ -78,7 +78,7 @@ const UserProfile = () => {
 
   return (
     <div className="flex flex-col md:flex-row items-center justify-center md:justify-start p-4 md:p-8">
-      <div className="flex flex-col shadow-custom-grey rounded-lg items-center p-8 m-8 w-full md:w-auto">
+      <div className="flex flex-col shadow-custom-grey rounded-3xl items-center p-8 m-8 w-full md:w-auto">
         <img
           className="w-40 rounded-full"
           src="https://as1.ftcdn.net/v2/jpg/03/39/45/96/1000_F_339459697_XAFacNQmwnvJRqe1Fe9VOptPWMUxlZP8.jpg"
@@ -102,7 +102,7 @@ const UserProfile = () => {
           </li>
         </ul>
       </div>
-      <div className="border-2 border-gray-300 m-4 p-8 rounded-lg w-full md:w-auto">
+      <div className="border-2 border-gray-300 m-4 p-8 rounded-3xl w-full md:w-auto">
         <h2 className="font-bold text-3xl mb-4">
           {isProfile ? "Profile" : "Login Details"}
         </h2>
@@ -114,6 +114,11 @@ const UserProfile = () => {
                 id="name"
                 label="Name"
                 variant="outlined"
+                sx={{
+                  '& .MuiOutlinedInput-root': {
+                    borderRadius: '15px',
+                  },
+                }}
                 value={userData.name}
                 onChange={handleChange}
               />
@@ -126,6 +131,14 @@ const UserProfile = () => {
                   value={userData.gender}
                   onChange={handleChange}
                   label="Gender"
+                  sx={{
+                    '& .MuiOutlinedInput-root': {
+                      borderRadius: '15px',
+                    },
+                    '& .MuiOutlinedInput-notchedOutline': {
+                      borderRadius: '15px',
+                    },
+                  }}
                 >
                   <MenuItem value="">
                     <em>None</em>
@@ -140,6 +153,11 @@ const UserProfile = () => {
                 id="address"
                 label="Address"
                 variant="outlined"
+                sx={{
+                  '& .MuiOutlinedInput-root': {
+                    borderRadius: '15px',
+                  },
+                }}
                 value={userData.address}
                 onChange={handleChange}
               />
@@ -148,6 +166,11 @@ const UserProfile = () => {
                 id="province"
                 label="Province"
                 variant="outlined"
+                sx={{
+                  '& .MuiOutlinedInput-root': {
+                    borderRadius: '15px',
+                  },
+                }}
                 value={userData.province}
                 onChange={handleChange}
               />
@@ -156,6 +179,11 @@ const UserProfile = () => {
                 id="pincode"
                 label="Pin Code"
                 variant="outlined"
+                sx={{
+                  '& .MuiOutlinedInput-root': {
+                    borderRadius: '15px',
+                  },
+                }}
                 value={userData.pincode}
                 onChange={handleChange}
               />
@@ -167,6 +195,11 @@ const UserProfile = () => {
                 id="mobile"
                 label="Mobile No."
                 variant="outlined"
+                sx={{
+                  '& .MuiOutlinedInput-root': {
+                    borderRadius: '15px',
+                  },
+                }}
                 value={userData.mobile}
                 onChange={handleChange}
               />
@@ -175,6 +208,11 @@ const UserProfile = () => {
                 id="email"
                 label="Email"
                 variant="outlined"
+                sx={{
+                  '& .MuiOutlinedInput-root': {
+                    borderRadius: '15px',
+                  },
+                }}
                 value={userData.email}
                 onChange={handleChange}
               />
@@ -184,7 +222,15 @@ const UserProfile = () => {
             type="submit"
             variant="contained"
             color="primary"
-            className="!mt-6 !bg-[#002475]"
+            sx={{
+              mt: 2,
+              borderRadius: '10px',
+              background: 'linear-gradient(to right, #0060D0, #00316A)',
+              color: 'white',
+              fontWeight: 'bold',
+              fontSize: '14px',
+              textTransform: 'none',
+            }}
           >
             Save Changes
           </Button>
