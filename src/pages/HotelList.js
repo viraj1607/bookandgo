@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import HotelCard from "../components/HotelCard";
 import Filters from "../components/Filters";
+import SearchBarHotelList from "../components/SearchBarHotelList";
 import HeroHotelList from "../components/HeroHotelList";
 import HeaderContainerList from "../components/HeaderContainerList";
 import { AppContext } from "../AppContext";
@@ -22,6 +23,7 @@ const HotelList = () => {
     <div>
       <HeroHotelList />
       <HeaderContainerList />
+      {/* <SearchBarHotelList /> */}
       <div className="bg-[#E5F4FF] p-4 mt-4">
         <ul className="flex justify-evenly flex-wrap">
           <li className="font-bold">Sort By:</li>

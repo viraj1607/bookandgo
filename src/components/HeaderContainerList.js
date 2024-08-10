@@ -10,20 +10,20 @@ const HeaderContainer = () => {
 
   return (
     
-    <div className="flex items-center w-[350px] max-[376px]:w-[280px] md:w-[540px] lg:w-[800px] h-[80px] lg:h-[110px] md:h-[80px] rounded-3xl shadow-custom-shadow bg-white justify-between mt-[-50px] mx-auto webkit-sticky sticky z-50 top-5">
-      <Link to="/" className="hover:bg-[#E5F4FF] w-[85px] md:w-[177px] lg:w-[246px] h-[80px] md:h-[110px] lg:h-[110px] shrink-0 flex items-center justify-center flex-col transition-colors duration-300 ease-in-out cursor-pointer rounded-l-3xl hotels">
-        <img src={HotelsIcon} alt={t('hotels')} className="w-[45px] lg:w-[55.518px] h-[39.623px] lg:h-[32.1163px] shrink-0" />
-        <p className="hidden md:block text-slate-700 text-center md:text-[15px] lg:text-[20px] font-semibold mt-[15px] md:mt-[10px] lg:mt-[15px]">{t('hotels')}</p>
+    <div className="flex items-center w-[350px] max-[376px]:w-[280px] md:w-[540px] lg:w-[800px] h-[60px] lg:h-[75px] md:h-[60px] rounded-2xl lg:rounded-3xl shadow-custom-shadow bg-white justify-between mt-[-50px] mx-auto webkit-sticky sticky z-50 top-5 border border-[rgba(0,0,0,0.20)]">
+      <Link to="/" className="hover:bg-[#E5F4FF] w-[85px] md:w-[177px] lg:w-[246px] shrink-0 flex items-center justify-center flex-col transition-colors duration-300 ease-in-out cursor-pointer rounded-l-3xl hotels">
+        <img src={HotelsIcon} alt={t('hotels')} className="w-[35px] md:w-[45px] lg:w-[55.518px] h-[30.8179px] md:h-[39.623px] lg:h-[32.1163px] shrink-0" />
+        
       </Link>
-      <div className="w-[4px] lg:w-[5px] h-[65px] lg:h-[92px] shrink-0 bg-slate-300 rounded-md"></div>
-      <Link to="/flights" className="hover:bg-[#E5F4FF] w-[85px] md:w-[177px] lg:w-[246px] h-[80px] md:h-[110px] lg:h-[110px] shrink-0 flex items-center justify-center flex-col transition-colors duration-300 ease-in-out cursor-pointer flights">
-        <img src={FlightsIcon} alt={t('flights')} className="w-[71.6968] lg:w-[88.178px] h-[32.1163px] lg:h-[39.499px] shrink-0" />
-        <p className="hidden md:block text-slate-700 text-center md:text-[15px] lg:text-[20px] font-semibold mt-[15px] md:mt-[10px] lg:mt-[15px]">{t('flights')}</p>
+      <div className="w-[4px] lg:w-[4px] h-[50px] lg:h-[55px] shrink-0 bg-slate-300 rounded-md"></div>
+      <Link to="/flights" className="hover:bg-[#E5F4FF] w-[85px] md:w-[177px] lg:w-[246px] shrink-0 flex items-center justify-center flex-col transition-colors duration-300 ease-in-out cursor-pointer flights">
+        <img src={FlightsIcon} alt={t('flights')} className="w-[60px] md:w-[71.6968px] lg:w-[88.178px] h-[26.8768 px] md:h-[32.1163px] lg:h-[39.499px] shrink-0" />
+        
       </Link>
-      <div className="w-[4px] lg:w-[5px] h-[65px] lg:h-[92px] shrink-0 bg-slate-300 rounded-md"></div>
+      <div className="w-[4px] lg:w-[4px] h-[50px] lg:h-[55px] shrink-0 bg-slate-300 rounded-md"></div>
       <Link to="/holiday-packages" className="hover:bg-[#E5F4FF] w-[85px] md:w-[177px] lg:w-[246px] h-[80px] md:h-[110px] lg:h-[110px] shrink-0 flex items-center justify-center flex-col transition-colors duration-300 ease-in-out cursor-pointer rounded-r-3xl holiday-packages">
-        <img src={HolidayPackagesIcon} alt={t('holiday_packages')} className="w-[31.2028] lg:w-[44.643px] h-[32.1163px] lg:h-[45.95px] shrink-0" />
-        <p className="hidden md:block text-slate-700 text-center md:text-[15px] lg:text-[20px] font-semibold mt-[15px] md:mt-[10px] lg:mt-[15px]">{t('holiday_packages')}</p>
+        <img src={HolidayPackagesIcon} alt={t('holiday_packages')} className="w-[31.2028px] lg:w-[44.643px] h-[32.1163px] lg:h-[45.95px] shrink-0" />
+        
       </Link>
     </div>
   );
