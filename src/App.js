@@ -19,6 +19,7 @@ import "./i18n";
 import { ContextProvider } from "./AppContext";
 import Support from './pages/Support';
 import SignInPopup from './components/SignInPopup'; // Import SignInPopup
+import HolidayPackagesDetail from './pages/HolidayPackagesDetail';
 
 const App = () => {
   const [showContent, setShowContent] = useState(false);
@@ -54,6 +55,8 @@ const App = () => {
             <Route path="flights" element={<Flights />} />
             <Route path="holiday-packages" element={<HolidayPackages />} />
             <Route path="support" element={<Support />} />
+            <Route path="/holidaylist" element={<HolidayList />} />
+            <Route path="/holidaydetails/:packageName" element={<HolidayPackagesDetail />} />
           </Route>
         </Routes>
       </div>
