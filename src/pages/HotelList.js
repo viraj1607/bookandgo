@@ -52,9 +52,8 @@ const HotelList = () => {
           {["Popular", "Ratings", "Price(High)", "Price(Low)"].map((option) => (
             <li
               key={option}
-              className={`cursor-pointer ${
-                selectedSortOption === option ? "font-bold custom-underline" : ""
-              }`}
+              className={`cursor-pointer ${selectedSortOption === option ? "font-bold custom-underline" : ""
+                }`}
               onClick={() => handleSortOptionClick(option)}
             >
               {option}
