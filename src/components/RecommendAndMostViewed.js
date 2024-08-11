@@ -115,7 +115,7 @@ const RecommendAndMostViewed = () => {
           </div>
 
           <div className="flex justify-center items-center mt-10">
-            <h2 className="md:text-[40px] text-[20px] sm:text-[30px] font-semibold font-extrabold">Most Viewd</h2>
+            <h2 className="md:text-[40px] text-[20px] sm:text-[30px] font-semibold">Most Viewd</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-[20px] md:gap-[25px] pt-0 md:pt-4 justify-items-center">
             {Mostviewflights.map((flight, index) => (

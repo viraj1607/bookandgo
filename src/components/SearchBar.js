@@ -7,7 +7,6 @@ import { getHotelList } from "../custom-functions/getHotelList";
 import GoButton from "./GoButton";
 import { AppContext } from "../AppContext";
 
-
 const SearchCard = () => {
   const { t } = useTranslation();
   const [location, setLocation] = useState(null);
@@ -16,6 +15,7 @@ const SearchCard = () => {
   const [priceRange, setPriceRange] = useState([0, 1000]);
   const [roomsAndGuests, setRoomsAndGuests] = useState(null);
   const { setHotels } = useContext(AppContext);
+  const { setFlightBooking } = useContext(AppContext);
 
   const handleLocationChange = (event, newValue) => {
     setLocation(newValue);
@@ -60,10 +60,11 @@ const SearchCard = () => {
     { label: "4 Rooms, 5 Guests", value: "4r5g" },
   ];
 
-  const handleSubmit = async() => {
+  const handleSubmit = async () => {
     // e.preventDefault();
     const hotels = await getHotelList(location, priceRange);
     setHotels(hotels);
+    setFlightBooking({ location, checkInDate, checkOutDate });
   };
 
   return (
@@ -134,7 +135,7 @@ const SearchCard = () => {
               variant="body2"
               className="text-[#606060] font-normal text-[20px] leading-[110%]"
             >
-              USA
+              Canada
             </Typography>
           </div>
 
@@ -231,7 +232,7 @@ const SearchCard = () => {
           </div>
         </div>
       </div>
-      <GoButton onSubmit={handleSubmit}/>
+      <GoButton onSubmit={handleSubmit} />
     </>
   );
 };
