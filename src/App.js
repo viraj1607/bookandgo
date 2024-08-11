@@ -17,6 +17,7 @@ import FlightList from "./pages/FlightList";
 import HolidayList from "./pages/HolidayList";
 import "./i18n";
 import { ContextProvider } from "./AppContext";
+import HolidayPackagesDetail from './pages/HolidayPackagesDetail';
 import Support from "./pages/Support";
 import SignInPopup from "./components/SignInPopup"; // Import SignInPopup
 import VirtualTour from "./pages/VirtualTour";
@@ -113,6 +114,8 @@ const App = () => {
             <Route path="flights" element={<Flights />} />
             <Route path="holiday-packages" element={<HolidayPackages />} />
             <Route path="support" element={<Support />} />
+            <Route path="/holidaylist" element={<HolidayList />} />
+            <Route path="/holidaydetails/:packageName" element={<HolidayPackagesDetail />} />
           </Route>
         </Routes>
       </div>

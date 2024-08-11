@@ -96,7 +96,7 @@ const FlightDetails = () => {
                     </div>
                     
                     <SelectFare onSelectFare={setSelectedFarePrice} />
-                    <SelectSeat />
+                    {/* <SelectSeat /> */}
                     <Bags onBagChange={handleBagChange} onAddBags={handleAddBags} />
                 </div>
 

@@ -1,10 +1,19 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const HolidayCard = ({ holidayData }) => {
   const { img, packageName, duration, price, amenities } = holidayData;
+  const navigate = useNavigate();
+
+  const handleCardClick = () => {
+    navigate(`/holidaydetails/${holidayData.packageName}`, { state: { holidayData } });
+  };
 
   return (
-    <div className="flex flex-col items-start md:flex-row justify-between p-3 my-4 mx-auto w-[300px] md:w-[500px] lg:w-[706px] xl:w-[960px] h-[380px] md:h-[238px] rounded-[20px] bg-white shadow-lg">
+    <div 
+      className="flex flex-col items-start md:flex-row justify-between p-3 my-4 mx-auto w-[300px] md:w-[500px] lg:w-[706px] xl:w-[960px] h-[380px] md:h-[238px] rounded-[20px] bg-white shadow-lg cursor-pointer"
+      onClick={handleCardClick} // Add onClick handler
+    >
       <div className='flex'>
         <div className="flex items-center space-x-2 md:space-x-4 flex-col md:flex-row">
           <div className="w-[275px] lg:w-[425px] xl:w-[580px] h-[130px] lg:h-[220px] xl:h-[215px]">
