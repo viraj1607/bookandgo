@@ -38,14 +38,14 @@ const Footer = () => {
               <li className="text-white font-inter text-base font-medium leading-6">{t('footer.hotels_in_vancouver')}</li>
             </ul>
           </div>
-          <div className="flex flex-col">
+          {/* <div className="flex flex-col">
             <h3 className="text-white text-[17px] font-semibold mb-[10px]">{t('footer.top_countries_regions')}</h3>
             <ul className="list-none p-0 gap-[2px] md:gap-6 flex flex-col">
               <li className="text-white font-inter text-base font-medium leading-6">{t('footer.india')}</li>
               <li className="text-white font-inter text-base font-medium leading-6">{t('footer.canada')}</li>
               <li className="text-white font-inter text-base font-medium leading-6">{t('footer.america')}</li>
             </ul>
-          </div>
+          </div> */}
           <div className="flex flex-col">
             <h3 className="text-white text-[17px] font-semibold mb-[10px]">{t('footer.support_faqs')}</h3>
             <ul className="list-none p-0 gap-[2px] md:gap-6 flex flex-col">

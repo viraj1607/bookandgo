@@ -1,6 +1,8 @@
-import React, { useContext, useEffect, useState } from "react";
-import HotelInfo from "../components/HotelInfo";
-import RoomCard from "../components/RoomCard";
+
+import React, { useContext, useEffect, useState } from 'react';
+import HotelInfo from '../components/HotelInfo';
+import RoomCard from '../components/RoomCard';
+import UnitCard from '../components/UnitCard';
 import { useLocation, useNavigate } from "react-router-dom";
 import hotelDetailImg from "../imgs/hotelDetailImg.png";
 import { getHotelDetails } from "../custom-functions/getHotelDetails";
