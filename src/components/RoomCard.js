@@ -1,6 +1,6 @@
 import React from 'react';
 
-const RoomCard = ({ rooms }) => {
+const RoomCard = ({ price }) => {
   return (
     <div className="room-card max-[426px]:mx-8 p-6 rounded-[31px] h-auto flex-shrink-0 border-[0.75px] border-[#CDCDCD] bg-white">
       <h2 className="text-xl font-bold text-black font-inter">
@@ -26,7 +26,7 @@ const RoomCard = ({ rooms }) => {
       <div className="flex justify-between items-center mt-4">
         <div>
           <span className="text-lg font-bold text-black font-inter">
-            $150
+            ${price}
           </span>
           <span className="text-black font-inter text-[15px] font-light leading-normal">
             + taxes

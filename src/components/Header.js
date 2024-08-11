@@ -75,7 +75,7 @@ const Header = ({ onSignInClick }) => {
           )}
         </div>
       </div>
-      <div
+      {/* <div
         className={`fixed z-50 top-4 right-4 items-center space-x-2 cursor-pointer hidden md:flex transition-all duration-300 bg-[#002475] p-2 rounded-md ${isHeaderVisible ? 'opacity-0' : 'opacity-100'}`}
       >
         <img className="h-6" src={LanguageIcon} alt="Language" />
@@ -86,7 +86,7 @@ const Header = ({ onSignInClick }) => {
           <option value="en" className="text-black">English</option>
           <option value="fr" className="text-black">French</option>
         </select>
-      </div>
+      </div> */}
     </>
   );
 };

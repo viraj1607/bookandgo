@@ -20,6 +20,7 @@ import { ContextProvider } from "./AppContext";
 import Support from "./pages/Support";
 import SignInPopup from "./components/SignInPopup"; // Import SignInPopup
 import VirtualTour from "./pages/VirtualTour";
+import CheckoutPage from "./pages/CheckoutPage";
 
 const App = () => {
   const [showContent, setShowContent] = useState(false);
@@ -62,7 +63,7 @@ const App = () => {
               }
             />
             <Route
-              path="/virtual-tour/:hotelId"
+              path="/virtual-tour/:hotelId" 
               element={
                 <ProtectedRoute>
                   <VirtualTour />
@@ -74,6 +75,14 @@ const App = () => {
               element={
                 <ProtectedRoute>
                   <FlightList />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="checkout"
+              element={
+                <ProtectedRoute>
+                  <CheckoutPage />
                 </ProtectedRoute>
               }
             />

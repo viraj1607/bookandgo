@@ -1,20 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import HotelInfo from "../components/HotelInfo";
 import RoomCard from "../components/RoomCard";
 import { useLocation, useNavigate } from "react-router-dom";
 import hotelDetailImg from "../imgs/hotelDetailImg.png";
 import { getHotelDetails } from "../custom-functions/getHotelDetails";
 import { useParams } from "react-router-dom";
+import { AppContext } from "../AppContext";
 
 const HotelDetails = () => {
   const [hotelData, setHotelData] = useState(null);
   const { hotelId } = useParams();
   const navigate = useNavigate();
+  const {flightBooking}=useContext(AppContext);
 
   useEffect(() => {
     const fetchHotelDetails = async () => {
       const detail = await getHotelDetails(hotelId);
       setHotelData(detail);
+      console.log("flightBooking",flightBooking)
     };
 
     if (hotelId) {
@@ -52,7 +55,7 @@ const HotelDetails = () => {
         </div>
       </div>
       <div className="room-card-container md:w-4/12">
-        <RoomCard />
+        {hotelData && <RoomCard price={hotelData.price} />}
 
         <div className="w-full mt-4 hidden md:block">
           <img src={hotelDetailImg} alt="Hotel Image" className="w-full" />
