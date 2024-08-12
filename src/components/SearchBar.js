@@ -14,8 +14,7 @@ const SearchCard = () => {
   const [checkOutDate, setCheckOutDate] = useState(null);
   const [priceRange, setPriceRange] = useState([0, 1000]);
   const [roomsAndGuests, setRoomsAndGuests] = useState(null);
-  const { setHotels } = useContext(AppContext);
-  const { setFlightBooking } = useContext(AppContext);
+  const { setHotels,setHotelBooking } = useContext(AppContext);
 
   const handleLocationChange = (event, newValue) => {
     setLocation(newValue);
@@ -64,7 +63,8 @@ const SearchCard = () => {
     // e.preventDefault();
     const hotels = await getHotelList(location, priceRange);
     setHotels(hotels);
-    setFlightBooking({ location, checkInDate, checkOutDate,roomsAndGuests });
+    // setFlightBooking({ location, checkInDate, checkOutDate,roomsAndGuests });
+    setHotelBooking({location,checkInDate, checkOutDate,roomsAndGuests})
   };
 
   return (

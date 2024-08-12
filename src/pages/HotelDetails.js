@@ -1,8 +1,7 @@
-
-import React, { useContext, useEffect, useState } from 'react';
-import HotelInfo from '../components/HotelInfo';
-import RoomCard from '../components/RoomCard';
-import UnitCard from '../components/UnitCard';
+import React, { useContext, useEffect, useState } from "react";
+import HotelInfo from "../components/HotelInfo";
+import RoomCard from "../components/RoomCard";
+import UnitCard from "../components/UnitCard";
 import { useLocation, useNavigate } from "react-router-dom";
 import hotelDetailImg from "../imgs/hotelDetailImg.png";
 import { getHotelDetails } from "../custom-functions/getHotelDetails";
@@ -13,13 +12,16 @@ const HotelDetails = () => {
   const [hotelData, setHotelData] = useState(null);
   const { hotelId } = useParams();
   const navigate = useNavigate();
-  const {flightBooking}=useContext(AppContext);
+  const { setHotelBooking } = useContext(AppContext);
 
   useEffect(() => {
     const fetchHotelDetails = async () => {
       const detail = await getHotelDetails(hotelId);
       setHotelData(detail);
-      console.log("flightBooking",flightBooking)
+      setHotelBooking((prevBooking) => ({
+        ...prevBooking,
+        hotelName: detail.name,
+      }));
     };
 
     if (hotelId) {

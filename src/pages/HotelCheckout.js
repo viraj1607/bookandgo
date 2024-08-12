@@ -1,7 +1,19 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import HotelCard from '../components/HotelCard'; // Ensure you have the correct import path
+import { AppContext } from '../AppContext';
 
-const HotelCheckout = ({ hotelData }) => {
+const getDateOneWeekFromNow = () => {
+    const today = new Date();
+    const nextWeek = new Date(today);
+    nextWeek.setDate(today.getDate() + 7); 
+    
+    const options = { weekday: 'short', month: 'short', day: 'numeric' }; 
+    return nextWeek.toLocaleDateString('en-US', options);
+  };
+
+const HotelCheckout = () => {
+    const dateOneWeekFromNow = getDateOneWeekFromNow();
+    const {hotelBooking}=useContext(AppContext)
     const [personalDetails, setPersonalDetails] = useState({
         firstName: '',
         lastName: '',
@@ -31,17 +43,23 @@ const HotelCheckout = ({ hotelData }) => {
         // Handle form submission
         console.log('Personal Details:', personalDetails);
         console.log('Payment Details:', paymentDetails);
+        console.log("booking",hotelBooking)    
+        
     };
+
+    useEffect(()=>{
+        console.log("hotelBooking",hotelBooking)
+    })
 
     return (
         <div className="mx-auto px-20 py-10 text-gray-800 flex flex-col lg:flex-row gap-10">
             {/* Left Side - Checkout Form */}
             <div className="lg:w-2/3">
                 <div className="overflow-hidden pb-5">
-                    <h1 className="text-[35px] text-[#000] font-semibold mb-5">DoubleTree by Hilton</h1>
+                    <h1 className="text-[35px] text-[#000] font-semibold mb-5">{hotelBooking.hotelName}</h1>
                     <p className="mb-5 p-4 rounded-[20px] border border-[#B5B5B5] bg-white">
                         <span className="text-[#000] font-inter text-[20px] font-semibold leading-normal">
-                            Fully refundable before Mon., Jul. 29.
+                        Fully refundable before {dateOneWeekFromNow}.
                         </span>
                         <br />
                         <span className="text-[#000] font-inter text-[15px] font-medium leading-[25px]">
