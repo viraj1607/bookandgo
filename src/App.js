@@ -21,7 +21,8 @@ import HolidayPackagesDetail from './pages/HolidayPackagesDetail';
 import Support from "./pages/Support";
 import SignInPopup from "./components/SignInPopup"; // Import SignInPopup
 import VirtualTour from "./pages/VirtualTour";
-import CheckoutPage from "./pages/CheckoutPage";
+import RoomCard from './components/RoomCard';
+import HotelCheckout from './pages/HotelCheckout';
 
 const App = () => {
   const [showContent, setShowContent] = useState(false);
@@ -79,14 +80,7 @@ const App = () => {
                 </ProtectedRoute>
               }
             />
-            <Route
-              path="checkout"
-              element={
-                <ProtectedRoute>
-                  <CheckoutPage />
-                </ProtectedRoute>
-              }
-            />
+            
             <Route
               path="holidaylist"
               element={
@@ -125,6 +119,7 @@ const App = () => {
             <Route path="support" element={<Support />} />
             <Route path="/holidaylist" element={<HolidayList />} />
             <Route path="/holidaydetails/:packageName" element={<HolidayPackagesDetail />} />
+            <Route path="/hotelcheckout" element={<HotelCheckout />} />
           </Route>
         </Routes>
       </div>
