@@ -10,13 +10,37 @@ const HotelList = () => {
   const [showFilters, setShowFilters] = useState(false);
   const [selectedSortOption, setSelectedSortOption] = useState("Popular");
   const { hotels } = useContext(AppContext);
+  const [sortedHotels, setSortedHotels] = useState([]);
+
 
   const handleSortOptionClick = (option) => {
     setSelectedSortOption(option);
+    let sortedData = [...hotels];
+
+    switch (option) {
+      case "Ratings":
+        sortedData.sort((a, b) => b.rating - a.rating);
+        break;
+      case "Price(High)":
+        sortedData.sort((a, b) => b.price - a.price);
+        break;
+      case "Price(Low)":
+        sortedData.sort((a, b) => a.price - b.price);
+        break;
+      default:
+        // Default case can be "Popular" or any other sorting logic
+        sortedData = hotels;
+    }
+
+    setSortedHotels(sortedData);
   };
 
   useEffect(() => {
+
     console.log("Hotels Data:", hotels); // Log hotels data for debugging
+
+    setSortedHotels(hotels); // Initialize with the unsorted list of hotels
+
   }, [hotels]);
 
   return (
@@ -41,9 +65,8 @@ const HotelList = () => {
       </div>
       <div className="flex flex-wrap">
         <div className="w-full md:w-[80%]">
-          {hotels.length > 0 ? (
-            hotels.map((val, ind) => {
-              console.log("Hotel Data:", val); // Log each hotel's data
+          {sortedHotels.length > 0 ? (
+            sortedHotels.map((val, ind) => {
               return <HotelCard key={ind} hotelData={val} />;
             })
           ) : (
