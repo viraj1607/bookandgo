@@ -64,7 +64,7 @@ const SearchCard = () => {
     // e.preventDefault();
     const hotels = await getHotelList(location, priceRange);
     setHotels(hotels);
-    setFlightBooking({ location, checkInDate, checkOutDate });
+    setFlightBooking({ location, checkInDate, checkOutDate,roomsAndGuests });
   };
 
   return (
