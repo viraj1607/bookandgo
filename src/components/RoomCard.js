@@ -1,6 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const RoomCard = ({ rooms }) => {
+  const navigate = useNavigate();
+
+  const handleBookNowClick = () => {
+    navigate('/hotelcheckout'); // Navigate to the HotelCheckout page
+  };
+
   return (
     <div className="room-card max-[426px]:mx-8 p-6 rounded-[31px] h-auto flex-shrink-0 border-[0.75px] border-[#CDCDCD] bg-white">
       <h2 className="text-xl font-bold text-black font-inter">
@@ -32,7 +39,10 @@ const RoomCard = ({ rooms }) => {
             + taxes
           </span>
         </div>
-        <button className="w-[105px] lg:w-[135px] h-[35px] lg:h-[41px] flex-shrink-0 rounded-[11px] bg-gradient-to-r from-[#0060D0] to-[#00316A] text-white font-semibold text-[14px] lg:text-[17px]">
+        <button 
+          onClick={handleBookNowClick}
+          className="w-[105px] lg:w-[135px] h-[35px] lg:h-[41px] flex-shrink-0 rounded-[11px] bg-gradient-to-r from-[#0060D0] to-[#00316A] text-white font-semibold text-[14px] lg:text-[17px]"
+        >
           BOOK NOW
         </button>
       </div>
