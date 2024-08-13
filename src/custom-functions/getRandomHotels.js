@@ -3,7 +3,7 @@ import axios from "axios";
 export const getRandomHotels = async () => {
   try {
     const response = await axios.get(
-      "http://localhost:5000/api/hotels/random/Toronto",
+      "https://bookngo-server.vercel.app/api/hotels/random/Toronto",
       {}
     );
     console.log(response.data);
