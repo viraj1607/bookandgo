@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import HotelCard from '../components/HotelCard'; // Ensure you have the correct import path
 import { AppContext } from '../AppContext';
+import axios from 'axios';
 
 const getDateOneWeekFromNow = () => {
     const today = new Date();
@@ -43,9 +44,34 @@ const HotelCheckout = () => {
         // Handle form submission
         console.log('Personal Details:', personalDetails);
         console.log('Payment Details:', paymentDetails);
-        console.log("booking",hotelBooking)    
+        console.log("booking",{...hotelBooking,...personalDetails})    
+
+        const bookingData={
+            userId:localStorage.getItem("id"),
+            email:localStorage.getItem("user"),
+            billingName: personalDetails.firstName+" "+personalDetails.lastName,
+            billingEmail:personalDetails.email,
+            billingPhoneNumber:personalDetails.phone,
+            location:hotelBooking.location.label,
+            hotelName:hotelBooking.hotelName,
+            checkInDate:hotelBooking.checkInDate,
+            checkOutDate:hotelBooking.checkOutDate,
+            roomsAndGuests:hotelBooking.roomsAndGuests.label
+        }
+        bookHotel(bookingData)
         
     };
+
+
+    const bookHotel = async (bookingData) => {
+        try {
+          const response = await axios.post('http://localhost:5000/api/booking', bookingData);
+          console.log('Booking successful:', response.data);
+          return response.data;
+        } catch (error) {
+          console.error('There was a problem with the axios request:', error);
+        }
+      };
 
     useEffect(()=>{
         console.log("hotelBooking",hotelBooking)

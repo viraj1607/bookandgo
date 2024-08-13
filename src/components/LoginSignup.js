@@ -29,12 +29,9 @@ const LoginSignup = ({ onClose }) => {
       );
       const dataSignIn = await signin.data;
       console.log("user",dataSignIn);
-      setHotelBooking((prevBooking) => ({
-        ...prevBooking,
-        userId:dataSignIn.user._id,
-        email:dataSignIn.user.email
-      }));
+      
       localStorage.setItem("user", dataSignIn.user.email);
+      localStorage.setItem("id",dataSignIn.user._id)
       login(dataSignIn.token);
       onClose();
     } else {
