@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 
-const RoomCard = ({ rooms }) => {
+const RoomCard = ({ price }) => {
   const navigate = useNavigate();
 
   const handleBookNowClick = () => {
