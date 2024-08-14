@@ -41,6 +41,10 @@ const FlightsSearchBar = () => {
     { label: '4 Travellers, Economy/Premium', value: '4 Travellers' },
   ];
 
+  const getDayName = (date) => {
+    return date ? date.toLocaleDateString("en-US", { weekday: "long" }) : "";
+  };
+
   return (
     <div className="relative max-w-[1205px] h-[610px] xl:w-[100%] lg:w-[90%] md:w-[90%] mx-auto pt-15 md:pt-[4rem] px-6 pb-6 md:border-2 md:border-gray-300 md:rounded-[40px] bg-white md:shadow-md mt-[-65px] md:mt-[-40px] md:h-[410px] md:flex md:flex-col" style={{ boxShadow: '0px 12px 24px 0px rgba(0, 0, 0, 0.10)' }}>
       <div className="text-center mb-6">
@@ -63,10 +67,6 @@ const FlightsSearchBar = () => {
             <input type="radio" className="form-radio text-blue-600" name="tripType" value="roundtrip" checked={tripType === 'roundtrip'} onChange={() => setTripType('roundtrip')} />
             <span className="ml-2">{t('round_trip')}</span>
           </label>
-          {/* <label className="inline-flex items-center md:ml-0">
-            <input type="radio" className="form-radio text-blue-600" name="tripType" value="multicity" checked={tripType === 'multicity'} onChange={() => setTripType('multicity')} />
-            <span className="ml-2">Multi City</span>
-          </label> */}
         </div>
       </div>
       <div className="max-[376px]:w-[270px] w-[360px] h-[auto] xl:w-[100%] lg:w-[100%] md:w-[95%] flex-shrink-0 border-2 border-gray-300 rounded-xl md:border-2 md:border-gray-300 md:rounded-2xl mx-auto p-4 md:p-6 md:flex md:flex-row flex md:flex-nowrap flex-wrap justify-between items-start gap-4 md:gap-0">
@@ -129,7 +129,9 @@ const FlightsSearchBar = () => {
             placeholderText={t('select_date')}
             className="text-[#000] leading-trim text-edge-cap text-[24px] xl:text-[30px] lg:text-[25px] md:text-[18px] font-bold leading-[110%] w-full"
           />
-          <Typography variant="body2" className="text-[#606060] font-normal text-[20px] leading-[110%]">Friday</Typography>
+          <Typography variant="body2" className="text-[#606060] font-normal text-[20px] leading-[110%]">
+            {getDayName(departureDate)}
+          </Typography>
         </div>
 
         <div className="w-[2px] h-[60px] md:w-[3px] md:h-[92px] bg-gray-300 flex-shrink-0 hidden md:block"></div>
@@ -144,7 +146,9 @@ const FlightsSearchBar = () => {
             className="text-[#000] leading-trim text-edge-cap text-[24px] xl:text-[30px] lg:text-[25px] md:text-[18px] font-bold leading-[110%] w-full"
             disabled={tripType === 'oneway'}
           />
-          <Typography variant="body2" className="text-[#606060] font-normal text-[20px] leading-[110%]">Friday</Typography>
+          <Typography variant="body2" className="text-[#606060] font-normal text-[20px] leading-[110%]">
+            {getDayName(returnDate)}
+          </Typography>
         </div>
 
         <div className="w-[2px] h-[60px] md:w-[3px] md:h-[92px] bg-gray-300 flex-shrink-0 hidden md:block"></div>

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../utils/AuthContext';
-import { useTranslation } from 'react-i18next'; // Import useTranslation hook
+import { useTranslation } from 'react-i18next';
 
-const SignInPopup = () => {
+const SignInPopup = ({ onSignInClick }) => {
   const [isOpen, setIsOpen] = useState(false);
   const { isAuthenticated, loading } = useAuth();
-  const { t } = useTranslation(); // Initialize useTranslation
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (!loading && !isAuthenticated) {
@@ -18,7 +18,7 @@ const SignInPopup = () => {
   };
 
   if (loading) {
-    return null; // You can return a loading spinner or null while loading
+    return null; 
   }
 
   return (
@@ -36,7 +36,10 @@ const SignInPopup = () => {
             <p className="mb-6">{t('unlock_exclusive_offers_by_signing_in')}</p>
             <button
               className="w-full py-2 px-4 bg-[#002475] text-white font-semibold rounded-md hover:bg-blue-700"
-              onClick={handleClose}
+              onClick={() => {
+                handleClose();
+                onSignInClick(); // Ensure onSignInClick is correctly passed and used
+              }}
             >
               {t('sign_in')}
             </button>

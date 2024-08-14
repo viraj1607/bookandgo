@@ -43,6 +43,10 @@ const HolidayPackagesSearchBar = () => {
     setFilter(newValue);
   };
 
+  const getDayName = (date) => {
+    return date ? date.toLocaleDateString("en-US", { weekday: "long" }) : "";
+  };
+
   return (
     <div className="relative max-w-[1205px] md:h-[443px] xl:w-[100%] lg:w-[90%] md:w-[90%] mx-auto pt-15 md:pt-[4rem] px-6 pb-6 md:border-2 md:border-gray-300 md:rounded-[40px] bg-white md:shadow-md mt-[-65px] md:mt-[-40px] md:flex md:flex-col" style={{ boxShadow: '0px 12px 24px 0px rgba(0, 0, 0, 0.10)' }}>
       <div className="flex justify-between">
@@ -115,7 +119,9 @@ const HolidayPackagesSearchBar = () => {
               placeholderText={t('select_date')}
               className="text-[#000] leading-trim text-edge-cap text-[24px] xl:text-[30px] lg:text-[25px] md:text-[18px] font-bold leading-[110%] w-full"
             />
-            <Typography variant="body2" className="text-[#606060] font-normal text-[20px] leading-[110%]">Friday</Typography>
+            <Typography variant="body2" className="text-[#606060] font-normal text-[20px] leading-[110%]">
+              {getDayName(departureDate)}
+            </Typography>
           </div>
 
           <div className="w-[2px] h-[60px] md:w-[3px] md:h-[92px] bg-gray-300 flex-shrink-0 hidden rounded-sm md:block"></div>
