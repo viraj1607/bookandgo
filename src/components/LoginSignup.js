@@ -1,10 +1,11 @@
-import React, { useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { TextField } from "@mui/material";
 import Mbutton from "./Mbutton";
 import { Hiking_Video } from "../utils/constants";
 import axios from "axios";
 import { useAuth } from "../utils/AuthContext";
 import { useTranslation } from 'react-i18next';
+import { AppContext } from "../AppContext";
 
 const LoginSignup = ({ onClose }) => {
   const [isSignIn, setIsSignIn] = useState(true);
@@ -13,6 +14,7 @@ const LoginSignup = ({ onClose }) => {
   const password = useRef(null);
   const { login } = useAuth();
   const { t } = useTranslation();
+  const { setHotelBooking } = useContext(AppContext );
 
   const handleSubmit = async () => {
     if (isSignIn) {
@@ -26,8 +28,10 @@ const LoginSignup = ({ onClose }) => {
         objSignIn
       );
       const dataSignIn = await signin.data;
-      console.log(dataSignIn);
+      console.log("user",dataSignIn);
+      
       localStorage.setItem("user", dataSignIn.user.email);
+      localStorage.setItem("id",dataSignIn.user._id)
       login(dataSignIn.token);
       onClose();
     } else {

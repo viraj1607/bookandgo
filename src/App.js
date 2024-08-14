@@ -76,7 +76,7 @@ const App = () => {
               }
             />
             <Route
-              path="/virtual-tour/:hotelId"
+              path="/virtual-tour/:hotelId" 
               element={
                 <ProtectedRoute>
                   <VirtualTour />
@@ -91,6 +91,7 @@ const App = () => {
                 </ProtectedRoute>
               }
             />
+            
             <Route
               path="holidaylist"
               element={
