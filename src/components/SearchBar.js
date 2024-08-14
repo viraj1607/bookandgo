@@ -60,11 +60,14 @@ const SearchCard = () => {
   ];
 
   const handleSubmit = async () => {
-    // e.preventDefault();
     const hotels = await getHotelList(location, priceRange);
     setHotels(hotels);
     // setFlightBooking({ location, checkInDate, checkOutDate,roomsAndGuests });
     setHotelBooking({location,checkInDate, checkOutDate,roomsAndGuests})
+  };
+
+  const getDayName = (date) => {
+    return date ? date.toLocaleDateString("en-US", { weekday: "long" }) : "";
   };
 
   return (
@@ -156,7 +159,7 @@ const SearchCard = () => {
               variant="body2"
               className="text-[#606060] font-normal text-[20px] leading-[110%]"
             >
-              Thursday
+              {getDayName(checkInDate)}
             </Typography>
           </div>
 
@@ -177,7 +180,7 @@ const SearchCard = () => {
               variant="body2"
               className="text-[#606060] font-normal text-[20px] leading-[110%]"
             >
-              Friday
+              {getDayName(checkOutDate)}
             </Typography>
           </div>
 

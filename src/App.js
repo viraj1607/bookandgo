@@ -8,7 +8,7 @@ import Layout from "./pages/Layout";
 import HotelDetails from "./pages/HotelDetails";
 import Flights from "./pages/Flights";
 import HolidayPackages from "./pages/HolidayPackages";
-import FlightDetails from "./pages/FlightDetails"; // Add this import
+import FlightDetails from "./pages/FlightDetails"; 
 import ProtectedRoute from "./ProtectedRoute";
 import { AuthProvider, useAuth } from "./utils/AuthContext";
 import ErrorBoundary from "./components/ErrorBoundary";
@@ -19,32 +19,43 @@ import "./i18n";
 import { ContextProvider } from "./AppContext";
 import HolidayPackagesDetail from './pages/HolidayPackagesDetail';
 import Support from "./pages/Support";
-import SignInPopup from "./components/SignInPopup"; // Import SignInPopup
+import SignInPopup from "./components/SignInPopup"; 
+import LoginSignup from './components/LoginSignup'; // Import LoginSignup component
 import VirtualTour from "./pages/VirtualTour";
 import RoomCard from './components/RoomCard';
 import HotelCheckout from './pages/HotelCheckout';
 
 const App = () => {
   const [showContent, setShowContent] = useState(false);
+  const [showLoginSignup, setShowLoginSignup] = useState(false); // State to control LoginSignup visibility
   const { isAuthenticated, loading } = useAuth();
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowContent(true);
-    }, 4000); // Duration of the video
+    }, 4000); 
 
     return () => clearTimeout(timer);
   }, []);
 
+  const handleSignInClick = () => {
+    setShowLoginSignup(true); // Show LoginSignup when Sign In is clicked
+  };
+
+  const handleCloseLoginSignup = () => {
+    setShowLoginSignup(false); // Close LoginSignup when needed
+  };
+
   if (loading) {
-    return <div>Loading...</div>; // Optional: You can show a loading spinner here
+    return <div>Loading...</div>; 
   }
 
   return (
     <div className="App">
       {!showContent && <LogoAnimation />}
       <div className={showContent ? "" : "hidden"}>
-        {!isAuthenticated && <SignInPopup />} {/* Add SignInPopup component */}
+        {!isAuthenticated && <SignInPopup onSignInClick={handleSignInClick} />} {/* Pass onSignInClick */}
+        {showLoginSignup && <LoginSignup onClose={handleCloseLoginSignup} />} {/* Show LoginSignup */}
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
@@ -96,8 +107,7 @@ const App = () => {
                   <FlightDetails />
                 </ProtectedRoute>
               }
-            />{" "}
-            {/* Add this route */}
+            /> 
             <Route
               path="userprofile"
               element={

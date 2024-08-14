@@ -93,7 +93,7 @@ const LoginSignup = ({ onClose }) => {
               variant="outlined"
               InputProps={{
                 style: {
-                  borderRadius: "15px", // Adjust the radius as needed
+                  borderRadius: "15px", 
                 },
               }}
             />
@@ -106,7 +106,7 @@ const LoginSignup = ({ onClose }) => {
             variant="outlined"
             InputProps={{
               style: {
-                borderRadius: "15px", // Adjust the radius as needed
+                borderRadius: "15px",
               },
             }}
           />
@@ -119,7 +119,7 @@ const LoginSignup = ({ onClose }) => {
             type="password"
             InputProps={{
               style: {
-                borderRadius: "15px", // Adjust the radius as needed
+                borderRadius: "15px",
               },
             }}
           />
